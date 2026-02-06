@@ -1,0 +1,40 @@
+# OpenGrader generated files
+opengrader.db
+opengrader.db-shm
+opengrader.db-wal
+logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+.tmp/
+*.tmp
+*.bak
+
+# OpenGrader output folders (optional - uncomment if you don't want to track generated files)
+# **/opengrader/
+my_exams
