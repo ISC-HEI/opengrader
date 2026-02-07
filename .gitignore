@@ -38,3 +38,4 @@ Thumbs.db
 # OpenGrader output folders (optional - uncomment if you don't want to track generated files)
 # **/opengrader/
 my_exams
+*.log

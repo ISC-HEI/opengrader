@@ -1,5 +1,7 @@
 # OpenGrader
 
+![logo](docs/opengrader_logo.png)
+
 ## About
 
 OpenGrader is a modular agentic system to grade exams. It offers several tools:

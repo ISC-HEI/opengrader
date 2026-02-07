@@ -1,5 +1,5 @@
 ---
-name: question_extraction
+name: question-extraction
 description: Use this skill to extract questions from exam files (markdown, LaTeX, PDF) and create a structured questions.yaml file. Handles LaTeX conditionals (\ifsolution), separates questions from solutions, and preserves metadata.
 ---
 
