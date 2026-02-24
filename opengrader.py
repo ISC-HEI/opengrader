@@ -21,7 +21,6 @@ class OpenGraderAgent:
         self,
         working_dir: str,
         skills_dir: str = None,
-        api_key: str = None
     ):
         """
         Initialize the OpenGrader agent.
@@ -29,7 +28,6 @@ class OpenGraderAgent:
         Args:
             working_dir: Directory where exam files are located (teacher's workspace)
             skills_dir: Path to skills directory (defaults to ./skills)
-            api_key: LLM API key (uses env var if not provided)
         """
         self.working_dir = Path(working_dir).resolve()
         
@@ -46,18 +44,10 @@ class OpenGraderAgent:
             self.skills_dir = Path(skills_dir).resolve()
         assert os.path.exists(self.skills_dir), f"Skills directory {self.skills_dir} does not exist"
                 
-        # Get API key
-        gemini_api_key = api_key or os.getenv("GOOGLE_API_KEY") or os.getenv("GEMINI_API_KEY")
-        if not gemini_api_key:
-            raise ValueError(
-                "Gemini API key required. Provide via api_key parameter or GOOGLE_API_KEY env var"
-            )
-        # Set API key for LiteLLM
-        os.environ["GEMINI_API_KEY"] = gemini_api_key
-        
-        # Create Gemini model via LiteLLM. Lets us swap models easily in the future.
+        # LiteLLM loads OPENROUTER_API_KEY from .env automatically.
+        model_name = os.getenv("OPENGRADER_MODEL", "openrouter/google/gemini-3-flash-preview")
         self.model = ChatLiteLLM(
-            model="gemini/gemini-3-flash-preview",
+            model=model_name,
             temperature=0.7,
         )
         

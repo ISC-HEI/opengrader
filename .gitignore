@@ -39,3 +39,4 @@ Thumbs.db
 # **/opengrader/
 my_exams
 *.log
+.env

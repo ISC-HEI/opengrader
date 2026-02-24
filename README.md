@@ -7,9 +7,10 @@
 OpenGrader is a modular agentic system to grade exams. It offers several tools:
 
 - Extract the questions from various formats (LaTeX, Markdown, PDF, Excel, Word, JSON, etc.)
-- Extract the questions and answers from various systems (Moodle, VPL).
+- Extract the questions and answers from various systems (Moodle, VPL, HybridProctor).
 - Extract answers from scanned exams.
 - Assist in building the rubrics
+- Ability to run unit tests - test cases
 - Pre-grade the exams using the rubrics and the answers.
 
 Instead of offering a single, monolithic solution, OpenGrader is designed to be modular and extensible. 
@@ -28,32 +29,28 @@ OpenGrader comes with a set of skills that are bundled with the system. These sk
 
 ## Using OpenGrader
 
-```bash
-# Install dependencies (you'll need to do this)
-pip install -r requirements.txt
-
-# Set API key
-export GOOGLE_API_KEY="your-key"
-
-# Run interactively
 1. Install the dependencies (one time only)
 
-Install uv (https://docs.astral.sh/uv/getting-started/installation/)
-
 ```bash
-cd src
-uv sync
+pip install -r requirements.txt
 ```
 
-2. Add your exame files
-
-Create a folder in the `my_exams` folder with the name of the exam.
-
-3. Run the grader agent and follow the instructions
+2. Set your OpenRouter API key
 
 ```bash
-cd src
-uv run grader_agent.py  {name of your exam folder, e.g. my_exam/test_sql}
+export OPENROUTER_API_KEY="your-key"
+```
+
+Or create a `.env` file with `OPENROUTER_API_KEY=your-key`.
+
+3. Add your exam files
+
+Create a folder in `my_exams/` with the name of the exam.
+
+4. Run the grader agent and follow the instructions
+
+```bash
+python opengrader.py my_exams/your_exam_folder
 ```
 
 
