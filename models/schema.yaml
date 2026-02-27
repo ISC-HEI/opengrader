@@ -1,0 +1,129 @@
+$schema: "http://json-schema.org/draft-07/schema#"
+title: Exam Format
+description: |
+  Schema for exam files containing questions and student responses.
+  Uses YAML format with literal strings (|) for multiline content.
+type: object
+required:
+  - exam_name
+  - course_name
+  - questions
+  - student_response
+properties:
+  exam_name:
+    type: string
+    description: Name of the exam (e.g., "Contrôle continu 2")
+
+  course_name:
+    type: string
+    description: Name of the course (e.g., "Algorithmie et structures de données")
+
+  questions:
+    type: array
+    description: List of questions in order
+    items:
+      type: object
+      required:
+        - name
+        - id
+        - type
+        - description
+        - max_points
+      properties:
+        name:
+          type: string
+          description: Question title (e.g., "Exercice 1")
+        id:
+          type: number
+          description: Question id (auto-increment from 0)
+          minimum: 0
+        type:
+          type: string
+          enum: ["python", "javascript", "java", "cpp", "open"]
+          description: Programming language or answer type
+
+        description:
+          type: string
+          description: |
+            Question text/markdown. Use literal block scalar (|) for multiline.
+            Can include code blocks, examples, and explanations.
+        max_points:
+          type: number
+          description: Maximum points for this question
+          minimum: 0
+        solution:
+          type: [string, "null"]
+          description: |
+            Expected solution code. Null if not provided.
+            Use literal block scalar (|) for multiline code.
+        unit_tests:
+          type: [string, "null"]
+          description: |
+            Optionnal unit tests. Either the code of the unit tests corresponding to this question, or null
+
+student_response:
+  type: array
+  description: List of student submissions
+  items:
+    type: object
+    required:
+      - firstname
+      - lastname
+      - answers
+    properties:
+      firstname:
+        type: string
+        description: Student's first name
+      lastname:
+        type: string
+        description: Student's last name
+      answers:
+        type: array
+        description: List of students answers
+        items:
+          type: object
+          required:
+            - question_id
+            - content
+          properties:
+            question_id:
+              type: number
+              description: The id of the question corresponding to this answer
+              minimum: 0
+            content:
+              type: string
+              description: |
+                  Student's submitted code/answer.
+                  Use literal block scalar (|) to preserve formatting and indentation.
+            points:
+              type: [number, "null"]
+              description: Points awarded for this answer, null if not yet graded
+            correction_details:
+              type: [string, "null"]
+              description: The details for this correction, null if not yet graded
+additionalProperties: false
+
+example: |
+  exam_name: "Contrôle continu 2"
+  course_name: "Algorithmie et structures de données"
+  questions:
+    - name: "Exercice 1"
+      id: 0
+      type: python
+      description: |-
+        Your friend is lost in a maze...
+
+        Create a function `get_proba(labyrinth, start, exits)` that...
+      solution: null
+      max_points: 1.0
+  student_response:
+      - firstname: "John"
+      lastname: "Doe"
+      answers:
+          - question_id: 0
+          content: |
+            def get_proba(labyrinth, start, exits):
+                # implementation here
+                pass
+          points: null
+          correction_details: null

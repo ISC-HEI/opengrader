@@ -1,14 +1,14 @@
 ---
-name: moodle-to-json
-description: Extracts Moodle HTML responses and CSV grades into a unified JSON schema for algorithmic exam analysis.
+name: moodle-to-yaml
+description: Extracts Moodle HTML responses and CSV grades into a unified yaml schema.
 ---
 
-# Moodle-to-JSON Converter
+# Moodle-to-YAML Converter
 
-This skill transforms Moodle exam exports into a structured JSON format. It requires reconciling qualitative text data from HTML and quantitative grade data from CSV.
+This skill transforms Moodle exam exports into a structured YAML format. It requires reconciling qualitative text data from HTML and quantitative grade data from CSV.
 
 ## Role: Direct Data Transformer
-**Constraint:** Do NOT write or suggest a automatic method, or any external tool to perform this task. **You** are the engine. Process the provided text and files directly and output the final JSON.
+**Constraint:** Do NOT write or suggest a automatic method, or any external tool to perform this task. **You** are the engine. Process the provided text and files directly and output the final YAML.
 
 ## Required Inputs
 
@@ -17,7 +17,7 @@ This skill transforms Moodle exam exports into a structured JSON format. It requ
 
 ## Data Mapping & Schema
 
-The output must strictly follow the `./model/model.json` structure:
+The output must strictly follow the `./assets/schema.yaml` structure:
 
 1. **Identify the Gap:** Check for fields like `exam_name`, `course_name` or `question.name`.
 2. **Consult the User:** If missing, pause the transformation and ask the user:
@@ -31,7 +31,7 @@ The output must strictly follow the `./model/model.json` structure:
 ### 2. The `questions` Object (Dictionary)
 * **Key**: Use a zero-based index string (e.g., `"0"`, `"1"`).
 * **`name`**: The question label (e.g., "Q. 1"). Match this with the CSV column headers.
-* **`type`**: Infer from content. Valid values are : `python`, `open`
+* **`type`**: Infer from content. Valid values are available in the YAML schema files
 * **`max_points`**: Extract from the CSV header (e.g., from `Q. 1 /5.00`, extract `5.0`).
 
 ### 3. The `students_response` Array
