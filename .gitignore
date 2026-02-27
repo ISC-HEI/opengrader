@@ -4,6 +4,8 @@ opengrader.db-shm
 opengrader.db-wal
 logs/
 
+sources
+
 # Python
 __pycache__/
 *.py[cod]
@@ -29,6 +31,7 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+__MACOSX/
 
 # Temporary files
 .tmp/
