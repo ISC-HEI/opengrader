@@ -3,6 +3,7 @@ opengrader.db
 opengrader.db-shm
 opengrader.db-wal
 logs/
+exams
 
 sources
 

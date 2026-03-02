@@ -6,7 +6,7 @@
 
 OpenGrader is a modular agentic system to grade exams. It offers several tools:
 
-- Extract the questions from various formats (LaTeX, Markdown, PDF, Excel, Word, JSON, etc.)
+- Extract the questions from various formats (LaTeX, Markdown, PDF, JSON, CSV etc.)
 - Extract the questions and answers from various systems (Moodle, VPL, HybridProctor).
 - Extract answers from scanned exams.
 - Assist in building the rubrics
@@ -23,38 +23,41 @@ OpenGrader comes with a set of skills that are bundled with the system. These sk
 
 - `pdf`: Extract the questions from PDF files.
 - `moodle`: Extract the questions and answers from Moodle.
-- `vpl`: Extract the questions and answers from VPL.
 - `scans`: Extract answers from scanned exams (OCR).
 - `rubrics`: Assist in building the rubrics.
 
-## Using OpenGrader
+## Installation
 
-1. Install the dependencies (one time only)
+As this project uses skills, you can just run the script `./install.sh` (which just create some symlink using `GNU stow`). This script will ask you which local agent you are using, if your local agent is not in this list, you need to find the right folder in which the skills needs to be created (you can find this in the doc of your local agent), and then choose the `Custom` option, and enter the folder path.
 
+## Usage
+
+For this project, we recommand using [OpenCode](https://opencode.ai/), as it can be linked to the AI agent of your choice, and support the `SKILL.md` [specification](https://agentskills.io/specification). But you can bring the local agent of your choice.
+
+Using `opencode`, you can start a sessions either in the terminal (with a TUI) using :
 ```bash
-pip install -r requirements.txt
+opencode
 ```
 
-2. Set your OpenRouter API key
+Or start a web based session using :
 
 ```bash
-export OPENROUTER_API_KEY="your-key"
+opencode web
 ```
 
-Or create a `.env` file with `OPENROUTER_API_KEY=your-key`.
+Then, you can start prompting the agent with requests like :
+- `I want to import an exam I downloaded from Moodle` -> To trigger the `moodle-to-yaml` skill
+- `I want to import some students submissions into my exam` -> To trigger the `import-student-answers` skill
+- ...
 
-3. Add your exam files
+Or you can force the usage of a particual skill by typing `/skills` and then pressing `Tab`.
 
-Create a folder in `my_exams/` with the name of the exam.
+## Local agents
 
-4. Run the grader agent and follow the instructions
-
-```bash
-python opengrader.py my_exams/your_exam_folder
-```
-
-
-
+Here are some local agents that have been tested to work with skills (in no particular order) :
+- [OpenCode](https://opencode.ai/) (Recommanded)
+- [Gemini CLI](https://geminicli.com/)
+- [Claude Desktop](https://claude.com/download)
 
 ## Credits
 
