@@ -87,7 +87,6 @@ If a question has sub-parts (a, b, c, d), include them within the same question'
 ### Step 6: Build the YAML
 
 Construct the YAML object following the exact schema:
-- Use string indices for questions: "0", "1", "2", etc.
 - Ensure all numeric values are floats
 - Use literal block scalar (|-) for every multiline string.
 - Use `null` (not "null" string) for missing solutions

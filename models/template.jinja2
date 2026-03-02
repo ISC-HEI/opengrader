@@ -1,0 +1,47 @@
+---
+title: "{{ exam.name }}"
+author: [
+  {%- for a in exam.authors -%}
+  {{ a }}
+  {%- if not loop.last %}, {% endif -%}
+{%- endfor -%}
+]
+date: "{{ exam.date }}"
+version: "1.0.0"
+
+module: "201"
+ue: "201.1"
+course: "Algorithmie et structures de données"
+
+# LaTex specific
+fontsize: 10pt
+caption-justification: centering
+---
+
+<style>
+r { color: Red }
+y { color: Yellow }
+FIXME { color: Yellow }
+TODO {color: Blue}
+</style>
+
+{% for q in exam.questions %}
+# {{ q.name }} {%- if q.max_point is defined %}- {{ q.max_point }}{% endif %}
+
+{{ q.description }}
+
+{%- if q.answer is defined %}
+## Student answer
+
+```{% if q.type == 'open' %}text{% elif q.type == "python" %}text{% else %}{{ q.type }}{% endif %}
+{{ q.answer.content }}
+```
+
+{% endif %}
+
+{%- if q.correction_details is defined %}
+
+{{ q.correction_details }}
+
+{% endif %}
+{% endfor %}
