@@ -26,11 +26,14 @@ TODO {color: Blue}
 </style>
 
 {% for q in exam.questions %}
-# {{ q.name }} {%- if q.max_point is defined %}- {{ q.max_point }}{% endif %}
+{% if exam.add_anchors %}Q{{ loop.index0 }}:start
 
+{% endif %}
+# {{ q.name }} {%- if q.max_point is defined %} - {{ q.max_point }}{% endif %}
 {{ q.description }}
 
-{%- if q.answer is defined %}
+{% if q.answer is defined %}
+
 ## Student answer
 
 ```{% if q.type == 'open' %}text{% elif q.type == "python" %}text{% else %}{{ q.type }}{% endif %}
@@ -38,10 +41,13 @@ TODO {color: Blue}
 ```
 
 {% endif %}
+{% for b in range(q.linebreak) -%}
+  \newpage
+  \null
+  \newpage
+{%- endfor %}
 
-{%- if q.correction_details is defined %}
+{% if exam.add_anchors %}Q{{ loop.index0 }}:end{% endif %}
+{%- if not loop.last %}\pagebreak{% endif -%}
 
-{{ q.correction_details }}
-
-{% endif %}
 {% endfor %}
