@@ -1,0 +1,8 @@
+model_list:
+  - model_name: local_Step_3.5_Flash
+    litellm_params:
+      model: openrouter/stepfun/step-3.5-flash:free
+      api_key: "os.environ/OPENROUTER_FREE"
+
+litellm_settings:
+  callbacks: ["langfuse_otel"]

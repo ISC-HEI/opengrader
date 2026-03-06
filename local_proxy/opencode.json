@@ -1,0 +1,17 @@
+  {
+    "$schema": "https://opencode.ai/config.json",
+    "provider": {
+      "LiteLLM": {
+        "npm": "@ai-sdk/openai-compatible",
+        "name": "Local - LiteLLM",
+        "options": {
+          "baseURL": "http://localhost:4000"
+        },
+        "models": {
+          "local_Step_3.5_Flash": {
+            "name": "LOCAL - Step 3.5 Flash (Free)"
+          }
+        }
+      }
+    }
+  }

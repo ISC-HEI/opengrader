@@ -18,6 +18,9 @@ dist/
 build/
 uv.lock
 
+# Secrets
+secrets
+
 # Virtual environments
 venv/
 env/

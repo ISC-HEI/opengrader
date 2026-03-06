@@ -1,0 +1,9 @@
+OPENROUTER_FREE=<Your open router key>
+
+
+
+LANGFUSE_OTEL_HOST="http://langfuse-web:3000"
+
+# Those key can be created once the local langfuse interface is running
+LANGFUSE_SECRET_KEY=<The LOCAL langfuse secret key>
+LANGFUSE_PUBLIC_KEY=<The LOCAL langfuse public key>
