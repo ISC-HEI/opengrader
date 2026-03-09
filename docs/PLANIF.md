@@ -48,38 +48,41 @@ Parsed students submissions from HybridProctor
 - Parsed students answers per questions
 - Parsed students first/last name
 
-## Week two (2.03 - 06.03)
+## [DONE] Week two (2.03 - 06.03)
 
 Generate PDF files from YAML to allow for gradescope grading :
-- Find a way to generate a .md file for each student submission
-- Generate the PDF from the .md file
+- [DONE] Find a way to generate a .md file for each student submission
+- [DONE] Generate the PDF from the .md file
 - Find a way to support programming language for .md code block (python, scala, SQL etc...)
-- Generate the correct number of page for every student to fit each submission
-- Put them in gradescope -> and test if everything work or not
+- [DONE] Generate the correct number of page for every student to fit each submission
+- [DONE] Put them in gradescope -> and test if everything work or not
 
-## Week three (9.03 - 13.03)
+## Week three and four (9.03 - 20.03)
 
-Parse unit tests :
-- SKILL to parse the unit tests for an exam and add them to the YAML
+Fix provider jumping from openrouter -> avoid cache clearing during prompt (this cost more)
 
-Find a way to run unit tests on students submissions :
-- Start with easier language (probably `python`)
-- Find a way to automate test running for each student submission. 
-- Save unit tests results in the YAML file directly
-- Add unit tests results to the PDF generation for gradescope
+Parse scan from student answers :
+- Research on what models can do OCR on pictures
+- Find good intermediate representation to avoid doing OCR each time we want to loop on results
+- Create skills to parse scanned document
 
-Maybe add another language (probably `scala`) ?
+Make cost estimation :
+- Cost estimation for run without OCR (Either exported from moodle or, more likely, from hybrid proctor)
+- Cost esimation for run with OCR -> probably extracted from FNL course
 
-## Week four (16.03 - 20.03)
+Estimate precision of correction by opengrader :
+- Get CSV of ground truth from Renaud
+- Create skill to correct exams
+- Create blind judge agent to judge correction (between ground truth and LLM produced correction).
 
-Parse solution from files (.py files, .txt files etc): 
-- Parse the exam solution from separate file (either .txt or .py)
+Real use case test on excel exam :
+- Test data parsing from old exam
+  - Test data parsing from .mbz (moodle compressed file)
+  - Parse from csv/html otherwise
+- Test autonomous correction
+  - Test autonomous correction
+  - Compare with ground truth from gradescope
 
-Import rubric to YAML file:
-- Create SKILL to import rubric
-
-Generate pre-grading report:
-- Generate pre-grading report per question with the rubric and the student submission
 
 ## Week five ? (23.03 - 27.03)
 

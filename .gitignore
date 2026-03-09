@@ -23,6 +23,7 @@ secrets
 
 # Virtual environments
 venv/
+.venv
 env/
 ENV/
 
@@ -32,6 +33,7 @@ ENV/
 *.swp
 *.swo
 *~
+.ruff_cache
 
 # OS
 .DS_Store
