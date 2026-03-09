@@ -18,6 +18,7 @@ services:
         condition: service_healthy
     ports:
       - 127.0.0.1:3030:3030
+    profiles: ["langfuse", "all"]
     environment: &langfuse-worker-env
       NEXTAUTH_URL: ${NEXTAUTH_URL:-http://localhost:3000}
       DATABASE_URL: ${DATABASE_URL:-postgresql://postgres:postgres@postgres:5432/postgres} # CHANGEME
@@ -72,6 +73,7 @@ services:
     depends_on: *langfuse-depends-on
     ports:
       - 3000:3000
+    profiles: ["langfuse", "all"]
     environment:
       <<: *langfuse-worker-env
       NEXTAUTH_SECRET: ${NEXTAUTH_SECRET:-mysecret} # CHANGEME
@@ -99,6 +101,7 @@ services:
     ports:
       - 127.0.0.1:8123:8123
       - 127.0.0.1:9000:9000
+    profiles: ["langfuse", "all"]
     healthcheck:
       test: wget --no-verbose --tries=1 --spider http://localhost:8123/ping || exit 1
       interval: 5s
@@ -120,6 +123,7 @@ services:
       - 127.0.0.1:9091:9001
     volumes:
       - langfuse_minio_data:/data
+    profiles: ["langfuse", "all"]
     healthcheck:
       test: ["CMD", "mc", "ready", "local"]
       interval: 1s
@@ -143,6 +147,7 @@ services:
       interval: 3s
       timeout: 10s
       retries: 10
+    profiles: ["langfuse", "all"]
 
   postgres:
     image: docker.io/postgres:${POSTGRES_VERSION:-17}
@@ -160,6 +165,7 @@ services:
       PGTZ: UTC
     ports:
       - 127.0.0.1:5432:5432
+    profiles: ["langfuse", "all"]
     volumes:
       - langfuse_postgres_data:/var/lib/postgresql/data
 
@@ -170,6 +176,7 @@ services:
     - 4000:4000
     volumes:
       - ./config.yml:/app/config.yml
+    profiles: ["litellm", "all"]
     command: --config /app/config.yml --detailed_debug
     env_file: "./.env"
 

@@ -1,8 +1,21 @@
 model_list:
-  - model_name: local_Step_3.5_Flash
+  - model_name: Personnal_Step_3.5_Flash
     litellm_params:
       model: openrouter/stepfun/step-3.5-flash:free
-      api_key: "os.environ/OPENROUTER_FREE"
+      api_key: "os.environ/OPENROUTER_PERSONNAL"
+  - model_name: School_Step_3.5_Flash
+    litellm_params:
+      model: openrouter/stepfun/step-3.5-flash:free
+      api_key: "os.environ/OPENROUTER_SCHOOL"
+  - model_name: School_Claude_Haiku_3.0
+    litellm_params:
+      model: openrouter/anthropic/claude-3-haiku
+      api_key: "os.environ/OPENROUTER_SCHOOL"
+  - model_name: School_Claude_Haiku_4.5
+    litellm_params:
+      model: openrouter/anthropic/claude-haiku-4.5
+      api_key: "os.environ/OPENROUTER_SCHOOL"
+
 
 litellm_settings:
   callbacks: ["langfuse_otel"]

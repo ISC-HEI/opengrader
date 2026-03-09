@@ -56,6 +56,22 @@ docker compose up
 
 Once this is up, you can try using the model defined in `opencode.json` (`local_Step_3.5_Flash` by default). And while running a prompt, you should see logs pop in you `docker compose` window.
 
+### Developping
+
+If you are tweaking the configuration (of either `Langfuse` or `LiteLLM`), you can boot them up separately using :
+
+```bash
+docker compose --profile langfuse up
+```
+
+and
+
+```bash
+docker compose --profile litellm up
+```
+
+This allow to restart only the correct services when configuration changes have been made
+
 ## Adding models
 
 To add a new model, you need to edit multiples files.
