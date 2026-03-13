@@ -28,11 +28,20 @@ OpenGrader comes with a set of skills that are bundled with the system. These sk
 
 ## Installation
 
-As this project uses skills, you can just run the script `./install.sh` (which just create some symlink using `GNU stow`). This script will ask you which local agent you are using, if your local agent is not in this list, you need to find the right folder in which the skills needs to be created (you can find this in the doc of your local agent), and then choose the `Custom` option, and enter the folder path.
+For this project, we recommand using [OpenCode](https://opencode.ai/), as it can be linked to the AI agent of your choice, and support the `SKILL.md` [specification](https://agentskills.io/specification). But you can bring the local agent of your choice. We will only detail installation and usage with this tool, and we officially support only this one.
+
+Run the installation script to set up OpenGrader with OpenCode:
+
+```bash
+./install.py
+```
+
+This script installs three components to `~/.config/opencode/`:
+- **Skills**: Linked from the `skills/` folder using GNU stow
+- **Prompts**: Linked from the `prompts/` folder using GNU stow  
+- **Config**: Merged with your existing OpenCode config (if any), overlaying only the options defined in `config/opencode.json`
 
 ## Usage
-
-For this project, we recommand using [OpenCode](https://opencode.ai/), as it can be linked to the AI agent of your choice, and support the `SKILL.md` [specification](https://agentskills.io/specification). But you can bring the local agent of your choice.
 
 Using `opencode`, you can start a sessions either in the terminal (with a TUI) using :
 ```bash

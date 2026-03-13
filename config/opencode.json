@@ -1,0 +1,45 @@
+{
+  "agent": {
+    "open-grader": {
+      "mode": "primary",
+      "model": "opencode/big-pickle",
+      "prompt": "{file:./prompts/open-grader.md}",
+      "description": "Open grader main agent",
+      "steps": 100,
+      "color": "#87bf7c",
+      "permission": {
+        "read": "allow",
+        "external_directory": "ask",
+        "glob": "allow",
+        "edit": "allow",
+        "lsp": "allow",
+        "skill": "allow",
+        "task": "allow",
+        "question": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "todowrite": "allow",
+        "todoread": "allow",
+        "webfetch": "ask",
+        "websearch": "deny",
+        "bash": "allow",
+        "doom_loop": "deny",
+        "codesearch": "allow"
+      }
+    },
+    "document-analyst": {
+      "description": "Use this tool ONLY for PDF files, images, or scanned documents. This is the ONLY agent capable of parsing non-text formats. Do NOT attempt to use the standard 'read' tool for .pdf or image extensions; pass those file paths directly to this analyst instead.",
+      "mode": "subagent",
+      "model": "OpenRouter - School/google/gemini-2.5-flash-lite",
+      "prompt": "{file:./prompts/document-analyst.md}",
+      "permission": {
+        "*": "deny",
+        "read": "allow",
+        "glob": "allow",
+        "list": "allow",
+        "task": "deny",
+        "external_directory": "ask"
+      }
+    }
+  }
+}

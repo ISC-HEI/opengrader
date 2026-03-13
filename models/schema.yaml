@@ -6,8 +6,9 @@ description: |
 type: object
 required:
   - exam_name
-  - authors
   - course_name
+  - exam_date
+  - authors
   - questions
   - student_response
 properties:
@@ -18,6 +19,9 @@ properties:
   course_name:
     type: string
     description: Name of the course (e.g., "Algorithmie et structures de données")
+  exam_date:
+    type: date
+    description: The date at which the exam was created
   authors:
     type: array
     description: List of authors

@@ -136,7 +136,6 @@ def find_questions_in_pdf(pdf_path: str) -> dict[int, int]:
 
     # We loop until no more question are found
     while True:
-        q_num += 1
         pattern_start = f"Q{q_num}:start"
         pattern_end = f"Q{q_num}:end"
         page_num_start = None
@@ -158,6 +157,7 @@ def find_questions_in_pdf(pdf_path: str) -> dict[int, int]:
             questions[q_num] = page_num_end - page_num_start
         else:
             break  # no more questions found
+        q_num += 1
 
     return questions
 
@@ -189,6 +189,7 @@ def generate_exam(data: List[FilledExam], output_folder):
                     ["isc-build-pandoc", "-i", markdown_filename],
                     cwd=working_folder,
                     stdout=subprocess.DEVNULL,
+                    stderr=subprocess.DEVNULL,
                 )
 
         pages = []
@@ -196,6 +197,10 @@ def generate_exam(data: List[FilledExam], output_folder):
 
         # We generate the markdown -> pdfs with the anchors
         generate(True)
+
+        print(
+            "First generation done. Counting the pages to prepare for normalization"
+        )
 
         for d in data:
             base = d.firstname + "_" + d.lastname
@@ -205,6 +210,10 @@ def generate_exam(data: List[FilledExam], output_folder):
             for key, value in page_n.items():
                 if not key in maxes or maxes[key] < value:
                     maxes[key] = value
+
+        print(
+            "Pages counted. Here are the maxmimum pages per question :", maxes
+        )
 
         # This loop adds the right number of pagebreak to every exams.
         for e, p in zip(data, pages, strict=True):
