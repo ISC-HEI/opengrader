@@ -26,20 +26,6 @@
         "doom_loop": "deny",
         "codesearch": "allow"
       }
-    },
-    "document-analyst": {
-      "description": "Use this tool ONLY for PDF files, images, or scanned documents. This is the ONLY agent capable of parsing non-text formats. Do NOT attempt to use the standard 'read' tool for .pdf or image extensions; pass those file paths directly to this analyst instead.",
-      "mode": "subagent",
-      "model": "OpenRouter - School/google/gemini-2.5-flash-lite",
-      "prompt": "{file:./prompts/document-analyst.md}",
-      "permission": {
-        "*": "deny",
-        "read": "allow",
-        "glob": "allow",
-        "list": "allow",
-        "task": "deny",
-        "external_directory": "ask"
-      }
     }
   }
 }
