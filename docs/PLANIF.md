@@ -61,21 +61,24 @@ Generate PDF files from YAML to allow for gradescope grading :
 
 Fix provider jumping from openrouter -> avoid cache clearing during prompt (this cost more)
 
-Parse scan from student answers :
-- Research on what models can do OCR on pictures
-- Find good intermediate representation to avoid doing OCR each time we want to loop on results
-- Create skills to parse scanned document
 
-Make cost estimation :
-- Cost estimation for run without OCR (Either exported from moodle or, more likely, from hybrid proctor)
-- Cost esimation for run with OCR -> probably extracted from FNL course
+[PARTIALLY DONE] Parse scan from student answers :
+- Research on what models can do OCR on pictures [DONE]
+- Find good intermediate representation to avoid doing OCR each time we want to loop on results [Partially Done] - **Need to try latex**
+- Create skills to parse scanned document [See agent] - **Created sub-agent** -> sub agent allow us to change model during inference
 
-Estimate precision of correction by opengrader :
-- Get CSV of ground truth from Renaud
-- Create skill to correct exams
-- Create blind judge agent to judge correction (between ground truth and LLM produced correction).
+[DONE] Make cost estimation :
+- Cost estimation for run without OCR (Either exported from moodle or, more likely, from hybrid proctor) [DONE] -> **Can use free model**
+- Cost esimation for run with OCR -> probably extracted from FNL course [DONE] ->  - **Seems to be around 0.001 per document**
 
-Real use case test on excel exam :
+[PARTIALLY DONE] Estimate precision of correction by opengrader :
+- Get CSV of ground truth from Renaud [DONE]
+- Create skill to correct exams [DONE] - **Agent**
+- Create blind judge agent to judge correction (between ground truth and LLM produced correction). [NOT DONE]
+
+
+
+[NOT DONE] Real use case test on excel exam :
 - Test data parsing from old exam
   - Test data parsing from .mbz (moodle compressed file)
   - Parse from csv/html otherwise
