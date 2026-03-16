@@ -4,7 +4,7 @@
 - (1/4 - 1/2 day) - Parse unit tests 
 - (1-3 day) - Find a way to run unit tests on students submissions -> Allows for pre-grade and Gradescope PDF generation. ==> Look with Louis to see what has been done for python. We need to sandbox this
 - (2-4 day) - Parse PDF files to allow for students answer extraction
-- (1/2 day) - Parse solution from files (.py files, .txt files etc)
+- [DONE] (1/2 day) - Parse solution from files (.py files, .txt files etc)
 - (3-5 day) - Generate PDF files from YAML to allow for gradescope grading
 - (1-3 day) - Research on privacy implication - We may find a solution to anonimize the data
 - (1-3 day) - Create a SKILL to help professors create rubrics for corrections ? We may need to adapt those on the fly (Can talk with TC professors to gain experience on how to create them)

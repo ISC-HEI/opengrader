@@ -16,6 +16,8 @@
 
 ### What is left to do :
 
+- Find a way to restrain provider change on openrouter
+
 - For the precision of correction :
   - Create benchmarks and use blind judge to estimate precision
 
