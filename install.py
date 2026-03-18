@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import json
-import subprocess
 from pathlib import Path
 
 CONFIG_PATH = Path.home() / ".config" / "opencode" / "opencode.json"
@@ -53,43 +52,35 @@ def ensure_config():
     print(f"  Saved config to: {CONFIG_PATH}")
 
 
-def install_stow():
+def symlink_dir(src: Path, dest: Path):
+    """Symlink each file in src into dest, mirroring the directory structure."""
+    for src_file in src.rglob("*"):
+        if not src_file.is_file():
+            continue
+        rel = src_file.relative_to(src)
+        dest_file = dest / rel
+        dest_file.parent.mkdir(parents=True, exist_ok=True)
+        if dest_file.is_symlink():
+            dest_file.unlink()
+        dest_file.symlink_to(src_file)
+
+
+def install_files():
     print("\nInstalling files...")
     dest = Path.home() / ".config" / "opencode"
-    skills_dest = dest / "skills"
-    prompts_dest = dest / "prompts"
-
-    skills_dest.mkdir(parents=True, exist_ok=True)
-    prompts_dest.mkdir(parents=True, exist_ok=True)
 
     if SKILLS_SRC.exists():
-        subprocess.run(
-            [
-                "stow",
-                "-t",
-                str(skills_dest),
-                "-d",
-                str(SKILLS_SRC.parent),
-                SKILLS_SRC.name,
-            ],
-            check=True,
-        )
+        skills_dest = dest / "skills"
+        skills_dest.mkdir(parents=True, exist_ok=True)
+        symlink_dir(SKILLS_SRC, skills_dest)
         print(f"  Installed skills to: {skills_dest}")
     else:
         print(f"  No skills source found at: {SKILLS_SRC}, skipping")
 
     if PROMPTS_SRC.exists():
-        subprocess.run(
-            [
-                "stow",
-                "-t",
-                str(prompts_dest),
-                "-d",
-                str(PROMPTS_SRC.parent),
-                PROMPTS_SRC.name,
-            ],
-            check=True,
-        )
+        prompts_dest = dest / "prompts"
+        prompts_dest.mkdir(parents=True, exist_ok=True)
+        symlink_dir(PROMPTS_SRC, prompts_dest)
         print(f"  Installed prompts to: {prompts_dest}")
     else:
         print(f"  No prompts source found at: {PROMPTS_SRC}, skipping")
@@ -99,7 +90,7 @@ def install_stow():
 
 def main():
     ensure_config()
-    install_stow()
+    install_files()
 
 
 if __name__ == "__main__":

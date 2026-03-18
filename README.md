@@ -39,9 +39,11 @@ uv run install.py
 ```
 
 This script installs three components to `~/.config/opencode/`:
-- **Skills**: Linked from the `skills/` folder using GNU stow
-- **Prompts**: Linked from the `prompts/` folder using GNU stow  
+- **Skills**: Symlinked from the `skills/` folder
+- **Prompts**: Symlinked from the `prompts/` folder
 - **Config**: Merged with your existing OpenCode config (if any), overlaying only the options defined in `config/opencode.json`
+
+> **Windows**: Creating symlinks requires either running the terminal as Administrator, or enabling Developer Mode in _Settings → System → For developers_.
 
 ## Usage
 
