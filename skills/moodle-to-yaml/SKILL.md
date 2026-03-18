@@ -27,6 +27,8 @@ The output must strictly follow the `./assets/schema.yaml` structure:
 ### 1. Global Metadata
 * **`exam_name`**: Extract from the header of the HTML or the filename.
 * **`course_name`**: Extract from the HTML breadcrumbs or header.
+* **`exam_date`**: Extract from the HTML or filename if present. If not found, **ask the user**. Format: `YYYY-MM-DD`.
+* **`authors`**: Ask the user for the list of exam authors. If none, use `[]`.
 
 ### 2. The `questions` Object (Dictionary)
 * **Key**: Use a zero-based index string (e.g., `"0"`, `"1"`).
@@ -34,7 +36,7 @@ The output must strictly follow the `./assets/schema.yaml` structure:
 * **`type`**: Infer from content. Valid values are available in the YAML schema files
 * **`max_points`**: Extract from the CSV header (e.g., from `Q. 1 /5.00`, extract `5.0`).
 
-### 3. The `students_response` Array
+### 3. The `student_response` Array
 * **`firstname` / `lastname`**: Split the student name found in the HTML table or CSV "Nom/Prénom" columns.
 * **`answers`**: A dictionary where keys match the `questions` object IDs.
     * **`content`**: The raw text/code response from the HTML.
@@ -53,6 +55,21 @@ The output must strictly follow the `./assets/schema.yaml` structure:
 1. Is the `questions` ID (e.g., `"0"`) consistent between the global definitions and the student `answers`?
 2. Are all `points` and `max_points` represented as numbers or `null`, never strings?
 3. Did you capture the "Description" of the question from the HTML?
+4. Are `exam_date` and `authors` present at the top level?
+5. Is the student list field named `student_response` (singular)?
+
+## Final Step: Validate the Output
+
+Once the YAML file is saved, run the validation script to confirm the file matches the schema:
+
+```bash
+uv run validate_exam_yaml.py <path-to-exam.yaml>
+```
+
+If validation fails, fix the reported fields before declaring the skill complete. Common issues:
+- `exam_date` missing — add it in `YYYY-MM-DD` format
+- `authors` missing — add as a list (can be empty: `[]`)
+- A question missing `id`, `name`, `description`, or `type`
 
 ## General Principles & Integrity (Strict Mode)
 
