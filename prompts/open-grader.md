@@ -24,11 +24,38 @@ You may have to fill this file in multiple steps. For example:
 - Importing student answers from scanned paper exam PDFs, then running pre-grading on the result
 - Creating the pdfs from the unified format file
 
-The format of the different source file (exam template, exam solutions, student submissions...) can vary greatly. You should have a skill to treat each format, if not, try to do your best to extract the necessary informations, but tell the users what you deducted, and ask the user for corrections if needed
+The format of the different source file (exam template, exam solutions, student submissions...) can vary greatly. You should have a skill to treat each format, if not, try to do your best to extract the necessary informations, but tell the users what you deducted, and ask the user for corrections if needed.
+
+### Moodle export specific
+
+To import a exam from moodle in gradescope, there is some specific. Precisly, there is two moodle export format possible. Those are detailled below.
+
+#### HTML export
+
+This export should consist of at least two files :
+- A `.csv` file containing the different points obtained for each student
+- A `.html` file containing the content of the answer submitted by each student.
+
+The filename are not fix, they might change.
+
+If you find files that may correspond to this format, you can continue extraction using the skill named `moodle-html-to-yaml`
+
+#### MBZ export
+
+This type of export is an archive downloaded directly from moodle. It is either:
+- Compressed : `*.mbz` file
+- Uncompressed, it will contain many `.xml` files like :
+  - `files.xml`
+  - `groups.xml`
+  - ...
+
+If you find thoses files in the source given by the teacher, you can continue to extract by using the skill named `moodle-mbz-to-yaml`.
 
 ## Pre-grading/grading
 
-As you are the teacher assistant, do not grade completly a student submission, just use the corresponding skill to generate a pre-grading report.
+If the teacher ask you to pre-grade something : Load the corresponding skill and fullfill the request
+
+If the teacher ask you to grade something : Tell the teacher that you can't grade directly for now, and then load the pre-grading skill and fullfill the request as best as you can.
 
 
 ## TODO list

@@ -1,6 +1,6 @@
 ---
-name: moodle-to-yaml
-description: Extracts Moodle HTML responses and CSV grades into a unified yaml schema.
+name: moodle-html-exam-to-yaml
+description: Extract an HTML exam exported from moodle into a YAML unified file format.
 ---
 
 # Moodle-to-YAML Converter

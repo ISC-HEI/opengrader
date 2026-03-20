@@ -65,6 +65,25 @@ properties:
           type: number
           description: Maximum points for this question
           minimum: 0
+        scoring_method:
+          type: boolean
+          description: The scoring method for the rubric. 'true' for positive score, 'false' for negative scoring
+        rubrics:
+          type: array
+          description: List of the rubrics for scoring
+          items:
+            type: object
+            required:
+              - description
+              - value
+            properties:
+              description:
+                type: string
+                description: The description of the rubric
+              value:
+                type: number
+                description: The points for this rubric
+                minimum: 0
         solution:
           type: [string, "null"]
           description: |
