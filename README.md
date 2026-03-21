@@ -12,6 +12,7 @@ OpenGrader is a modular agentic system to grade exams. It offers several tools:
 - Assist in building the rubrics
 - Ability to run unit tests - test cases
 - Pre-grade the exams using the rubrics and the answers.
+- Export to PDFs formatted for Gradescope import.
 
 Instead of offering a single, monolithic solution, OpenGrader is designed to be modular and extensible. 
 

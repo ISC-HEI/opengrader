@@ -1,5 +1,18 @@
 #!/usr/bin/env python3
+# Installs OpenGrader into the opencode config directory (~/.config/opencode).
+#
+# Two things happen:
+#   1. The opencode.json agent config is deep-merged into the user's existing
+#      opencode config, so we don't clobber any other agents or settings they have.
+#   2. skills/ and prompts/ are symlinked (via stow) into ~/.config/opencode/,
+#      so edits in this repo are immediately live without reinstalling.
+#
+# Reinstall is only needed when adding new skill directories, renaming files,
+# or changing config/opencode.json. Day-to-day edits to existing files are
+# picked up automatically through the symlinks.
+
 import json
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -15,6 +28,8 @@ def edit_config(config: dict) -> dict:
     with open(overlay_path) as f:
         overlay = json.load(f)
 
+    # Deep merge so nested dicts (e.g. other agents' permission blocks) are
+    # preserved rather than replaced wholesale by our overlay.
     def deep_merge(base: dict, overlay: dict) -> dict:
         result = base.copy()
         for key, value in overlay.items():
@@ -53,6 +68,16 @@ def ensure_config():
     print(f"  Saved config to: {CONFIG_PATH}")
 
 
+def clear_stale_entries(src: Path, dest: Path):
+    # Only remove entries that belong to us (same name as something in src).
+    # This leaves any other skills or prompts the user has installed untouched.
+    for entry in src.iterdir():
+        target = dest / entry.name
+        if target.exists() or target.is_symlink():
+            target.unlink() if target.is_symlink() else shutil.rmtree(target)
+            print(f"  Removed stale entry: {target}")
+
+
 def install_stow():
     print("\nInstalling files...")
     dest = Path.home() / ".config" / "opencode"
@@ -63,6 +88,7 @@ def install_stow():
     prompts_dest.mkdir(parents=True, exist_ok=True)
 
     if SKILLS_SRC.exists():
+        clear_stale_entries(SKILLS_SRC, skills_dest)
         subprocess.run(
             [
                 "stow",
@@ -79,6 +105,7 @@ def install_stow():
         print(f"  No skills source found at: {SKILLS_SRC}, skipping")
 
     if PROMPTS_SRC.exists():
+        clear_stale_entries(PROMPTS_SRC, prompts_dest)
         subprocess.run(
             [
                 "stow",
