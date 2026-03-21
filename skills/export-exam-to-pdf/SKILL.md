@@ -16,11 +16,22 @@ Trigger this skill when the user mentions:
 - "exam template PDF"
 - "student answer PDFs"
 
+## Prerequisites
+
+This skill requires a structured exam YAML file as input. If the user does not already have one, these skills can be used to generate it:
+
+- **`exam-markdown-to-yaml`** — if the source is a `.md` exam file
+- **`moodle-to-yaml`** — if the source is a Moodle HTML/CSV export
+
+Do not proceed with this skill until a valid YAML file exists. If the user asks to generate PDFs but hasn't produced a YAML yet, run the upstream skill first, based on their source format.
+
 ## Workflow
 
 ### Step 1: Locate Exam YAML File
 
 If the user did not give you the location of the YAML file, ask for it.
+
+If the provided path does not exist, list the files in the same directory (or the current working directory if no directory was given), filter by `.yaml` extension, and identify the closest match by name. Ask the user: "I couldn't find `<provided path>`. Did you mean `<best match>`?" and wait for confirmation before proceeding.
 
 
 ### Step 2: Generate PDFS with the python script

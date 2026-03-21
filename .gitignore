@@ -50,3 +50,4 @@ __MACOSX/
 my_exams
 *.log
 .env
+session-ses*.md

@@ -8,7 +8,6 @@ required:
   - exam_name
   - course_name
   - exam_date
-  - authors
   - questions
   - student_response
 properties:

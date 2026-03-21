@@ -32,7 +32,7 @@ TODO {color: Blue}
 # {{ q.name }} {%- if q.max_point is defined %} - {{ q.max_point }}{% endif %}
 {{ q.description }}
 
-{% if q.answer is defined %}
+{% if q.answer is defined and q.answer is not none and q.answer.content is not none %}
 
 ## Student answer
 

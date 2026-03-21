@@ -12,7 +12,7 @@ This skill transforms Moodle exam exports into a structured YAML format. It requ
 
 ## Required Inputs
 
-1.  **Student Response File (`*-responses.html`):** The source for student names and the text of their answers.
+1.  **Student Response File (`*-responses.html` or `*-réponses.html`):** The source for student names and the text of their answers.
 2.  **Marks File (`*-notes.csv`):** The source for max points, obtained points, and question names.
 
 ## Data Mapping & Schema

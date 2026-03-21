@@ -63,9 +63,7 @@ class FilledExam(Exam):
     firstname: str
     lastname: str
 
-    def __init__(
-        self, data, firstname: str, lastname: str, answers: List[Answer]
-    ):
+    def __init__(self, data, firstname: str, lastname: str, answers: List[Answer]):
         super().__init__(data)
         self.firstname = firstname
         self.lastname = lastname
@@ -76,11 +74,7 @@ class FilledExam(Exam):
 
     @staticmethod
     def from_yaml(data, add_anchors=False):
-        res = [
-            FilledExam(
-                data, firstname="Template", lastname="Template", answers=[]
-            )
-        ]
+        res = [FilledExam(data, firstname="Template", lastname="Template", answers=[])]
         data["add_anchors"] = add_anchors
         for s in data["student_response"]:
             answers = []
@@ -198,9 +192,7 @@ def generate_exam(data: List[FilledExam], output_folder):
         # We generate the markdown -> pdfs with the anchors
         generate(True)
 
-        print(
-            "First generation done. Counting the pages to prepare for normalization"
-        )
+        print("First generation done. Counting the pages to prepare for normalization")
 
         for d in data:
             base = d.firstname + "_" + d.lastname
@@ -211,9 +203,7 @@ def generate_exam(data: List[FilledExam], output_folder):
                 if not key in maxes or maxes[key] < value:
                     maxes[key] = value
 
-        print(
-            "Pages counted. Here are the maxmimum pages per question :", maxes
-        )
+        print("Pages counted. Here are the maxmimum pages per question :", maxes)
 
         # This loop adds the right number of pagebreak to every exams.
         for e, p in zip(data, pages, strict=True):
@@ -250,12 +240,8 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate markdown files from exam YAML data"
     )
-    parser.add_argument(
-        "-i", "--input", required=True, help="Path to input YAML file"
-    )
-    parser.add_argument(
-        "-o", "--output", required=True, help="Path to output folder"
-    )
+    parser.add_argument("-i", "--input", required=True, help="Path to input YAML file")
+    parser.add_argument("-o", "--output", required=True, help="Path to output folder")
     args = parser.parse_args()
 
     generate_exam(load_yaml(args.input), args.output)
