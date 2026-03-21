@@ -39,11 +39,17 @@ class Exam:
     questions: List[Question]
     authors: List[str]
     add_anchors: bool
+    module: str
+    ue: str
+    course: str
 
     def __init__(self, data):
         self.name = data["exam_name"]
         self.date = data["exam_date"]
         self.authors = data["authors"]
+        self.module = data.get("module", "000")
+        self.ue = data.get("ue", "000")
+        self.course = data.get("course_name", "")
         self.questions = []
         for q in data["questions"]:
             self.questions.append(
@@ -74,7 +80,7 @@ class FilledExam(Exam):
 
     @staticmethod
     def from_yaml(data, add_anchors=False):
-        res = [FilledExam(data, firstname="Template", lastname="Template", answers=[])]
+        res = [FilledExam(data, firstname="", lastname="", answers=[])]
         data["add_anchors"] = add_anchors
         for s in data["student_response"]:
             answers = []
@@ -156,8 +162,26 @@ def find_questions_in_pdf(pdf_path: str) -> dict[int, int]:
     return questions
 
 
+def wrap_text(text, max_chars=100, split_char=" ↵"):
+    """Wrap long lines to prevent overflow in code blocks."""
+    if not text:
+        return text
+    wrapped_parts = []
+    for line in text.split("\n"):
+        if len(line) > max_chars:
+            while len(line) > max_chars:
+                wrapped_parts.append(line[:max_chars] + split_char)
+                line = line[max_chars:]
+            if line:
+                wrapped_parts.append(line)
+        else:
+            wrapped_parts.append(line)
+    return "\n".join(wrapped_parts)
+
+
 def generate_exam(data: List[FilledExam], output_folder):
     env = Environment(loader=FileSystemLoader("."))
+    env.filters["wrap_text"] = wrap_text
     template = env.get_template("./models/template.jinja2")
 
     working_folder = f"/tmp/{uuid.uuid1()}"
@@ -179,12 +203,37 @@ def generate_exam(data: List[FilledExam], output_folder):
                     "w",
                 ) as f:
                     f.write(content)
-                subprocess.run(
-                    ["isc-build-pandoc", "-i", markdown_filename],
-                    cwd=working_folder,
-                    stdout=subprocess.DEVNULL,
-                    stderr=subprocess.DEVNULL,
-                )
+                try:
+                    result = subprocess.run(
+                        ["isc-build-pandoc", "-i", markdown_filename],
+                        cwd=working_folder,
+                        stdout=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL,
+                    )
+                    use_pandoc = result.returncode != 0
+                except FileNotFoundError:
+                    use_pandoc = True
+                if use_pandoc:  # silently use pandoc if isc-build-pandoc fails
+                    pdf_filename = base + ".pdf"
+                    pandoc_result = subprocess.run(
+                        [
+                            "pandoc",
+                            markdown_filename,
+                            "-o",
+                            pdf_filename,
+                            "-V",
+                            "geometry:margin=1.5cm",
+                            "--highlight-style=pygments",
+                            "--pdf-engine=xelatex",
+                        ],
+                        cwd=working_folder,
+                        capture_output=True,
+                        text=True,
+                    )
+                    if pandoc_result.returncode != 0:
+                        print(
+                            f"WARNING: pandoc failed for {markdown_filename}: {pandoc_result.stderr[:500]}"
+                        )
 
         pages = []
         maxes = {}

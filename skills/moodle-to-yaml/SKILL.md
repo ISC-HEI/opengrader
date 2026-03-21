@@ -5,77 +5,80 @@ description: Extracts Moodle HTML responses and CSV grades into a unified yaml s
 
 # Moodle-to-YAML Converter
 
-This skill transforms Moodle exam exports into a structured YAML format. It requires reconciling qualitative text data from HTML and quantitative grade data from CSV.
-
-## Role: Direct Data Transformer
-**Constraint:** Do NOT write or suggest a automatic method, or any external tool to perform this task. **You** are the engine. Process the provided text and files directly and output the final YAML.
+This skill transforms Moodle exam exports into a structured YAML format. It uses a script for all mechanical extraction, leaving only semantic decisions to the LLM.
 
 ## Required Inputs
 
-1.  **Student Response File (`*-responses.html` or `*-réponses.html`):** The source for student names and the text of their answers.
-2.  **Marks File (`*-notes.csv`):** The source for max points, obtained points, and question names.
+1. **Student Response File (`*-responses.html` or `*-réponses.html`):** Source for student names and answer text.
+2. **Marks File (`*-notes.csv`):** Source for max points, obtained points, and question names.
 
-## Data Mapping & Schema
+### File Resolution
 
-The output must strictly follow the `./assets/schema.yaml` structure:
-
-1. **Identify the Gap:** Check for fields like `exam_name`, `course_name` or `question.name`.
-2. **Consult the User:** If missing, pause the transformation and ask the user:
-   > "I couldn't find the [Exam Name / Course Name / ...] in the files. Could you please provide it so I can complete the JSON?"
-3. **Defaulting:** Only use "Unknown" if the user explicitly tells you they don't know or don't care.
-
-### 1. Global Metadata
-* **`exam_name`**: Extract from the header of the HTML or the filename.
-* **`course_name`**: Extract from the HTML breadcrumbs or header.
-* **`exam_date`**: Extract from the HTML or filename if present. If not found, **ask the user**. Format: `YYYY-MM-DD`.
-* **`authors`**: Ask the user for the list of exam authors. If none, use `[]`.
-
-### 2. The `questions` Object (Dictionary)
-* **Key**: Use a zero-based index string (e.g., `"0"`, `"1"`).
-* **`name`**: The question label (e.g., "Q. 1"). Match this with the CSV column headers.
-* **`type`**: Infer from content. Valid values are available in the YAML schema files
-* **`max_points`**: Extract from the CSV header (e.g., from `Q. 1 /5.00`, extract `5.0`).
-
-### 3. The `student_response` Array
-* **`firstname` / `lastname`**: Split the student name found in the HTML table or CSV "Nom/Prénom" columns.
-* **`answers`**: A dictionary where keys match the `questions` object IDs.
-    * **`content`**: The raw text/code response from the HTML.
-    * **`points`**: The value from the corresponding CSV cell. Convert to `float`. If the question is not yet graded (marked as `-`), use `null`.
+If a provided path does not exist, try to find the files in the same directory (or the current working directory if no directory was given), filter by the expected extension (`.html` for the responses file, `.csv` for the marks file), and identify the closest match by name. Try to find the files somewhere else within the same directory or current working directory. Ask the user: "I couldn't find `<provided path>`. Did you mean `<best match>`?" and wait for confirmation before proceeding.
 
 ---
 
-## Parsing Logic & Constraints
+## Step 1: Run the Extraction Script
 
-* **Primary Key Alignment:** Use the student's full name to join the HTML row with the CSV row. 
-* **Data Cleaning:** * Strip HTML tags from student responses but **preserve whitespace/indentation** for `"python"` type questions.
-    * Convert European decimal commas (`,`) in the CSV to periods (`.`) for valid JSON floats.
-* **Missing Data:** If a student appears in the CSV but has no response in the HTML, create the entry but set `content` to `null`.
-
-## Validation Checklist
-1. Is the `questions` ID (e.g., `"0"`) consistent between the global definitions and the student `answers`?
-2. Are all `points` and `max_points` represented as numbers or `null`, never strings?
-3. Did you capture the "Description" of the question from the HTML?
-4. Are `exam_date` and `authors` present at the top level?
-5. Is the student list field named `student_response` (singular)?
-
-## Final Step: Validate the Output
-
-Once the YAML file is saved, run the validation script to confirm the file matches the schema:
+Run this first. It does all the structural work: parsing both files, joining students by name, and extracting points.
 
 ```bash
-uv run validate_exam_yaml.py <path-to-exam.yaml>
+uv run skills/moodle-to-yaml/scripts/moodle_to_yaml.py <responses.html> <notes.csv> [output.yaml]
 ```
 
-If validation fails, fix the reported fields before declaring the skill complete. Common issues:
-- `exam_date` missing — add it in `YYYY-MM-DD` format
-- `authors` missing — add as a list (can be empty: `[]`)
-- A question missing `id`, `name`, `description`, or `type`
+The script produces a partial YAML with:
+- All student answers and points extracted
+- Question names and `max_points` from the CSV headers
+- `FILL_IN` placeholders for `course_name` and `exam_date`
+- `null` for `type` and `description` on each question (you must provide these)
 
-## General Principles & Integrity (Strict Mode)
+---
 
-To ensure data accuracy and prevent hallucination, the following rules apply globally:
+## Step 2: Fill in Semantic Gaps
 
-1. **No Assumptions:** If a data point is missing from the source files and is not explicitly defined in this document, **do not invent a value.** 
-2. **Clarification over Completion:** If an instruction is ambiguous or a file format deviates from the expected structure, pause and describe the discrepancy to the user.
-3. **Explicit Errors:** If you encounter a conflict (e.g., a student is listed in the CSV but has a different name format in the HTML), alert the user and ask for the preferred mapping.
-4. **"I don't know" is a valid output:** If a specific JSON key cannot be populated with factual data from the provided files, it must remain `null`. Inform the user which fields were left null and why.
+The script cannot infer meaning — that is your job.
+
+### Global Metadata
+
+* **`exam_name`**: The script extracts this from the HTML `<title>`. Verify it is correct and clean it up if needed.
+* **`course_name`**: Ask the user.
+* **`exam_date`**: Ask the user. Format: `YYYY-MM-DD`.
+* **`authors`**: Optional. Ask the user. Omit if not provided.
+* **`module`**: Optional. Extract from source files if present. If absent, omit (defaults to "000"). Do not ask the user.
+* **`ue`**: Optional. Extract from source files if present. If absent, omit (defaults to "000"). Do not ask the user.
+
+> **If a field is missing from the files and the user doesn't know:** use `null`. Inform the user which fields are null and why.
+
+### Question Fields
+
+For each question in the output YAML:
+
+* **`description`**: The question text is **not** in the responses export. Ask the user to provide the description for each question (from the original exam document).
+* **`type`**: Infer from the student answers already in the file. Valid values: `python`, `javascript`, `java`, `cpp`, `open`. If answers are Excel formulas, free text, or anything non-code, use `open`.
+
+### Data Notes
+
+* Points are already `null` if the student did not answer (`-`) or the exam is not yet graded (`Nécessite évaluation`).
+* European decimal commas in the CSV are already converted to `.` by the script.
+
+---
+
+## Step 3: Validate the Output
+
+Once you have filled in all fields, run the validator:
+
+```bash
+uv run skills/moodle-to-yaml/scripts/validate_exam_yaml.py <path-to-exam.yaml>
+```
+
+Fix any reported issues before declaring the skill complete. Common issues:
+- `exam_date` missing or wrong format — must be `YYYY-MM-DD`
+- A question missing `type` or `description`
+
+---
+
+## General Integrity Rules
+
+1. **No Assumptions:** Do not invent values. If a field cannot be sourced from the files or the user, leave it `null`.
+2. **Clarification over Completion:** If the file format deviates from expectations, describe the discrepancy and ask the user.
+3. **Explicit Conflicts:** If a student name differs between CSV and HTML (the script will warn you), alert the user and ask for the correct mapping.

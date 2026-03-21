@@ -18,6 +18,12 @@ properties:
   course_name:
     type: string
     description: Name of the course (e.g., "Algorithmie et structures de données")
+  module:
+    type: string
+    description: Module code (e.g., "201"). Defaults to "000" if not provided.
+  ue:
+    type: string
+    description: UE code (e.g., "201.1"). Defaults to "000" if not provided.
   exam_date:
     type: date
     description: The date at which the exam was created

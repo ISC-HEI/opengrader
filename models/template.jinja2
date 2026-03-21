@@ -9,9 +9,9 @@ author: [
 date: "{{ exam.date }}"
 version: "1.0.0"
 
-module: "201"
-ue: "201.1"
-course: "Algorithmie et structures de données"
+module: "{{ exam.module }}"
+ue: "{{ exam.ue }}"
+course: "{{ exam.course }}"
 
 # LaTex specific
 fontsize: 10pt
@@ -25,6 +25,9 @@ FIXME { color: Yellow }
 TODO {color: Blue}
 </style>
 
+
+**Nom / Name: {{ exam.firstname }} {{ exam.lastname }}**
+
 {% for q in exam.questions %}
 {% if exam.add_anchors %}Q{{ loop.index0 }}:start
 
@@ -37,7 +40,7 @@ TODO {color: Blue}
 ## Student answer
 
 ```{% if q.type == 'open' %}text{% elif q.type == "python" %}text{% else %}{{ q.type }}{% endif %}
-{{ q.answer.content }}
+{{ q.answer.content | wrap_text }}
 ```
 
 {% endif %}

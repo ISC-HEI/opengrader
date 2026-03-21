@@ -37,7 +37,9 @@ Read the markdown file provided by the user.
 Look for YAML frontmatter at the top of the file (between `---` markers):
 
 - `exam_name`: Extract from `title` field, or from the first heading if no title
-- `course_name`: Extract from `course` field in frontmatter
+- `course_name`: Extract from `course` field in frontmatter, or from any visible course title in the document
+- `module`: Extract from `module` field if present. If absent or unclear, omit (defaults to "000"). Do not ask the user.
+- `ue`: Extract from `ue` field if present. If absent or unclear, omit (defaults to "000"). Do not ask the user.
 
 ### Step 3: Identify Questions
 

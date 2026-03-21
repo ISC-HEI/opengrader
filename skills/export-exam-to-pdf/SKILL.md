@@ -9,9 +9,11 @@ This skill exports an exam YAML file into PDFs ready for GradeScope upload. It g
 
 ## When to Use This Skill
 
+The purpose of this skill is to produce PDFs formatted for import into [Gradescope](https://www.gradescope.com/). Any time the user mentions Gradescope, this is the skill to use.
+
 Trigger this skill when the user mentions:
+- "GradeScope" (any context — uploading, importing, grading on GradeScope, etc.)
 - "export to PDF" / "generate PDFs" / "create PDF"
-- "GradeScope" combined with "PDF" or "exam"
 - "convert exam to PDF"
 - "exam template PDF"
 - "student answer PDFs"
@@ -45,7 +47,7 @@ The parameters are the following :
 uv run generate_pdfs.py -i <path-to-exam.yaml> -o <output-dir>
 ```
 
-This scripts will take a long time to finish, it is normal. Do not timeout on this step
+This script can take several minutes to complete — one markdown-to-PDF conversion per student. Warn the user upfront that this will take time. Do not timeout on this step.
 
 At the end of this step, you should have something like :
 
