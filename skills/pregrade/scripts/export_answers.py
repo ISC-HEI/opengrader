@@ -57,7 +57,7 @@ def main():
         for student in students:
             lastname = student["lastname"].strip()
             firstname = student["firstname"].strip()
-            filename = f"{lastname}_{firstname}.{ext}"
+            filename = f"{firstname}_{lastname}.{ext}"
 
             answer = next(
                 (a for a in student.get("answers", []) if a["question_id"] == q_id),
