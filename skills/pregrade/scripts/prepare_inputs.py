@@ -102,11 +102,11 @@ def main():
                 json.dumps(payload, indent=2, ensure_ascii=False)
             )
             created.append(out_file)
-            print(f"  {out_file.relative_to(exam_path.parent)}")
+            print(f"  {out_file}")
 
-    print(
-        f"\nCreated {len(created)} input file(s) in {output_dir.relative_to(exam_path.parent)}/"
-    )
+    pregrade_dir = exam_path.parent / "pregrade"
+    print(f"\nCreated {len(created)} input file(s) in {output_dir}/")
+    print(f"Pregrade directory: {pregrade_dir}")
     return created
 
 

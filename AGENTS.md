@@ -18,6 +18,12 @@ Always use YAML literal block scalar (`|`) for multiline strings (`description`,
 - **Package manager**: `uv` — use `uv run <script>` to execute scripts
 - **Installation**: `uv run install.py` — links skills and prompts into `~/.config/opencode/` via GNU stow and merges `config/opencode.json`
 
+## Model Provider Policy
+
+- Use OpenRouter as the single model gateway for this project.
+- Use keys from project `.env` (currently `OPENROUTER_API_KEY`); do not require direct provider API keys like `GOOGLE_GENERATIVE_AI_API_KEY`.
+- When debugging model routing, verify provider selection from OpenCode logs before suggesting model or credential changes.
+
 Run scripts with `uv run`, not `python` directly:
 ```bash
 uv run skills/moodle-to-yaml/scripts/moodle_to_yaml.py <responses.html> <notes.csv> [output.yaml]

@@ -32,6 +32,10 @@ Check for a rubric in the following order:
 
 ---
 
+## Path convention
+
+All generated directories (`pregrade/`, `code/`) are created **next to the exam YAML**, not at the workspace root. For example, if the exam lives at `my_exams/NLP_CC_26/exam.yaml`, the pregrade tree is `my_exams/NLP_CC_26/pregrade/`. Throughout these instructions, `EXAM_DIR` refers to the directory containing the exam YAML.
+
 ## Execution Strategy
 
 ### Step 1 — Prepare inputs
@@ -42,14 +46,16 @@ Run the preparation script to extract focused JSON files from the exam YAML:
 uv run skills/pregrade/scripts/prepare_inputs.py <exam.yaml> --batch-size 10
 ```
 
-This writes one file per question per batch into `pregrade/inputs/`:
+This creates `EXAM_DIR/pregrade/inputs/` and writes one file per question per batch. The script prints the full path of every created file and the pregrade directory — **save these paths for Steps 3 and 4**.
+
+Example output (for an exam at `my_exams/NLP_CC_26/exam.yaml`):
 
 ```
-pregrade/inputs/
-  Q1a_batch0.json    ← question metadata + students 1–10
-  Q1a_batch1.json    ← students 11–20
-  Q2_batch0.json
+  my_exams/NLP_CC_26/pregrade/inputs/Q1a_batch0.json
+  my_exams/NLP_CC_26/pregrade/inputs/Q1a_batch1.json
+  my_exams/NLP_CC_26/pregrade/inputs/Q2_batch0.json
   ...
+Pregrade directory: my_exams/NLP_CC_26/pregrade
 ```
 
 Each file contains only what the sub-agent needs: the question definition, solution, rubric, and the assigned student answers. The full YAML is never passed to a sub-agent.
@@ -62,7 +68,9 @@ Create one todo item per input file generated (e.g. `"Q1a batch 1/8"`). This giv
 
 Spawn all **`pregrade-worker`** sub-agents **in the same turn** — one per input file. Do not wait for one to finish before starting the next.
 
-Each sub-agent receives the prompt template below. When a sub-agent completes, mark its corresponding todo item as done.
+Each sub-agent receives the prompt template below. **Replace `{input_path}` and `{output_path}`** with the actual paths printed by the preparation script. The output path mirrors the input path with `inputs/` replaced by `outputs/` (e.g. `my_exams/NLP_CC_26/pregrade/inputs/Q1a_batch0.json` → `my_exams/NLP_CC_26/pregrade/outputs/Q1a_batch0.json`).
+
+When a sub-agent completes, mark its corresponding todo item as done.
 
 **Sub-agents must NOT spawn further sub-agents.**
 **Rate limits:** spawning ~65 workers simultaneously is safe on a paid Gemini tier (~1000 RPM). On a free tier (15 RPM) this will fail — reduce `--batch-size` or process one question at a time in that case.
@@ -71,7 +79,7 @@ Each sub-agent receives the prompt template below. When a sub-agent completes, m
 #### Sub-agent prompt template
 
 ```
-Read the input file at: pregrade/inputs/<filename>.json
+Read the input file at: {input_path}
 
 It contains a `question` object and a `students` list. Your job is to generate
 pre-grading feedback for each student in that list.
@@ -154,7 +162,7 @@ Example (Scala programming question, no rubric):
 
 ## Output
 
-Write a JSON file to: pregrade/outputs/<filename>.json
+Write a JSON file to: {output_path}
 
 Schema:
 {
@@ -170,20 +178,21 @@ Schema:
 }
 
 Preserve the student order from the input. Do not spawn sub-agents.
+The output file MUST be valid JSON — do not include any text outside the JSON structure.
 ```
 
 ### Step 4 — Assemble outputs
 
-Once all sub-agents have completed, run the assembly script:
+Once all sub-agents have completed, run the assembly script with the pregrade directory printed in Step 1:
 
 ```bash
-uv run skills/pregrade/scripts/assemble_outputs.py pregrade/
+uv run skills/pregrade/scripts/assemble_outputs.py EXAM_DIR/pregrade/
 ```
 
 This merges all batch outputs into final per-question Markdown files, sorted alphabetically by first name:
 
 ```
-pregrade/
+EXAM_DIR/pregrade/
   Q1a.md
   Q1b.md
   Q2.md
@@ -198,10 +207,10 @@ To give the teacher copyable text files of every student answer (useful for Exce
 uv run skills/pregrade/scripts/export_answers.py <exam.yaml>
 ```
 
-This creates one file per student per question in `code/`:
+This creates one file per student per question in `EXAM_DIR/code/`:
 
 ```
-code/
+EXAM_DIR/code/
   Q1a/
     Dupont_Jean.txt
     Martin_Alice.txt

@@ -1,11 +1,29 @@
 # Merges per-batch JSON outputs from sub-agents into per-question Markdown files.
-# Output: pregrade/Q1a.md, pregrade/Q1b.md, ...
+# Validates inputs/ vs outputs/ coverage and JSON integrity before assembly.
 
 import argparse
 import json
 import sys
 from collections import defaultdict
 from pathlib import Path
+
+
+def validate_outputs(inputs_dir: Path, outputs_dir: Path) -> tuple[list[str], list[str]]:
+    """Cross-reference inputs/ against outputs/. Returns (missing, corrupt) file lists."""
+    missing = []
+    corrupt = []
+
+    for input_file in sorted(inputs_dir.glob("*_batch*.json")):
+        output_file = outputs_dir / input_file.name
+        if not output_file.exists():
+            missing.append(input_file.name)
+            continue
+        try:
+            json.loads(output_file.read_text())
+        except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            corrupt.append(f"{input_file.name}: {e}")
+
+    return missing, corrupt
 
 
 def main():
@@ -16,13 +34,26 @@ def main():
     args = parser.parse_args()
 
     pregrade_dir = Path(args.pregrade_dir)
+    inputs_dir = pregrade_dir / "inputs"
     outputs_dir = pregrade_dir / "outputs"
 
     if not outputs_dir.exists():
         print(f"Error: {outputs_dir} not found", file=sys.stderr)
         sys.exit(1)
 
-    # Group output files by question slug (filename prefix before _batch)
+    missing, corrupt = validate_outputs(inputs_dir, outputs_dir)
+    if missing or corrupt:
+        for name in missing:
+            print(f"  MISSING: {name}", file=sys.stderr)
+        for detail in corrupt:
+            print(f"  CORRUPT: {detail}", file=sys.stderr)
+        print(
+            f"\n{len(missing)} missing, {len(corrupt)} corrupt output(s). "
+            "Re-run failed workers before assembling.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
     by_question: dict[str, list[Path]] = defaultdict(list)
     for f in outputs_dir.glob("*_batch*.json"):
         slug = f.stem.rsplit("_batch", 1)[0]

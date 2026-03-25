@@ -23,8 +23,10 @@ def page_to_jpeg_b64(pdf_path: Path, page_idx: int) -> str:
     return base64.b64encode(pix.tobytes("jpeg")).decode()
 
 
-def parse_json(text: str) -> dict:
+def parse_json(text: str | None) -> dict:
     """Parse JSON from a response that may include markdown code fences."""
+    if text is None:
+        raise ValueError("Empty response from model")
     text = text.strip()
     if text.startswith("```"):
         text = text[text.index("\n") + 1 :]
@@ -38,12 +40,22 @@ def main():
         description="Extract one student's answer to one question from scanned pages."
     )
     parser.add_argument("--exam", required=True, help="Path to exam.yaml")
-    parser.add_argument("--layout", required=True, help="Path to scan_results/layout.json")
-    parser.add_argument("--students", required=True, help="Path to scan_results/students.json")
+    parser.add_argument(
+        "--layout", required=True, help="Path to scan_results/layout.json"
+    )
+    parser.add_argument(
+        "--students", required=True, help="Path to scan_results/students.json"
+    )
     parser.add_argument("--student-id", required=True, help="Student login/ID")
-    parser.add_argument("--question-id", required=True, type=int, help="Question ID (integer)")
-    parser.add_argument("--folder", required=True, help="Exam folder containing scan PDFs")
-    parser.add_argument("--output", help="Output JSON path (default: scan_results/q{id}_{login}.json)")
+    parser.add_argument(
+        "--question-id", required=True, type=int, help="Question ID (integer)"
+    )
+    parser.add_argument(
+        "--folder", required=True, help="Exam folder containing scan PDFs"
+    )
+    parser.add_argument(
+        "--output", help="Output JSON path (default: scan_results/q{id}_{login}.json)"
+    )
     args = parser.parse_args()
 
     folder = Path(args.folder)
@@ -67,17 +79,26 @@ def main():
 
     question = next((q for q in exam["questions"] if q["id"] == args.question_id), None)
     if question is None:
-        print(f"Error: question id {args.question_id} not found in exam.yaml", file=sys.stderr)
+        print(
+            f"Error: question id {args.question_id} not found in exam.yaml",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     student = next((s for s in students if s["student_id"] == args.student_id), None)
     if student is None:
-        print(f"Error: student '{args.student_id}' not found in students.json", file=sys.stderr)
+        print(
+            f"Error: student '{args.student_id}' not found in students.json",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     q_data = layout["questions"].get(str(args.question_id))
     if not q_data or not q_data.get("exam_pages"):
-        print(f"Error: question {args.question_id} has no pages in layout.json", file=sys.stderr)
+        print(
+            f"Error: question {args.question_id} has no pages in layout.json",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     # exam_pages and start_page are both 1-indexed; convert to 0-indexed for fitz
@@ -99,11 +120,15 @@ def main():
                 f"Question (id={args.question_id}, name={question['name']}):\n"
                 f"{question['description']}\n\n"
                 f"The image(s) below show the relevant page(s) from the student's exam copy.\n"
-                f"Transcribe the student's handwritten answer exactly as written.\n"
-                f"- Preserve code structure and line breaks.\n"
+                f"Transcribe the student's handwritten answer verbatim and in full, exactly as written.\n"
+                f"- The professor will read your transcription to verify it against the original scan, so accuracy is critical.\n"
+                f"- Preserve all structure: checkboxes (checked/unchecked), tables, code, diagrams described in text, line breaks.\n"
+                f"- Include crossed-out or corrected text (e.g. '~~wrong~~ correct').\n"
+                f"- For drawings or diagrams (e.g. automata), describe them in structured text as faithfully as possible.\n"
                 f"- Mark illegible parts with [?].\n"
-                f"- Set \"uncertain\" to true if significant parts are illegible or ambiguous.\n\n"
-                f"Return ONLY a JSON object: {{\"content\": \"...\", \"uncertain\": false}}"
+                f"- Do NOT summarize, paraphrase, or omit anything.\n"
+                f'- Set "uncertain" to true if significant parts are illegible or ambiguous.\n\n'
+                f'Return ONLY a JSON object: {{"content": "...", "uncertain": false}}'
             ),
         }
     ]
@@ -114,15 +139,22 @@ def main():
             {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64}"}}
         )
 
-    raw = client.chat.completions.create(
-        model=MODEL,
-        messages=[{"role": "user", "content": content}],
-    ).choices[0].message.content
+    raw = (
+        client.chat.completions.create(
+            model=MODEL,
+            messages=[{"role": "user", "content": content}],
+        )
+        .choices[0]
+        .message.content
+    )
 
     try:
         result = parse_json(raw)
     except (json.JSONDecodeError, KeyError) as e:
-        print(f"Warning: failed to parse JSON response ({e}), storing raw text", file=sys.stderr)
+        print(
+            f"Warning: failed to parse JSON response ({e}), storing raw text",
+            file=sys.stderr,
+        )
         result = {"content": raw, "uncertain": True}
 
     output_data = {

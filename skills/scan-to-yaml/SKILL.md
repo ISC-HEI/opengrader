@@ -95,6 +95,7 @@ Fix missing files before treating the output as complete.
 - **`uncertain: true` means human review required** before grading. Flag these to the user.
 - If a question spans multiple pages, all pages are sent to Gemini in a single call.
 - The final YAML has `points: null` and `correction_details: null` for all answers — ready for the `pregrade` skill.
+- **The `content` field must always contain a full verbatim transcription** of what the student wrote, in plain readable text. This allows the professor to compare the transcription against the original scan and catch OCR errors. Do not summarize or paraphrase — transcribe exactly, including crossed-out text, corrections, and illegible parts marked as `[?]`.
 
 ## Next Step
 

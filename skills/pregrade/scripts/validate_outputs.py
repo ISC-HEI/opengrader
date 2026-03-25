@@ -1,7 +1,8 @@
 # Flight check: verifies that pregrade outputs are complete and consistent with exam.yaml.
-# Checks batch coverage, question file count, and per-file student count.
+# Checks batch coverage, JSON validity, question file count, and per-file student count.
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
@@ -28,14 +29,13 @@ def main():
     expected_students = len(exam.get("student_response", []))
 
     errors = []
-    warnings = []
 
     print(f"Exam:              {exam_path.name}")
     print(f"Expected questions: {expected_questions}")
     print(f"Expected students:  {expected_students}")
     print()
 
-    # --- Check 1: every input batch has a matching output ---
+    # --- Check 1: every input batch has a matching, valid output ---
     input_files = sorted(inputs_dir.glob("*_batch*.json"))
     output_files = {f.name for f in outputs_dir.glob("*_batch*.json")}
 
@@ -43,8 +43,15 @@ def main():
     if missing_outputs:
         for name in missing_outputs:
             errors.append(f"Missing output for batch: {name}")
-    else:
-        print(f"✓ All {len(input_files)} batch outputs present")
+
+    for output_file in sorted(outputs_dir.glob("*_batch*.json")):
+        try:
+            json.loads(output_file.read_text())
+        except (json.JSONDecodeError, UnicodeDecodeError) as e:
+            errors.append(f"Invalid JSON in {output_file.name}: {e}")
+
+    if not missing_outputs:
+        print(f"✓ All {len(input_files)} batch outputs present and valid JSON")
 
     # --- Check 2: assembled .md file count matches question count ---
     md_files = sorted(pregrade_dir.glob("*.md"))

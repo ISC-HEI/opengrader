@@ -29,19 +29,20 @@
     },
     "pregrade-worker": {
       "mode": "subagent",
-      "model": "google/gemini-3-flash-preview",
+      "model": "openrouter/google/gemini-3-flash-preview",
       "description": "Grades one batch of student answers for a single question and writes the result as JSON.",
       "hidden": true,
       "steps": 10,
       "color": "#87bf7c",
-      "permission": {
-        "read": "allow",
-        "glob": "allow",
-        "edit": "allow",
-        "bash": "deny",
-        "task": "deny",
-        "websearch": "deny",
-        "webfetch": "deny"
+      "tools": {
+        "write": true,
+        "edit": true,
+        "read": true,
+        "glob": true,
+        "bash": false,
+        "task": false,
+        "websearch": false,
+        "webfetch": false
       }
     }
   }

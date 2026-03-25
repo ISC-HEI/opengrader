@@ -70,7 +70,7 @@ def main():
 
         print(f"  {slug}/  ({len(students)} files, .{ext})")
 
-    print(f"\nExported {total_files} file(s) to {output_root.relative_to(exam_path.parent)}/")
+    print(f"\nExported {total_files} file(s) to {output_root}/")
 
 
 if __name__ == "__main__":
