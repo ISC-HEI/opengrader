@@ -19,3 +19,8 @@ dependencies = [
 dev = [
     "ipdb>=0.13.13",
 ]
+
+[tool.uv.workspace]
+members = [
+    "stats",
+]

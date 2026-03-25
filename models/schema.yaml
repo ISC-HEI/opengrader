@@ -65,7 +65,7 @@ properties:
           type: number
           description: Maximum points for this question
           minimum: 0
-        scoring_method:
+        scoring_method_positive:
           type: boolean
           description: The scoring method for the rubric. 'true' for positive score, 'false' for negative scoring
         rubrics:

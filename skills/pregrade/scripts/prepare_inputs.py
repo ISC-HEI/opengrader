@@ -21,7 +21,10 @@ def main():
     )
     parser.add_argument("exam_yaml", help="Path to the exam.yaml file")
     parser.add_argument(
-        "--batch-size", type=int, default=10, help="Students per batch (default: 10)"
+        "--batch-size",
+        type=int,
+        default=10,
+        help="Students per batch (default: 10)",
     )
     args = parser.parse_args()
 
@@ -39,7 +42,9 @@ def main():
 
     output_dir = exam_path.parent / "pregrade" / "inputs"
     output_dir.mkdir(parents=True, exist_ok=True)
-    (exam_path.parent / "pregrade" / "outputs").mkdir(parents=True, exist_ok=True)
+    (exam_path.parent / "pregrade" / "outputs").mkdir(
+        parents=True, exist_ok=True
+    )
 
     created = []
 
@@ -51,7 +56,11 @@ def main():
         student_answers = []
         for student in students:
             answer = next(
-                (a for a in student.get("answers", []) if a["question_id"] == q_id),
+                (
+                    a
+                    for a in student.get("answers", [])
+                    if a["question_id"] == q_id
+                ),
                 None,
             )
             student_answers.append(
@@ -61,11 +70,17 @@ def main():
                     "answer": answer["content"] if answer else None,
                 }
             )
-        student_answers.sort(key=lambda s: (s["firstname"].lower(), s["lastname"].lower()))
+        student_answers.sort(
+            key=lambda s: (s["firstname"].lower(), s["lastname"].lower())
+        )
 
-        total_batches = max(1, (len(student_answers) + args.batch_size - 1) // args.batch_size)
+        total_batches = max(
+            1, (len(student_answers) + args.batch_size - 1) // args.batch_size
+        )
 
-        for batch_num, offset in enumerate(range(0, len(student_answers), args.batch_size)):
+        for batch_num, offset in enumerate(
+            range(0, len(student_answers), args.batch_size)
+        ):
             batch_students = student_answers[offset : offset + args.batch_size]
 
             payload = {
@@ -75,7 +90,7 @@ def main():
                     "type": question.get("type"),
                     "max_points": question.get("max_points"),
                     "solution": question.get("solution"),
-                    "rubric": question.get("rubric"),
+                    "rubrics": question.get("rubric"),
                 },
                 "batch": batch_num,
                 "total_batches": total_batches,
@@ -83,11 +98,15 @@ def main():
             }
 
             out_file = output_dir / f"{slug}_batch{batch_num}.json"
-            out_file.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+            out_file.write_text(
+                json.dumps(payload, indent=2, ensure_ascii=False)
+            )
             created.append(out_file)
             print(f"  {out_file.relative_to(exam_path.parent)}")
 
-    print(f"\nCreated {len(created)} input file(s) in {output_dir.relative_to(exam_path.parent)}/")
+    print(
+        f"\nCreated {len(created)} input file(s) in {output_dir.relative_to(exam_path.parent)}/"
+    )
     return created
 
 
