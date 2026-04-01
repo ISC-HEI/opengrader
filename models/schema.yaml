@@ -26,7 +26,7 @@ properties:
     description: UE code (e.g., "201.1"). Defaults to "000" if not provided.
   exam_date:
     type: date
-    description: The date at which the exam was created
+    description: "The date at which the exam was created, in the format : YYYY-MM-DD"
   authors:
     type: array
     description: List of authors
@@ -53,7 +53,7 @@ properties:
           minimum: 0
         type:
           type: string
-          enum: ["python", "javascript", "java", "cpp", "open"]
+          enum: ["python", "javascript", "java", "cpp", "open", "scala"]
           description: Programming language or answer type
 
         description:

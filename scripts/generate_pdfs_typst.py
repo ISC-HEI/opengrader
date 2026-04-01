@@ -7,10 +7,11 @@ import subprocess
 import sys
 import uuid
 from dataclasses import dataclass
-from datetime import date as Date
+from datetime import date as DateObj, datetime
 from os import mkdir, path
 from typing import List, Optional
-
+from os import mkdir, path
+from typing import List, Optional
 from jinja2 import Environment, FileSystemLoader
 from md2typst import convert as md2typst_convert
 from pypdf import PdfReader
@@ -61,7 +62,7 @@ class Question:
 @dataclass
 class Exam:
     name: str
-    date: Date
+    date: DateObj
     questions: List[Question]
     authors: List[str]
     add_anchors: bool
@@ -73,7 +74,22 @@ class Exam:
 
     def __init__(self, data):
         self.name = data["exam_name"]
-        self.date = data["exam_date"]
+        exam_date_raw = data["exam_date"]
+        if isinstance(exam_date_raw, DateObj):
+            self.date = exam_date_raw
+        elif isinstance(exam_date_raw, str):
+            try:
+                self.date = datetime.strptime(exam_date_raw, "%Y-%m-%d").date()
+            except ValueError:
+                raise ValueError(
+                    f"Invalid exam date format: '{exam_date_raw}'. "
+                    "Expected format: YYYY-MM-DD (e.g., 2025-05-20)"
+                )
+        else:
+            raise ValueError(
+                f"Invalid exam date type: {type(exam_date_raw).__name__}. "
+                "Expected a date object or a string in YYYY-MM-DD format."
+            )
         self.authors = data["authors"]
         self.module = data.get("module", "000")
         self.ue = data.get("ue", "000")
@@ -95,9 +111,7 @@ class Exam:
 
 @dataclass
 class FilledExam(Exam):
-    def __init__(
-        self, data, firstname: str, lastname: str, answers: List[Answer]
-    ):
+    def __init__(self, data, firstname: str, lastname: str, answers: List[Answer]):
         super().__init__(data)
         self.firstname = firstname
         self.lastname = lastname
@@ -286,12 +300,8 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate PDF files from exam YAML data using Typst"
     )
-    parser.add_argument(
-        "-i", "--input", required=True, help="Path to input YAML file"
-    )
-    parser.add_argument(
-        "-o", "--output", required=True, help="Path to output folder"
-    )
+    parser.add_argument("-i", "--input", required=True, help="Path to input YAML file")
+    parser.add_argument("-o", "--output", required=True, help="Path to output folder")
     parser.add_argument(
         "-t",
         "--template",
