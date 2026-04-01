@@ -1,0 +1,1028 @@
+{
+  "question_id": 1,
+  "question_name": "Q. 2",
+  "rubrics": [
+    {
+      "description": "Length -> LEN",
+      "value": 1.0
+    },
+    {
+      "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+      "value": 1.0
+    },
+    {
+      "description": "Nothing",
+      "value": 0.0
+    }
+  ],
+  "students": [
+    {
+      "firstname": "Justin",
+      "lastname": "Aeby",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in their formula =LEN(REPLACE(G1;FIND(\" \";G1);1;\"\"))"
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student attempted to remove spaces using REPLACE and FIND, but only removes first space, not all spaces. SUBSTITUTE or TRIM required."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a valid formula attempt, not a null/empty submission."
+        }
+      ]
+    },
+    {
+      "firstname": "Lilandra",
+      "lastname": "Albert-Lavault",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in their formula =LEN(G1)+COUNTIF(FIND(\" \"; G1))"
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student attempted to handle spaces but used incorrect approach (COUNTIF with FIND). Did not use SUBSTITUTE or TRIM."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a valid formula attempt, not a null/empty submission."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah Simon",
+      "lastname": "Anthamatten",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used LEN function to count characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used SUBSTITUTE function to remove all spaces before counting. Formula is complete and correct."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a correct answer, not a null/empty submission."
+        }
+      ]
+    },
+    {
+      "firstname": "Jade",
+      "lastname": "Aymon",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in =LEN(TRIM(G1))"
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student used TRIM which is accepted per rubric, though TRIM only removes leading/trailing spaces not all spaces. Rubric explicitly accepts TRIM."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided valid formulas, not a null/empty submission."
+        }
+      ]
+    },
+    {
+      "firstname": "Gioele",
+      "lastname": "Bagnovini",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student only wrote =MID( which is incomplete and does not use LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Incomplete formula does not use SUBSTITUTE or TRIM to remove spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Student attempted a formula (albeit incomplete), not a null submission like @NULL@."
+        }
+      ]
+    },
+    {
+      "firstname": "Ninon",
+      "lastname": "Bagutti",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in =LEN(TRIM(G1))"
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student used TRIM which is explicitly accepted per rubric description, though it only removes leading/trailing spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a valid formula, not a null/empty submission."
+        }
+      ]
+    },
+    {
+      "firstname": "Jonas",
+      "lastname": "Barraud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in =LEN(TRIM(G1))"
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student used TRIM which is explicitly accepted per rubric description."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a valid formula, not a null/empty submission."
+        }
+      ]
+    },
+    {
+      "firstname": "Shannon",
+      "lastname": "Billy Bilounga",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided @NULL@ indicating no answer, no LEN function used."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No valid formula provided, @NULL@ indicates submission error."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student provided @NULL@ which indicates no answer/submission error - matches 'Nothing' rubric."
+        }
+      ]
+    },
+    {
+      "firstname": "Maxime",
+      "lastname": "Bétrisey",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in =LEN(TRIM(G1))"
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student used TRIM which is explicitly accepted per rubric description."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a valid formula, not a null/empty submission."
+        }
+      ]
+    },
+    {
+      "firstname": "Ness",
+      "lastname": "Chanthakesone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in =LEN(G1)-COUNT(FIND(G1;\" \"))"
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student attempted to remove spaces but used incorrect COUNT/FIND approach. Did not use SUBSTITUTE or TRIM."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a valid formula attempt, not a null/empty submission."
+        }
+      ]
+    },
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Student used LEN function in their formula to count characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student used COUNT(FIND) approach instead of SUBSTITUTE or TRIM to handle spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted a formula, not a NULL/empty response."
+        }
+      ]
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted NULL, no formula with LEN function was provided."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No formula submitted, cannot have used SUBSTITUTE or TRIM."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student submitted NULL with no formula provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used LEN function in their formula."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student used REPLACE instead of SUBSTITUTE or TRIM; REPLACE only handles a specific position."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted a formula, not a NULL/empty response."
+        }
+      ]
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in their formula."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used SUBSTITUTE to remove all spaces before counting."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted a valid formula, not NULL."
+        }
+      ]
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student used COUNT instead of LEN; COUNT counts cells not characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student did not use SUBSTITUTE or TRIM; only submitted 'COUNT'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted something (COUNT), not a NULL/empty response."
+        }
+      ]
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in their formula."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Student used TRIM which is explicitly accepted per rubric, even though TRIM only removes leading/trailing spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted a formula, not NULL."
+        }
+      ]
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted NULL, no formula with LEN function was provided."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No formula submitted, cannot have used SUBSTITUTE or TRIM."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student submitted NULL with no answer provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in their formula."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Student used TRIM which is explicitly accepted per rubric description."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted a formula, not NULL."
+        }
+      ]
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in their formula."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Student used TRIM which is explicitly accepted per rubric, even though it's not the optimal solution."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted a formula, not NULL."
+        }
+      ]
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used LEN function in their formula."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used SUBSTITUTE to remove all spaces, matching the solution exactly."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted a valid formula, not NULL."
+        }
+      ]
+    },
+    {
+      "firstname": "Lena",
+      "lastname": "Geissberger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student used =LEN(TRIM(G1)) which includes the LEN function as required."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student used TRIM which is explicitly marked as 'accepted' in the rubric, though pregrade notes it only removes leading/trailing spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a meaningful formula attempt, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Lorie",
+      "lastname": "Haefliger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used =LEN(SUBSTITUTE(G1;\" \";\"\")) which includes LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used SUBSTITUTE to remove all spaces, which is the ideal solution per the rubric."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided the correct formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Théo",
+      "lastname": "Haenni",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student used =LEN(TRIM(G1)) which includes the LEN function as required."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student used TRIM which is explicitly marked as 'accepted' in the rubric, even though pregrade notes it's not ideal."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a meaningful formula attempt, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Iliana",
+      "lastname": "Harlingue",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student used =LEN(TRIM(G1)) which includes the LEN function as required."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student used TRIM which is explicitly marked as 'accepted' in the rubric."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a meaningful formula attempt, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Jeanne",
+      "lastname": "Magnin",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used =LEN(SUBSTITUTE(G1;\" \";\"\")) which includes LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used SUBSTITUTE to remove all spaces, which is the ideal solution per the rubric."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided the correct formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Eloise",
+      "lastname": "Maiorano",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student used =LEN(TRIM(G1)) which includes the LEN function as required."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student used TRIM which is explicitly marked as 'accepted' in the rubric."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a meaningful formula attempt, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Mauro",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used =LEN(SUBSTITUTE(G1;\" \";\"\")) which includes LEN function and matches solution exactly."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used SUBSTITUTE to remove all spaces, which is the ideal solution per the rubric."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided the correct formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Isabelle",
+      "lastname": "Meier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Student attempted to use LEN function (COUNT(LEN(G1)-1)), though used incorrectly. Pregrade confirms 'Attempted to use LEN function'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student did not use SUBSTITUTE or TRIM to remove spaces; subtracting 1 from LEN does not remove spaces as noted in pregrade."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula attempt, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Justin",
+      "lastname": "Michod",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student used =LEN(TRIM(A1)) which includes the LEN function as required."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student used TRIM which is explicitly marked as 'accepted' in the rubric, even though they referenced wrong cell A1 instead of G1."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a meaningful formula attempt, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Samuele Prince",
+      "lastname": "Moungang Moussandja",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student used REPLACE and FIND functions, not LEN. Pregrade explicitly states '(none)' for Did Well and notes 'Does not count characters'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student used REPLACE with FIND, not SUBSTITUTE or TRIM. This approach only replaces the first space and is not the accepted method."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "While the approach was completely wrong per pregrade, the student did attempt a formula, so 'Nothing' is not fully applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in formula =LEN(TRIM(G1))."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student used TRIM which only removes leading/trailing spaces, not all spaces. Feedback explicitly states TRIM is insufficient."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in formula =LEN(TRIM(G1))."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student used TRIM which only removes leading/trailing spaces, not all spaces. Feedback explicitly states TRIM is insufficient."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in formula =LEN(TRIM(G1))-INT(ISBLANK(G1))."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student used TRIM which only removes leading/trailing spaces, not all spaces. Feedback explicitly states TRIM is insufficient."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in formula =LEN(G1)-COUNTIF(A1;\"\")."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Formula uses COUNTIF incorrectly and does not remove all spaces. Feedback states it does not remove all spaces from text content."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in formula =LEN(TRIM(G1))."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student used TRIM which only removes leading/trailing spaces, not all spaces. Feedback explicitly states TRIM is insufficient."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in formula =LEN(G1)."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Formula =LEN(G1) counts all characters including spaces, does not remove any spaces. Feedback explicitly states this."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in correct formula =LEN(SUBSTITUTE(G1;\" \";\"\"))."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used SUBSTITUTE to remove all spaces. Feedback confirms formula is correct."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a correct formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in correct formula =LEN(SUBSTITUTE(G1; \" \"; \"\"))."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used SUBSTITUTE to remove all spaces. Feedback confirms formula is correct."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a correct formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function (=LEN(G3)) as part of solution."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student used SUBSTITUTE in G3 to remove spaces. Although using intermediate cell, the rubric criterion of removing all spaces via SUBSTITUTE is met."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided formulas, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in formula =LEN(G1)-COUNTIF(G1;\"\")."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "COUNTIF does not remove spaces from text. Feedback explicitly states this does not remove spaces and SUBSTITUTE is required."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula, not 'nothing'."
+        }
+      ]
+    },
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in formula =LEN(TRIM(G1)), clearly demonstrating use of the LEN function to count characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student used TRIM function which the rubric explicitly accepts for removing spaces. While TRIM only removes leading/trailing spaces (not all internal spaces), the rubric description states 'SUBSTITUTE / TRIM (accepted)'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula, so the 'Nothing' criterion does not apply."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function in formula =LEN(\"Life Science\"), demonstrating use of the LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student did not use SUBSTITUTE or TRIM functions. The formula only applies LEN to a string literal without any space removal operation."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula, so the 'Nothing' criterion does not apply."
+        }
+      ]
+    }
+  ]
+}

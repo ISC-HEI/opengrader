@@ -24,10 +24,16 @@ OpenGrader comes with a set of skills that are bundled with the system. These sk
 
 - **exam-markdown-to-yaml**: Transforms an exam markdown file into a structured YAML file, extracting metadata, questions, point values, types, and solutions.
 - **export-exam-to-pdf**: Exports an exam YAML into PDFs ready for GradeScope upload, generating both blank templates and student answer PDFs with normalized page counts.
+- **import-gradescope-rubrics**: Imports rubrics for exam correction from a GradeScope export.
 - **import-student-answers**: Imports student submission files into an existing exam YAML file, automatically detecting folder structures and handling duplicates.
 - **import-unit-tests**: Imports unit test code from files into an exam YAML file, matching tests to questions based on filenames or content.
-- **moodle-to-yaml**: Converts Moodle exam exports (HTML responses and CSV grades) into the unified YAML schema.
-- **pregrade**: **BETA**  Generates a pre-grading report by analyzing student submissions against an official solution, highlighting strengths and errors without assigning points.
+- **moodle-html-to-yaml**: Extracts an HTML exam exported from Moodle into a YAML unified file format.
+- **moodle-mbz-to-yaml**: Extracts and transforms a Moodle .mbz backup file into YAML format.
+- **pregrade-submissions**: **BETA** Assists teachers in pre-grading student submissions against an official solution key.
+- **rubric-activation-benchmark**: Assesses rubric activation based on pregrade feedback to benchmark LLM grading precision.
+- **scan-to-yaml**: Extracts student answers from scanned paper exam PDFs into a unified YAML file using Gemini vision.
+- **skill-creator**: Creates new skills, modifies and improves existing skills, and measures skill performance.
+- **text-exam-to-yaml**: Parses any text-based exam file (txt, html, doc, rtf) into a structured YAML file.
 
 ## Installation
 
@@ -60,9 +66,12 @@ opencode web
 Then, to cycle between the different agent (and use the `OpenGrader` agent), you can use the `tab` key by default.
 
 Then, you can start prompting the agent with requests like :
-- `I want to import an exam I downloaded from Moodle` -> To trigger the `moodle-to-yaml` skill
+- `I have a Moodle .mbz backup file I want to convert to YAML` -> To trigger the `moodle-mbz-to-yaml` skill
+- `I have a Moodle HTML export I want to convert to YAML` -> To trigger the `moodle-html-to-yaml` skill
 - `I want to import some students submissions into my exam` -> To trigger the `import-student-answers` skill
-- ...
+- `I want to export my exam to PDFs for GradeScope` -> To trigger the `export-exam-to-pdf` skill
+- `I have scanned paper exams I want to extract answers from` -> To trigger the `scan-to-yaml` skill
+- `I want to create a new skill for this project` -> To trigger the `skill-creator` skill
 
 Or you can force the usage of a particual skill by typing `/skills` and then pressing `Tab`.
 

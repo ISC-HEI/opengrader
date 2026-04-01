@@ -1,0 +1,89 @@
+{
+  "question": {
+    "id": 2,
+    "name": "Q. 3",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "IF",
+        "value": 0.5
+      },
+      {
+        "description": "No empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "Return the number of empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "All wrong",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly uses IF function with COUNTIF to check if empty cell count is zero and returns 'Aucune cellule vide'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "Formula logic is inverted - checks for text equality instead of properly detecting empty cells in the range."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Formula returns COUNTIF result which is the number of empty cells when not zero."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student demonstrates knowledge of IF and COUNTIF syntax, not a completely failed attempt."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Student includes IF function in C1 formula, though the condition logic is incorrect."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Uses COUNT instead of COUNTIF and checks for non-zero values rather than actual empty cells."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.75,
+          "justification": "Student provides number 9 in A7 which appears to represent count of relevant items, though exact correspondence to empty cells is unclear."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student shows partial understanding with correct function name (IF) and correct range (A1:A100), not entirely wrong."
+        }
+      ]
+    }
+  ]
+}

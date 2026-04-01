@@ -1,0 +1,62 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "answer": "Numéro de série\n=or(if(WEEKDAY(DATE(A3+2;A2;A1))=7;WEEKDAY(DATE(A3+2;A2;A1))+2;);if(weekday(date(A3+2;A2;A1)=1;WEEKDAY(DATE(A3+2;A2;A1))+1;))\nJour de la semaine\n=CHOOSE(weekday(or(if(WEEKDAY(DATE(A3+2;A2;A1))=7;WEEKDAY(DATE(A3+2;A2;A1))+2;);if(weekday(date(A3+2;A2;A1)=1;WEEKDAY(DATE(A3+2;A2;A1))+1;)));\"Dimanche\",\"Lundi\";\"Mardi\";\"Mercredi\";\"Jeudi\";\"Vendredi\";\"Samedi\")",
+      "pregrade_feedback": "* **Did Well:** Correctly used `DATE(A3+2;A2;A1)` to calculate the anniversary date. Recognized the need for `WEEKDAY` to identify the day of the week.\n* **Needs Improvement:** The formula for the serial number is nested within an `OR` function incorrectly, making the logic invalid. It attempts to add days (+2, +1) to the weekday number itself rather than the date serial number. The `CHOOSE` formula is used to return text strings (\"Lundi\", \"Mardi\", etc.) instead of calculating the numerical components (Day, Month, Year) for cells G1, G2, and G3 as requested. Missing the required formulas for cells G1, G2, and G3.\n\n---"
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "answer": "A1: 10\nC1: =DATE(2025;5;10)\nD1: =WEEKDAY(\"2025-05-10\")\nE1: =WEEKDAY(E1+2)\nG1: 12\nA2: 5\nG2: 5\nA3: 2023\nG3: 2025",
+      "pregrade_feedback": "* **Did Well:** Correctly identified the target date for the example (10/05/2025) and the resulting day (12). Correctly used `DATE` and `WEEKDAY` functions.\n* **Needs Improvement:** Used hardcoded values instead of cell references (A1, A2, A3) in the `DATE` function. The `WEEKDAY` function also uses a hardcoded string. Logic for `E1` and `G1-G3` either uses circular references or lacks proper formulas.\n\n---"
+    }
+  ]
+}

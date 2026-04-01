@@ -1,0 +1,329 @@
+{
+  "question": {
+    "id": 2,
+    "name": "Q. 3",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "IF",
+        "value": 0.5
+      },
+      {
+        "description": "No empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "Return the number of empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "All wrong",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 2,
+  "students": [
+    {
+      "firstname": "Lena",
+      "lastname": "Geissberger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The student explicitly used an IF function in the formula."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The student included the required string 'Aucune cellule vide' within the IF statement."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "The feedback indicates the counting logic and syntax are incorrect."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student attempted the IF and handled the text output."
+        }
+      ]
+    },
+    {
+      "firstname": "Lorie",
+      "lastname": "Haefliger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The student used an IF statement."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The formula handles the 'no empty cell' case with the specified string, despite logical errors."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback explicitly states the formula fails to return the actual count."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly used the range and some logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Théo",
+      "lastname": "Haenni",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correct implementation of the IF statement."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly handles the 'no empty cell' case."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly returns the count of empty cells."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The solution is complete and correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Iliana",
+      "lastname": "Harlingue",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states the student failed to implement the conditional IF logic."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states the student failed to handle the 'Aucune cellule vide' case."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms the student correctly used COUNTIF to count empty cells."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly implemented the counting part."
+        }
+      ]
+    },
+    {
+      "firstname": "Jeanne",
+      "lastname": "Magnin",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Perfectly implemented the IF logic."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Perfectly handled the 'no empty cell' case."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Perfectly implemented the counting of empty cells."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The solution is correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Eloise",
+      "lastname": "Maiorano",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The student used an IF statement."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The formula includes the string 'Aucune cellule vide'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states the syntax for counting empty cells is incorrect."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student identified the need for IF and the correct output string."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Mauro",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correct use of IF."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly handles the 'no empty cell' condition."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly returns the count of empty cells."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The solution is correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Isabelle",
+      "lastname": "Meier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states an IF statement is required but missing."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "The string was provided as an invalid argument to COUNTIF instead of handled by an IF."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Feedback confirms she correctly identified the range and condition for counting."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly identified the range and count criteria."
+        }
+      ]
+    },
+    {
+      "firstname": "Justin",
+      "lastname": "Michod",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states conditional logic is entirely missing."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states the required text message is missing."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states the range and criteria for counting are incorrect."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Most components of the formula are incorrect or missing."
+        }
+      ]
+    },
+    {
+      "firstname": "Samuele Prince",
+      "lastname": "Moungang Moussandja",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states IF logic is missing."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states the logic to handle the zero count case is missing."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "The student identified the function and range, though criteria syntax was incorrect."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly identified the function and range."
+        }
+      ]
+    }
+  ]
+}

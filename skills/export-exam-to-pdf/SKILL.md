@@ -47,7 +47,7 @@ The parameters are the following :
 uv run generate_pdfs.py -i <path-to-exam.yaml> -o <output-dir>
 ```
 
-This script can take several minutes to complete — one markdown-to-PDF conversion per student. Warn the user upfront that this will take time. Do not timeout on this step.
+This script can take several minutes to complete — one markdown-to-PDF conversion per student. Warn the user upfront that this will take time. Do not timeout on this step. And do not kill the process yourself. If the user find it is taking too long, he will cancel it himself.
 
 At the end of this step, you should have something like :
 

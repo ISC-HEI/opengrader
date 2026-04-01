@@ -1,0 +1,38 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "answer": "=LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses the `LEN` function to count characters in the cell G1.\n* **Needs Improvement:** Uses `TRIM(G1)` which only removes leading, trailing, and redundant internal spaces. To exclude all spaces as requested, the `SUBSTITUTE(G1; \" \"; \"\")` function should be used.\n\n---"
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "answer": "G1: Life Science\nG2: =LEN(\"Life Science\")",
+      "pregrade_feedback": "* **Did Well:** Correctly uses the `LEN` function to count characters.\n* **Needs Improvement:** Uses a hardcoded string `\"Life Science\"` instead of a cell reference to `G1`. Does not include any logic to exclude spaces from the count.\n\n---"
+    }
+  ]
+}

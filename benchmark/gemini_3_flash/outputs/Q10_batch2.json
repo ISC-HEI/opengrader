@@ -1,0 +1,649 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 2,
+  "students": [
+    {
+      "firstname": "Lena",
+      "lastname": "Geissberger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Superseded by more specific DATE rubrics."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback confirms the student used the DATE function correctly."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback states the student correctly calculated the 2-year anniversary date."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback explicitly mentions the correct use of the WEEKDAY function."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The logic was only partially applied to G1 and not fully computed for the date shift."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The feedback notes that the conditional logic correctly identifies weekends but only for the day extraction."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G2 and G3 do not account for the weekend shift."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The submission has noted errors in G2 and G3 logic."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Several parts of the exercise were completed correctly."
+        }
+      ]
+    },
+    {
+      "firstname": "Lorie",
+      "lastname": "Haefliger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Superseded by more specific DATE rubrics."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly calculated the anniversary date using the DATE function."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Successfully projected the date 2 years forward."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly used the WEEKDAY function in D1."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The logic incorrectly added the offset to the weekday number instead of the date."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Attempted to compute the day addition logic, though applied incorrectly to the wrong cell value."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1, G2, and G3 calculations are incorrect or do not account for the adjustment."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The solution contains significant logical errors in the adjustment phase."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Initial date and weekday calculations were correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Théo",
+      "lastname": "Haenni",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "The attempted formulas were syntactically and logically incorrect for building a date."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Did not use the DATE function correctly."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Did not calculate the serial number for the 2-year anniversary."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The WEEKDAY function usage was based on an invalid date calculation."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Calculation for days to add was invalid."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Attempted IF logic but it was syntactically invalid."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Final output cells were missing or incorrect."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Most of the answer was incorrect."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The formulas provided are described as logically and syntactically incorrect, failing to meet any meaningful criteria."
+        }
+      ]
+    },
+    {
+      "firstname": "Iliana",
+      "lastname": "Harlingue",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Superseded by correct date calculation rubrics."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly used the DATE function."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly calculated the 2-year projection."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly identified and used the WEEKDAY function."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Incomplete response, missing addition logic."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Logic for adding days was entirely missing."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Final output formulas were not provided."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Submission is incomplete."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Initial steps were completed correctly."
+        }
+      ]
+    },
+    {
+      "firstname": "Jeanne",
+      "lastname": "Magnin",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Superseded by 'all correct' rubric."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Included in 'all correct' rubric."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Included in 'all correct' rubric."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Included in 'all correct' rubric."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Included in 'all correct' rubric."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Superseded by full computation rubric."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Included in 'all correct' rubric."
+        },
+        {
+          "rubric_index": 7,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback states the student perfectly implemented all logic and extraction."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Submission was perfect."
+        }
+      ]
+    },
+    {
+      "firstname": "Eloise",
+      "lastname": "Maiorano",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Superseded by more specific DATE rubrics."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly used the DATE function."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly calculated the 2-year projection."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly identified and used the WEEKDAY function."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The formula in E1 was mathematically incorrect."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Attempted to compute the addition in E1, though with errors."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Output cells G1 and G3 were swapped."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Contains errors in math and output placement."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Initial steps were correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Mauro",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Superseded by 'all correct' rubric."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Included in 'all correct' rubric."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Included in 'all correct' rubric."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Included in 'all correct' rubric."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Included in 'all correct' rubric."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Superseded by full computation rubric."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Included in 'all correct' rubric."
+        },
+        {
+          "rubric_index": 7,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback states the student perfectly implemented the logic with a robust formula."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Submission was perfect."
+        }
+      ]
+    },
+    {
+      "firstname": "Isabelle",
+      "lastname": "Meier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Utilized DATE and YEAR functions to attempt a future date calculation."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Used hardcoded values and TODAY instead of the required cell references."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Did not calculate the serial number relative to the input date."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Missing weekday logic."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Missing adjustment logic."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Missing adjustment logic."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Missing G2 and G3 formulas."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Response is largely incorrect and ignores inputs."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Student correctly utilized some required functions (DATE, YEAR)."
+        }
+      ]
+    },
+    {
+      "firstname": "Justin",
+      "lastname": "Michod",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Used DAY function on hardcoded values but did not build the required DATE serial."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Did not build a proper date calculation."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No 2-year projection logic."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No weekday logic."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No adjustment logic."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No adjustment logic."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Missing most required cells."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Solution is incorrect."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The response used hardcoded values and missed all core logic for the task."
+        }
+      ]
+    },
+    {
+      "firstname": "Samuele Prince",
+      "lastname": "Moungang Moussandja",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Empty submission."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Empty submission."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Empty submission."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Empty submission."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Empty submission."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Empty submission."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Empty submission."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Empty submission."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        }
+      ]
+    }
+  ]
+}

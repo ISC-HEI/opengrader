@@ -1,0 +1,106 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Correctly implemented nested IF formula with all three cases using proper syntax."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Included condition A1>=80 returning Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Included condition A1>=50 (implicit via >=50 check) returning Suffisant."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Included default case returning Insuffisant for values below 50."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with 0 points."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.4,
+          "justification": "Formula contains syntax errors (extra parenthesis, invalid range) and lacks proper nested structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "A1>=80 threshold mentioned but formula is broken and incomplete."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Formula explicitly misses the Suffisant condition."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "Formula lacks proper ELSE branch for Insuffisant case."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with 0 points."
+        }
+      ]
+    }
+  ]
+}

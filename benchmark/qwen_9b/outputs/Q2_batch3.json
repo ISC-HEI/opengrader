@@ -1,0 +1,205 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student uses LEN function as confirmed in feedback."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Feedback states TRIM fails to remove all spaces (e.g., doesn't remove space in 'Life Sciences')."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student uses LEN function as confirmed in feedback."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Feedback states TRIM fails to remove all spaces (e.g., doesn't remove space in 'Life Sciences')."
+        }
+      ]
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student uses LEN function and references cell G1."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Feedback states TRIM only removes leading, trailing, and extra internal spaces, not all spaces."
+        }
+      ]
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student uses the LEN function to calculate length."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "COUNTIF(A1;\"\") checks if cell A1 is empty, not targeting spaces in G1."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student uses LEN to count characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Feedback states TRIM removes leading/trailing spaces and reduces internal spaces but doesn't remove all spaces as requested."
+        }
+      ]
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student uses LEN(G1) to count total characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No method to exclude spaces from the count is included."
+        }
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Feedback confirms perfectly implemented solution using LEN."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Feedback confirms SUBSTITUTE(G1;\" \";\"\") correctly removes all spaces."
+        }
+      ]
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Feedback confirms perfectly implemented solution using LEN."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Feedback confirms SUBSTITUTE correctly removes all spaces before counting."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback confirms correct logic using LEN to count characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback confirms SUBSTITUTE correctly removes spaces from text."
+        }
+      ]
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student uses LEN(G1) to count total characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "COUNTIF(G1;\"\") does not count spaces within text; it checks if whole cell matches criteria."
+        }
+      ]
+    }
+  ]
+}

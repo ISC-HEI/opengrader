@@ -271,7 +271,7 @@ def generate_exam(data: List[FilledExam], output_folder):
         generate(False)
 
         # Moving the generated files to the destination
-
+        os.makedirs(output_folder, exist_ok=True)
         for pdf_path in glob.glob(os.path.join(working_folder, "*.pdf")):
             shutil.move(pdf_path, output_folder)
 

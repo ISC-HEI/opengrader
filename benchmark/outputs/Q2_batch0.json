@@ -1,0 +1,265 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 0,
+  "students": [
+    {
+      "firstname": "Justin",
+      "lastname": "Aeby",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function as confirmed by the feedback 'Used LEN to count characters'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Only removes the first space, not all spaces as required by the rubric."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Rubrics 0 and 1 were evaluated; Nothing only applies if others are not met."
+        }
+      ]
+    },
+    {
+      "firstname": "Lilandra",
+      "lastname": "Albert-Lavault",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function as confirmed by the feedback 'Used the LEN function'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Logic is incorrect and adds to length instead of excluding spaces; rubric not satisfied."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Rubrics 0 and 1 were evaluated; Nothing only applies if others are not met."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah Simon",
+      "lastname": "Anthamatten",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly uses LEN as confirmed by feedback 'Correctly uses LEN and SUBSTITUTE'."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Used SUBSTITUTE to remove all spaces as required, confirmed by feedback."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Rubrics 0 and 1 were evaluated; Nothing only applies if others are not met."
+        }
+      ]
+    },
+    {
+      "firstname": "Jade",
+      "lastname": "Aymon",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student used LEN function as confirmed by feedback 'used the LEN function'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "TRIM only removes leading/trailing spaces and reduces internal spaces to one, does not remove all spaces as required."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Rubrics 0 and 1 were evaluated; Nothing only applies if others are not met."
+        }
+      ]
+    },
+    {
+      "firstname": "Gioele",
+      "lastname": "Bagnovini",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Answer is incomplete (=MID() does not use LEN); feedback confirms 'Nothing notable found'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Incomplete answer does not address the character counting requirement."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Neither LEN nor space removal was properly applied; Nothing applies as fallback."
+        }
+      ]
+    },
+    {
+      "firstname": "Ninon",
+      "lastname": "Bagutti",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly uses LEN as confirmed by feedback 'Correctly uses LEN'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "TRIM only removes leading, trailing, and extra internal spaces; does not exclude all spaces as required."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Rubrics 0 and 1 were evaluated; Nothing only applies if others are not met."
+        }
+      ]
+    },
+    {
+      "firstname": "Jonas",
+      "lastname": "Barraud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly used LEN as confirmed by feedback 'Correctly used the LEN function'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "TRIM fails to remove all internal spaces; only handles leading, trailing, and redundant internal spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Rubrics 0 and 1 were evaluated; Nothing only applies if others are not met."
+        }
+      ]
+    },
+    {
+      "firstname": "Shannon",
+      "lastname": "Billy Bilounga",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Answer shows $@NULL@$; feedback confirms 'No answer provided'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided; space removal not implemented."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "No answer provided; Nothing applies as fallback."
+        }
+      ]
+    },
+    {
+      "firstname": "Maxime",
+      "lastname": "Bétrisey",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly uses LEN as confirmed by feedback 'Correctly uses LEN'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "TRIM only removes leading, trailing, and redundant internal spaces; does not exclude all spaces as required."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Rubrics 0 and 1 were evaluated; Nothing only applies if others are not met."
+        }
+      ]
+    },
+    {
+      "firstname": "Ness",
+      "lastname": "Chanthakesone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly uses LEN as confirmed by feedback 'Correctly uses LEN'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "COUNT(FIND(G1;\" \")) does not correctly count all spaces; FIND only returns first occurrence position."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Rubrics 0 and 1 were evaluated; Nothing only applies if others are not met."
+        }
+      ]
+    }
+  ]
+}

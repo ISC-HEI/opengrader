@@ -1,0 +1,89 @@
+{
+  "question": {
+    "id": 2,
+    "name": "Q. 3",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "IF",
+        "value": 0.5
+      },
+      {
+        "description": "No empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "Return the number of empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "All wrong",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback explicitly states correct use of IF and COUNTIF with proper syntax."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback mentions correct output string 'Aucune cellule vide' which handles the no empty cell case."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Uses COUNTIF to count empty cells and returns the count when cells are found."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student got most aspects correct; only the range was wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback states they recognize the need for an IF statement and used one."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Output string 'CELLULE VIDE' does not match the required output format."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Uses COUNT instead of COUNTIF with incorrect condition '<>0'."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Major errors: wrong function, wrong condition, wrong output string."
+        }
+      ]
+    }
+  ]
+}

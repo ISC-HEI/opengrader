@@ -1,0 +1,86 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "answer": "G2: =LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly identifies `LEN` as the function to count characters.\n* **Needs Improvement:** `TRIM` fails to remove all spaces; for example, it would not remove the space in \"Life Sciences\".\n\n---"
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "answer": "G2: =LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly identifies `LEN` as the function to count characters.\n* **Needs Improvement:** `TRIM` fails to remove all spaces; for example, it would not remove the space in \"Life Sciences\".\n\n---"
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "answer": "=LEN(TRIM(G1))-INT(ISBLANK(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `LEN` and references cell `G1`.\n* **Needs Improvement:** `TRIM(G1)` only removes leading, trailing, and extra internal spaces, not all spaces. The addition of `-INT(ISBLANK(G1))` is not relevant to excluding spaces from the character count.\n\n---"
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "answer": "G2: =LEN(G1)-COUNTIF(A1;\"\")",
+      "pregrade_feedback": "* **Did Well:** Correctly uses the `LEN` function to calculate length.\n* **Needs Improvement:** `COUNTIF(A1;\"\")` does not target spaces in G1; it checks if cell A1 is empty.\n\n---"
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "answer": "G2: =LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Uses `LEN` to count characters.\n* **Needs Improvement:** Uses `TRIM(G1)` which removes leading/trailing spaces and reduces internal spaces, but doesn't remove all spaces as requested.\n\n---"
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "answer": "=LEN(G1)",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `LEN(G1)` to count total characters.\n* **Needs Improvement:** Does not include a method to exclude spaces from the count.\n\n---"
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "answer": "=LEN(SUBSTITUTE(G1;\" \";\"\"))",
+      "pregrade_feedback": "* **Did Well:** Perfectly implemented the solution. Correctly uses `SUBSTITUTE(G1;\" \";\"\")` to remove all spaces and `LEN` to count the remaining characters.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "answer": "G1: Life Sciences\nG2: =LEN(SUBSTITUTE(G1; \" \"; \"\"))",
+      "pregrade_feedback": "* **Did Well:** Perfectly implemented the solution. Correctly uses `SUBSTITUTE(G1; \" \"; \"\")` to remove all spaces before counting the length with `LEN`.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "answer": "G1: Life Sciences\nG2: =LEN(G3)\nG3: =SUBSTITUTE(G1; \" \"; \"\")",
+      "pregrade_feedback": "* **Did Well:** Correct logic using `SUBSTITUTE` to remove spaces and `LEN` to count characters.\n* **Needs Improvement:** Uses an auxiliary cell `G3` despite the instruction that the formula must be exclusively in `G2`.\n\n---"
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "answer": "G2: =LEN(G1)-COUNTIF(G1;\"\")",
+      "pregrade_feedback": "* **Did Well:** Uses `LEN(G1)` to count total characters.\n* **Needs Improvement:** `COUNTIF(G1;\"\")` does not count the number of spaces within the text; it checks if the whole cell matches the criteria.\n\n---"
+    }
+  ]
+}

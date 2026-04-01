@@ -1,0 +1,105 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback explicitly states correct nested IF logic was implemented."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback confirms 'Excellent' condition (A1>=80) was correctly implemented."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Default 'Suffisant' covers the 50-79 range as confirmed by feedback."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback confirms 'Insuffisant' (A1<50) condition was implemented."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student completed the exercise with valid formula."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Formula has syntax errors and missing 'Suffisant' condition; not correctly implemented."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Feedback confirms student correctly identified the 80 threshold."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Feedback explicitly states the 'Suffisant' condition is missing."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "INSUFFISANT is present in the B4 formula despite other issues."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student attempted the exercise with formulas."
+        }
+      ]
+    }
+  ]
+}

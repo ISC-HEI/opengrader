@@ -1,0 +1,199 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 0,
+  "students": [
+    {
+      "firstname": "Justin",
+      "lastname": "Aeby",
+      "rubric_assessments": [
+        { "rubric_index": 0, "active": true, "confidence": 0.9, "justification": "Attempted to construct a date by adding 2 to the year." },
+        { "rubric_index": 1, "active": false, "confidence": 1.0, "justification": "Used string concatenation instead of DATE function." },
+        { "rubric_index": 2, "active": false, "confidence": 1.0, "justification": "String concatenation produces text, not a date serial number." },
+        { "rubric_index": 3, "active": false, "confidence": 1.0, "justification": "No weekday calculation provided." },
+        { "rubric_index": 4, "active": false, "confidence": 1.0, "justification": "No weekend adjustment logic present." },
+        { "rubric_index": 5, "active": false, "confidence": 1.0, "justification": "No attempt to compute days to add." },
+        { "rubric_index": 6, "active": false, "confidence": 1.0, "justification": "No G1, G2, G3 outputs provided." },
+        { "rubric_index": 7, "active": false, "confidence": 1.0, "justification": "Not all correct." },
+        { "rubric_index": 8, "active": false, "confidence": 0.9, "justification": "Made an attempt, not empty." }
+      ]
+    },
+    {
+      "firstname": "Lilandra",
+      "lastname": "Albert-Lavault",
+      "rubric_assessments": [
+        { "rubric_index": 0, "active": true, "confidence": 1.0, "justification": "Correctly built DATE(A3+2;A2;A1)." },
+        { "rubric_index": 1, "active": true, "confidence": 1.0, "justification": "Used =DATE(A3+2;A2;A1)." },
+        { "rubric_index": 2, "active": true, "confidence": 1.0, "justification": "C1 correctly calculates serial number for date in 2 years." },
+        { "rubric_index": 3, "active": true, "confidence": 1.0, "justification": "D1 uses WEEKDAY(C1;2) correctly." },
+        { "rubric_index": 4, "active": true, "confidence": 1.0, "justification": "IFS correctly computes days to add based on weekday." },
+        { "rubric_index": 5, "active": false, "confidence": 1.0, "justification": "Full correct implementation, not partial." },
+        { "rubric_index": 6, "active": false, "confidence": 1.0, "justification": "G1 uses D1 instead of C1; G2/G3 use wrong source." },
+        { "rubric_index": 7, "active": false, "confidence": 1.0, "justification": "G1, G2, G3 are incorrect." },
+        { "rubric_index": 8, "active": false, "confidence": 1.0, "justification": "Made substantial attempt." }
+      ]
+    },
+    {
+      "firstname": "Noah Simon",
+      "lastname": "Anthamatten",
+      "rubric_assessments": [
+        { "rubric_index": 0, "active": true, "confidence": 1.0, "justification": "Correctly built DATE(A3+2;A2;A1)." },
+        { "rubric_index": 1, "active": true, "confidence": 1.0, "justification": "Used =DATE function properly." },
+        { "rubric_index": 2, "active": true, "confidence": 1.0, "justification": "C1 has correct date serial number in 2 years." },
+        { "rubric_index": 3, "active": true, "confidence": 1.0, "justification": "D1 correctly calculates weekday." },
+        { "rubric_index": 4, "active": true, "confidence": 1.0, "justification": "E1 correctly computes days to add for weekends." },
+        { "rubric_index": 5, "active": false, "confidence": 1.0, "justification": "Full correct implementation, not partial." },
+        { "rubric_index": 6, "active": false, "confidence": 1.0, "justification": "Results placed in F1/F2/F3 instead of G1/G2/G3." },
+        { "rubric_index": 7, "active": false, "confidence": 1.0, "justification": "Wrong cells used for output." },
+        { "rubric_index": 8, "active": false, "confidence": 1.0, "justification": "Substantial correct work submitted." }
+      ]
+    },
+    {
+      "firstname": "Jade",
+      "lastname": "Aymon",
+      "rubric_assessments": [
+        { "rubric_index": 0, "active": true, "confidence": 0.9, "justification": "Attempted DATE construction with A3+2." },
+        { "rubric_index": 1, "active": true, "confidence": 0.8, "justification": "Used DATE function but with incorrect logic." },
+        { "rubric_index": 2, "active": true, "confidence": 0.8, "justification": "Attempted A3+2 for year but logic flawed." },
+        { "rubric_index": 3, "active": true, "confidence": 0.8, "justification": "Used WEEKDAY function." },
+        { "rubric_index": 4, "active": true, "confidence": 0.7, "justification": "Attempted IF logic for computing days to add." },
+        { "rubric_index": 5, "active": false, "confidence": 0.9, "justification": "Made full attempt, not partial." },
+        { "rubric_index": 6, "active": false, "confidence": 0.9, "justification": "Formulas incorrect and inconsistent across G1/G2/G3." },
+        { "rubric_index": 7, "active": false, "confidence": 1.0, "justification": "Not all correct." },
+        { "rubric_index": 8, "active": false, "confidence": 0.9, "justification": "Submitted attempt, not empty." }
+      ]
+    },
+    {
+      "firstname": "Gioele",
+      "lastname": "Bagnovini",
+      "rubric_assessments": [
+        { "rubric_index": 0, "active": false, "confidence": 1.0, "justification": "Used TODAY() instead of inputs A1:A3." },
+        { "rubric_index": 1, "active": false, "confidence": 1.0, "justification": "Did not use DATE function." },
+        { "rubric_index": 2, "active": false, "confidence": 1.0, "justification": "No proper date serial number created." },
+        { "rubric_index": 3, "active": true, "confidence": 0.8, "justification": "Recognized weekend check logic (6,7)." },
+        { "rubric_index": 4, "active": true, "confidence": 0.8, "justification": "Identified days to add logic." },
+        { "rubric_index": 5, "active": false, "confidence": 0.9, "justification": "Made attempt at computation, not partial." },
+        { "rubric_index": 6, "active": false, "confidence": 1.0, "justification": "No G1, G2, G3 outputs." },
+        { "rubric_index": 7, "active": false, "confidence": 1.0, "justification": "Not all correct." },
+        { "rubric_index": 8, "active": false, "confidence": 0.9, "justification": "Submitted formulas, not empty." }
+      ]
+    },
+    {
+      "firstname": "Ninon",
+      "lastname": "Bagutti",
+      "rubric_assessments": [
+        { "rubric_index": 0, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 1, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 2, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 3, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 4, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 5, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 6, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 7, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 8, "active": true, "confidence": 1.0, "justification": "No answer provided - all wrong/empty." }
+      ]
+    },
+    {
+      "firstname": "Jonas",
+      "lastname": "Barraud",
+      "rubric_assessments": [
+        { "rubric_index": 0, "active": true, "confidence": 0.9, "justification": "Partially attempted year calculation with +2." },
+        { "rubric_index": 1, "active": false, "confidence": 1.0, "justification": "Did not use DATE function, only extracted year." },
+        { "rubric_index": 2, "active": false, "confidence": 1.0, "justification": "Only computed year, not full date." },
+        { "rubric_index": 3, "active": false, "confidence": 1.0, "justification": "No weekday calculation." },
+        { "rubric_index": 4, "active": false, "confidence": 1.0, "justification": "No weekend adjustment logic." },
+        { "rubric_index": 5, "active": false, "confidence": 1.0, "justification": "No attempt at computing days to add." },
+        { "rubric_index": 6, "active": false, "confidence": 1.0, "justification": "No G1, G2, G3 outputs." },
+        { "rubric_index": 7, "active": false, "confidence": 1.0, "justification": "Not all correct." },
+        { "rubric_index": 8, "active": false, "confidence": 0.9, "justification": "Made partial attempt, not empty." }
+      ]
+    },
+    {
+      "firstname": "Shannon",
+      "lastname": "Billy Bilounga",
+      "rubric_assessments": [
+        { "rubric_index": 0, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 1, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 2, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 3, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 4, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 5, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 6, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 7, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 8, "active": true, "confidence": 1.0, "justification": "No answer provided - all wrong/empty." }
+      ]
+    },
+    {
+      "firstname": "Maxime",
+      "lastname": "Bétrisey",
+      "rubric_assessments": [
+        { "rubric_index": 0, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 1, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 2, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 3, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 4, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 5, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 6, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 7, "active": false, "confidence": 1.0, "justification": "No answer provided." },
+        { "rubric_index": 8, "active": true, "confidence": 1.0, "justification": "No answer provided - all wrong/empty." }
+      ]
+    },
+    {
+      "firstname": "Ness",
+      "lastname": "Chanthakesone",
+      "rubric_assessments": [
+        { "rubric_index": 0, "active": true, "confidence": 1.0, "justification": "Used DATE function correctly." },
+        { "rubric_index": 1, "active": true, "confidence": 1.0, "justification": "Used =DATE(A3+2;A2;A1)." },
+        { "rubric_index": 2, "active": true, "confidence": 0.9, "justification": "C1 has date serial number but has typo (C2 instead of C1)." },
+        { "rubric_index": 3, "active": true, "confidence": 0.9, "justification": "D1 has WEEKDAY but references C2 instead of C1." },
+        { "rubric_index": 4, "active": true, "confidence": 1.0, "justification": "E1 uses IF to compute days to add." },
+        { "rubric_index": 5, "active": false, "confidence": 1.0, "justification": "Full attempt, not partial." },
+        { "rubric_index": 6, "active": false, "confidence": 1.0, "justification": "G1 uses A1 instead of date; G2/G3 don't account for adjustment." },
+        { "rubric_index": 7, "active": false, "confidence": 1.0, "justification": "Not all correct." },
+        { "rubric_index": 8, "active": false, "confidence": 1.0, "justification": "Made substantial attempt." }
+      ]
+    }
+  ]
+}

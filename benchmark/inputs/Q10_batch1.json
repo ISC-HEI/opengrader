@@ -1,0 +1,110 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 1,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "answer": "C1 : =DATE(A3+2;A2;A1)\nD1 : =WEEKDAY(C1) *Samedi=7 et Dimanche=1\nE1 : =IFS(D1=7;2;D1=1;1;D1=2;0;D1=3;0;D1=4;0;D1=5;0;D1=6;0)\nG1 : =DAY(C1+E1)\nG2 : =MONTH(C1+E1)\nG3 : =YEAR(C1+E1)",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the 2-year anniversary in `C1`. Successfully used `IFS` with the default `WEEKDAY` return values (where Saturday=7 and Sunday=1) to add the correct number of days (2 for Sat, 1 for Sun). Final extraction in `G1-G3` is accurate.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "answer": "C1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C1;2)\nE1: =IF(WEEKDAY(C1)=6;\"+2\";IF(WEEKDAY(C1)=7;\"+1\";IF(WEEKDAY(C1)=5;\"+3\";IF(WEEKDAY(C1)=4;\"+4;IF(WEEKDAY(C1)=3;\"+5\";IF(WEEKDAY(C1)=2;\"+6\"))))))\nG1: =E1+A1\nG2: =MONTH(C1)\nG3: =YEAR(C1)",
+      "pregrade_feedback": "* **Did Well:** Correctly used `DATE(A3+2;A2;A1)` to calculate the anniversary date and `WEEKDAY(C1;2)` to find the day of the week.\n* **Needs Improvement:** The `IF` formula in `E1` returns text strings (e.g., `\"+2\"`) instead of numeric values, making them unusable for calculations in `G1`. `G1` attempts to add the offset to the purchase day (`A1`) instead of the anniversary date.\n\n---"
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "answer": "A1: 10\nC1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C1)\nE1: =DAY(C1+2)\nG1: =E1\nA2: 5\nG2: =MONTH(C1)\nA3: 2023\nG3: =YEAR(C1)",
+      "pregrade_feedback": "* **Did Well:** Correctly used `DATE(A3+2;A2;A1)` to find the anniversary date. Correctly used `MONTH` and `YEAR` to extract parts of the date.\n* **Needs Improvement:** The logic for adjusting for weekends in `E1` (`=DAY(C1+2)`) is incorrect. `G1` does not correctly calculate the final day as it relies on the flawed `E1` value.\n\n---"
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "answer": "A1: 10\nC1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C1;2)\nE1: =IF(D1=6;2;IF(D1=7;1;0))\nF1: =DAY(C1+E1)\nA2: 5\nF2: =MONTH(C1)\nA3: 2023\nF3: =YEAR(C1)",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the anniversary date in C1 and the weekday in D1. The logic for the day offset in E1 is correct. Correctly extracted the day from the adjusted date in F1.\n* **Needs Improvement:** The results were placed in cells F1, F2, and F3 instead of G1, G2, and G3. The formulas for month (F2) and year (F3) do not account for the potential date shift from E1 (which could affect the month/year if the anniversary is at the end of a month).\n\n---"
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "No answer provided.\n\n---"
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "answer": "A1: 10\nC1: =DATE(A3+2;A1;A2)\nD1: =WEEKDAY(C1)\nE1: =IF(D1=6;2;IF(D1=7;1;0))\nG1: =A1+E1\nA2: 05\nG2: =A2\nA3: 2023\nG3: =A3+2",
+      "pregrade_feedback": "* **Did Well:** Identified the need for the `DATE`, `WEEKDAY`, and `IF` functions to calculate the anniversary and adjust for weekends.\n* **Needs Improvement:** In `C1`, the day (`A1`) and month (`A2`) arguments are swapped. The `WEEKDAY` function in `D1` uses the default return type (1=Sun, 7=Sat), but the `E1` logic assumes type 2 (6=Sat, 7=Sun). `G1`, `G2`, and `G3` do not correctly extract components from a calculated date; they mostly reference the input cells and don't account for month/year shifts if days are added.\n\n---"
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "answer": "G1: =IFS(WEEKDAY(DAY(DATE($A$3+2;$A$2;$A$1)))=1;\"DAY(DATE($A$3+2;$A$2;$A$1+1))\";WEEKDAY(DAY(DATE($A$3+2;$A$2;$A$1)))=7;\"DAY(DATE($A$3+2;$A$2;$A$1+2))\";TRUE;\"DAY(DATE($A$3+2;$A$2;$A$1))\")  Sur le lien excel le code affiche une errreur de nom, mais lidée est que lon regard si le weekday retourne 1 ou 7 et quil rajoute si \"1\" 1 jour car dimanche, si \"7\" 2 jours car samedi\nG2: =MONTH(DATE($A$3+2;$A$2;$A$1))\nG3: =YEAR(DATE($A$3+2;$A$2;$A$1))",
+      "pregrade_feedback": "* **Did Well:** Correctly identified the logic needed to adjust for Sunday (1) and Saturday (7) using an `IFS` function.\n* **Needs Improvement:** The `G1` formula uses text strings (e.g., `\"DAY(...)\"`) which results in text being displayed rather than a calculation. The `WEEKDAY` function is incorrectly applied to the result of `DAY()` instead of the full date. `G2` and `G3` fail to account for the potential weekend adjustment.\n\n---"
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "answer": "G1 =A1 G2=A2 G3=A3+2 G4=CONCATENATE(G3;\"-\";A2;\"-\";A1;\"-\")\nC1=DATE(G3;G2;G1)\nD1=WEEKDAY(G4;2)\nE1=\nIF(D1=6; D1+2;\"\"); IF(D1=7; D1+1;\"\")\n=IF(D1=6; SWITCH(D1;6;\"1\");",
+      "pregrade_feedback": "* **Did Well:** Correctly identified the target anniversary date in `G3` (`A3+2`). Attempted to use `WEEKDAY` and `IF` to handle the logic.\n* **Needs Improvement:** The results in `G1`, `G2`, and `G3` do not account for the weekend shift. The `WEEKDAY` formula references `G4`, which is a concatenated string rather than a date serial number. The logic in `E1` uses multiple `IF` statements incorrectly for a single cell and adds the weekday value itself rather than the required number of days (e.g., `D1+2`).\n\n---"
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "answer": "Année: G3: =YEAR(A3)+2\nMois: G2: =MONTH(A2)\nJour: =DAY(A1)\n\nC1: =DATE(G3, G2, G1)\nD1: =WEEKDAY(G3, G2, G1)\n\nE1: =IF(WEEKDAY = 1, (365*2)",
+      "pregrade_feedback": "* **Did Well:** Correctly identified the need to use `YEAR`, `MONTH`, `DAY`, and `DATE` functions. Correctly extracted components from cells A1, A2, and A3.\n* **Needs Improvement:** The formulas for G3, G2, and G1 use cell references (A3, A2, A1) incorrectly within extraction functions (e.g., `=YEAR(A3)` where A3 is already a year value). The `DATE` and `WEEKDAY` formulas in C1 and D1 use comma separators instead of semicolons. The `WEEKDAY` formula in D1 lacks a reference to a cell or serial number. The logic for handling weekends in E1 is incomplete and uses an incorrect approach (multiplying days by years).\n\n---"
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "answer": "G1=DAY(\nIF(WEEKDAY(DATE(A3; A2; (A1+2));2)=6;DATE((A3+2);A2;(A1+2));\";IF(WEEKDAY(DATE(A3; A2; (A1+2));2)=7; DATE((A3+2);A2;(A1+2); \"DATE((A3+2);A2;A1)))\n\nG2= MONTH(IF(WEEKDAY(DATE(A3; A2; (A1+2));2)=6;DATE((A3+2);A2;(A1+2));\";IF(WEEKDAY(DATE(A3; A2; (A1+2));2)=7; DATE((A3+2);A2;(A1+2); \"DATE((A3+2);A2;A1)))\n\nG3=YEAR(IF(WEEKDAY(DATE(A3; A2; (A1+2));2)=6;DATE((A3+2);A2;(A1+2));\";IF(WEEKDAY(DATE(A3; A2; (A1+2));2)=7; DATE((A3+2);A2;(A1+2); \"DATE((A3+2);A2;A1)))",
+      "pregrade_feedback": "* **Did Well:** Attempted to combine the logic for calculating the final date components in `G1`, `G2`, and `G3` using `IF`, `WEEKDAY`, and `DATE` functions.\n* **Needs Improvement:** The formulas contain significant syntax errors, including misplaced quotation marks and semicolons. The logic for adding 2 years is applied to the day parameter (`A1+2`) instead of the year parameter (`A3+2`) in some parts of the calculation.\n\n---"
+    }
+  ]
+}

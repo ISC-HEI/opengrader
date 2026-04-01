@@ -1,0 +1,105 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Pregrade feedback explicitly states 'Correctly implemented the nested IF logic' confirming Double IF implementation."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms coverage of 'Excellent (A1>=80)' case in the nested IF logic."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms coverage of 'Suffisant' as the default case for A1>=50 range."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms coverage of 'Insuffisant (A1<50)' case in the nested IF logic."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a working formula, so 'Nothing' does not apply."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Feedback mentions 'multiple formulas instead of one' and syntax errors; the OR(50<=A1<=79) is not proper nested IF structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Feedback states 'Correctly identified the required labels and the 80 threshold', and formulas show A1>=80 -> EXCELLENT."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Feedback explicitly states 'B4 formula misses the Suffisant condition', indicating this criterion was not met."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "The B4 formula only has EXCELLENT/INSUFFISANT without proper conditional logic; feedback mentions missing conditions."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided formulas (even if incorrect), so 'Nothing' does not apply."
+        }
+      ]
+    }
+  ]
+}

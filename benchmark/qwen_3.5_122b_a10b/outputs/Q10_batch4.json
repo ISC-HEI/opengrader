@@ -1,0 +1,169 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "Feedback states student 'Correctly used DATE(A3+2;A2;A1)' - this is full DATE usage, not partial. Rubric 1 is more appropriate."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Feedback explicitly states student 'Correctly used DATE(A3+2;A2;A1) to calculate the anniversary date.'"
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.4,
+          "justification": "Feedback mentions WEEKDAY usage but formula has invalid OR nesting. Unclear if C1 serial number was correctly computed."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Feedback states student 'Recognized the need for WEEKDAY to identify the day of the week' and used WEEKDAY function."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Feedback states formula 'attempts to add days (+2, +1) to the weekday number itself rather than the date serial number' - incorrect approach."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Student attempted to compute days to add but incorrectly. The OR/IF nesting shows partial understanding of adding days."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Feedback explicitly states 'Missing the required formulas for cells G1, G2, and G3' and CHOOSE returns text instead of numerical components."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Multiple issues identified - formulas are invalid, missing G1/G2/G3 formulas, CHOOSE returns text not numbers."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student did attempt DATE and WEEKDAY functions - not 'all wrong/empty'."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.4,
+          "justification": "Student used DATE function but with hardcoded values instead of cell references - unclear if this counts as partial or full."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Feedback states student 'Correctly used DATE function' with =DATE(2025;5;10), though with hardcoded values."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "C1 shows =DATE(2025;5;10) which calculates the date serial number for the target date in 2 years."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Feedback states student 'Correctly used WEEKDAY function' with =WEEKDAY(\"2025-05-10\") for D1."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 formula =WEEKDAY(E1+2) uses circular reference and doesn't properly compute days to add."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "Student attempted E1 with WEEKDAY(E1+2) showing some understanding, though logic is flawed with circular reference."
+        },
+        {
+          "rubric_index": 6,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "G1=12, G2=5, G3=2025 show the correct resulting date components (day=12, month=5, year=2025), though as hardcoded values not formulas."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states 'Logic for E1 and G1-G3 either uses circular references or lacks proper formulas' - not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided answers for all cells with some correct values - not 'all wrong/empty'."
+        }
+      ]
+    }
+  ]
+}

@@ -26,6 +26,11 @@ def main():
         default=10,
         help="Students per batch (default: 10)",
     )
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        help="Output directory for pregrade files (default: <exam_yaml_parent>/pregrade)",
+    )
     args = parser.parse_args()
 
     exam_path = Path(args.exam_yaml)
@@ -40,11 +45,10 @@ def main():
     questions = exam.get("questions", [])
     students = exam.get("student_response", [])
 
-    output_dir = exam_path.parent / "pregrade" / "inputs"
+    base_dir = args.output_dir or exam_path.parent / "pregrade"
+    output_dir = base_dir / "inputs"
     output_dir.mkdir(parents=True, exist_ok=True)
-    (exam_path.parent / "pregrade" / "outputs").mkdir(
-        parents=True, exist_ok=True
-    )
+    (base_dir / "outputs").mkdir(parents=True, exist_ok=True)
 
     created = []
 
@@ -52,7 +56,6 @@ def main():
         q_id = question["id"]
         slug = question_slug(str(question["name"]))
 
-        # Collect and sort answers for this question alphabetically by last name
         student_answers = []
         for student in students:
             answer = next(

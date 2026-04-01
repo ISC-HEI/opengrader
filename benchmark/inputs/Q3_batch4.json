@@ -1,0 +1,42 @@
+{
+  "question": {
+    "id": 2,
+    "name": "Q. 3",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "IF",
+        "value": 0.5
+      },
+      {
+        "description": "No empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "Return the number of empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "All wrong",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "answer": "=IF(COUNTIF(A1:A116;\"\")=0;\"Aucune cellule vide\";COUNTIF(A1:A116;\"\"))",
+      "pregrade_feedback": "* **Did Well:** Correct use of `IF` and `COUNTIF`, proper syntax with semicolons and standard quotes, and correct output string \"Aucune cellule vide\".\n* **Needs Improvement:** The range `A1:A116` is used instead of the requested `A1:A100`.\n\n---"
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "answer": "C1: =IF(COUNT(A1:A100;\"<>0\");\"CELLULE VIDE\")\nA7: 9",
+      "pregrade_feedback": "* **Did Well:** Recognizes the need for an `IF` statement and references the correct range `A1:A100`.\n* **Needs Improvement:** Uses `COUNT` instead of `COUNTIF`. The condition `\"<>0\"` and the string `\"CELLULE VIDE\"` do not match the exercise requirements. Includes an unrelated reference to `A7`.\n\n---"
+    }
+  ]
+}

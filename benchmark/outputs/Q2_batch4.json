@@ -1,0 +1,73 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback explicitly states the student 'Correctly uses the LEN function'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Uses TRIM which only removes leading/trailing/redundant spaces, not ALL spaces as requested. Feedback notes SUBSTITUTE should be used instead."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Rubric criteria is satisfied through other assessments."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback explicitly states the student 'Correctly uses the LEN function'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Uses hardcoded string instead of cell reference, and no logic to exclude spaces is present."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Rubric criteria is satisfied through other assessments."
+        }
+      ]
+    }
+  ]
+}

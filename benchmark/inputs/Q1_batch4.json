@@ -1,0 +1,46 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "answer": "=IF(A1>=80;\"Excellent\";IF(A1<50;\"Insuffisant\";\"Suffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Correctly implemented the nested `IF` logic to cover all three cases: \"Excellent\" (A1>=80), \"Insuffisant\" (A1<50), and the default \"Suffisant\". Used correct semicolon separators and standard quotation marks.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "answer": "A1: 56\nB2: =IF(A1>=80;\"EXCELLENT\"); OR(50<=A1<=79;\"SUFFISANT\";\"INSUFFISANT\")\nA4: EXCELLENT\nB4: =IF(A1>=80;\"EXCELLENT\";\"INSUFFISANT\")",
+      "pregrade_feedback": "* **Did Well:** Correctly identified the required labels and the 80 threshold.\n* **Needs Improvement:** The formula contains several syntax errors (extra closing parenthesis, invalid range syntax `50<=A1<=79`). The B4 formula misses the \"Suffisant\" condition. The student provided multiple formulas instead of one in A2.\n\n---"
+    }
+  ]
+}

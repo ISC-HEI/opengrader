@@ -1,0 +1,333 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student uses nested IF structure with multiple conditions."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula includes condition A2>=80 for Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Condition uses A2>50 which excludes exactly 50, not A2>=50."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Includes A2<50 condition for Insuffisant."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student uses nested IF structure with multiple conditions."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula includes condition A2>=80 for Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Condition uses A2>50 which excludes exactly 50, not A2>=50."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Includes A2<50 condition for Insuffisant."
+        }
+      ]
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly implements nested IFs with all three thresholds."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1>=80 condition mapping to Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes condition for score between 50-79 mapping to Suffisant."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1<50 condition mapping to Insuffisant."
+        }
+      ]
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly uses nested IF functions with all three conditions."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1>=80 condition mapping to Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes implied condition for 50-79 range mapping to Suffisant."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1<50 condition mapping to Insuffisant."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student uses nested IF structure with multiple conditions."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1>=80 condition mapping to Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Condition A1>=50 present but also requires A1<=79 with AND."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "Includes condition for below 50 but labeled as Insuffisant with misspelling."
+        }
+      ]
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student uses nested IF structure with all three conditions."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1>=80 condition mapping to Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes condition for 50-79 range mapping to Suffisant."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1<50 condition mapping to Insuffisant."
+        }
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly implements nested IFs with AND for middle range."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1>=80 condition mapping to Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Uses AND(A1>=50;A1<=79) for Sufficient range."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Includes condition for below 50 but labeled with lowercase 'insuffisant'."
+        }
+      ]
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "Uses IF function but with incorrect OR syntax for multiple conditions."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Includes A1>=80 in OR condition mapping to Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "Does not implement A1>=50 properly due to incorrect formula syntax."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Includes condition for A1<50 mapping to Insuffisant despite syntax issues."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student uses IFS function with multiple conditions."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1>=80 condition mapping to Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "Has A1<80 for Suffisant but ordering error makes logic incorrect for 50-79 range."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "A1<50 condition is present but unreachable due to earlier A1<80 catching it first."
+        }
+      ]
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student uses IFS function with multiple conditions."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1>=80 condition mapping to Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "A1<80 for Suffisant is too broad and includes scores below 50."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "A1<50 condition is unreachable due to earlier A1<80 catching it first."
+        }
+      ]
+    }
+  ]
+}

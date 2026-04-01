@@ -1,0 +1,90 @@
+{
+  "question": {
+    "id": 2,
+    "name": "Q. 3",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "IF",
+        "value": 0.5
+      },
+      {
+        "description": "No empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "Return the number of empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "All wrong",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "answer": "C1: =COUNTBLANK(A1:A100)",
+      "pregrade_feedback": "* **Did Well:** Correctly identifies the range `A1:A100` and uses `COUNTBLANK` to count empty cells.\n* **Needs Improvement:** Failed to implement the conditional logic (`IF`) to display \"Aucune cellule vide\" when the count is zero.\n\n---"
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "answer": "C1: =COUNTBLANK(A1:A100)",
+      "pregrade_feedback": "* **Did Well:** Correctly identifies the range `A1:A100` and uses `COUNTBLANK` to count empty cells.\n* **Needs Improvement:** Failed to implement the conditional logic (`IF`) to display \"Aucune cellule vide\" when the count is zero.\n\n---"
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "answer": "=COUNTIF(A1:A100; ISBLANK(A1:A100) \"=FALSE\")",
+      "pregrade_feedback": "* **Did Well:** References the correct range `A1:A100`.\n* **Needs Improvement:** The formula is syntactically invalid. It attempts to nest `ISBLANK` inside `COUNTIF` in a way that Excel does not support. It misses the `IF` logic required to display the specific text.\n\n---"
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "answer": "C1: =IF(COUNTIFS(A1:A100;\"\")=0;\"Aucune cellule vide\";COUNTIFS(A1:A100;\"\"))",
+      "pregrade_feedback": "* **Did Well:** Correct logic using `IF` and `COUNTIFS` (plural equivalent of `COUNTIF`) to check for empty strings `\"\"` and display the specific text \"Aucune cellule vide\".\n* **Needs Improvement:** While `COUNTIFS` works, the standard `COUNTIF` was expected; however, the logic remains identical.\n\n---"
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "answer": "C1: =IF(COUNTIF(A1:A100;\"\")=100;\"Aucune cellule vide\"; COUNTIF(A1:A100;\"\"))",
+      "pregrade_feedback": "* **Did Well:** Correct use of `IF` and `COUNTIF` with the range `A1:A100` and the criteria `\"\"`. Returns the correct count if the condition is not met.\n* **Needs Improvement:** The condition `=100` is incorrect; it should be `=0` to detect when no cells are empty.\n\n---"
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "answer": "=IF(COUNTIF(A1:A100;\"\")>0;COUNTIF(A1:A100;\"\");\"Aucune cellule vide\")",
+      "pregrade_feedback": "* **Did Well:** Correct logic using `IF` and `COUNTIF`. Accurately handles the case where empty cells exist (`>0`) by displaying the count, and handles the zero case with the required text.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "answer": "=IF(COUNTIF(A1:A100;\"=\")>0;COUNTIF(A1:A100;\"=\");\"aucune cellule vide\")",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `IF` and `COUNTIF` to check for empty cells and return the count or the string. Correctly uses `\"=\"` as a criteria for blank cells.\n* **Needs Improvement:** The string \"aucune cellule vide\" is in lowercase, whereas the prompt asked for \"Aucune cellule vide\" (though this is minor). The logic `>0` for the count branch is correct.\n\n---"
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "answer": "C1: =IF(COUNTIF(A1:A100; \"\"); \"aucune cellule vide \")",
+      "pregrade_feedback": "* **Did Well:** Uses `IF` and `COUNTIF` with the range `A1:A100`. Correctly includes the string \"aucune cellule vide\".\n* **Needs Improvement:** The `IF` condition is incomplete (it just contains the `COUNTIF` result without a comparison like `=0`). It is missing the alternative value to display the actual count if cells are found.\n\n---"
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "answer": "=IF(COUNTIF(A1:A100; \"\")=0; \"Aucune cellule vide\"; COUNTIF(A1:A100; \"\"))",
+      "pregrade_feedback": "* **Did Well:** Correct and complete formula implementation matching the official solution logic.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "answer": "C1: =IF(COUNTIF(A1:A100;\"\")=0;\"Aucune cellule vide\";COUNTIF(A1:A100;\"\"))",
+      "pregrade_feedback": "* **Did Well:** Accurate implementation of the `IF` and `COUNTIF` functions with correct parameters and strings as per the solution.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    }
+  ]
+}

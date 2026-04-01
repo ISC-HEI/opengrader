@@ -1,0 +1,649 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 1,
+  "students": [
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student fully built the DATE function, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly used =DATE(A3+2;A2;A1) to build the date."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "C1 correctly calculates the serial number of the date in 2 years."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "D1 uses WEEKDAY correctly with default return values (Saturday=7, Sunday=1)."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "E1 correctly computes how many days to add using IFS based on weekday."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student fully computed the days to add, not partially."
+        },
+        {
+          "rubric_index": 6,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "G1-G3 correctly extract the final date components after adjustment."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Not all correct - the solution works but rubric 7 is for perfect full solution, and student used slightly different approach."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Student provided a substantial answer with correct logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student fully built the DATE function, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly used =DATE(A3+2;A2;A1) to build the date."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "C1 correctly calculates the serial number of the date in 2 years."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "D1 correctly uses WEEKDAY(C1;2) to find the day of the week."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 returns text strings instead of numeric values, making them unusable for calculations."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student partially attempted to compute days to add but used text instead of numbers."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1 adds offset to A1 instead of C1, and G2/G3 don't account for date shift."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Solution has significant errors in E1 and G1-G3."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correct logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student fully built the DATE function, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly used =DATE(A3+2;A2;A1) to build the date."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "C1 correctly calculates the serial number of the date in 2 years."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "D1 uses WEEKDAY function to get day of week."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 uses =DAY(C1+2) which is incorrect logic for computing days to add."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Student attempted to compute days but with incorrect formula (=DAY(C1+2))."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1 relies on flawed E1 value and doesn't correctly calculate final day."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Solution has significant errors in E1 and G1."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correct logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student fully built the DATE function, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly used =DATE(A3+2;A2;A1) to build the date."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "C1 correctly calculates the serial number of the date in 2 years."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "D1 correctly uses WEEKDAY(C1;2) to find the day of the week."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "E1 correctly computes how many days to add using IF logic for weekends."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student fully computed the days to add, not partially."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Results placed in F1-F3 instead of G1-G3 as required. Also month/year don't account for date shift."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Solution has errors - wrong cells used and formulas don't account for date shift."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided a substantial answer with mostly correct logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "No answer provided - matches 'all wrong / empty' criterion."
+        }
+      ]
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student attempted to fully build DATE function, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student used DATE function, though with swapped arguments."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "C1 has day and month arguments swapped, so serial number is incorrect."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "D1 uses WEEKDAY function, though with default return type."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "E1 logic assumes type 2 but D1 uses default type, making the logic inconsistent."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "Student attempted to compute days to add but with inconsistent weekday logic."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1-G3 reference input cells instead of extracting from calculated date."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Solution has multiple significant errors."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correct logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student attempted to build full DATE function, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Student used DATE function within complex formula, though with syntax issues."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "C1 is not present; student combined logic directly in G1-G3."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "D1 is not present as separate cell; WEEKDAY applied incorrectly to DAY() result."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "E1 is not present; logic embedded in G1 but uses text strings."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.4,
+          "justification": "Student partially attempted to compute days to add using IFS logic, but with text strings."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1 displays text strings instead of calculating values; G2/G3 don't account for weekend adjustment."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Solution has significant syntax errors and incorrect logic."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correct logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student attempted to build DATE function, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Student used DATE function in C1, though reference chain is indirect."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "C1 formula references G4 which is a concatenated string, not a proper date serial."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "D1 references G4 (concatenated string) instead of a date serial number."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 uses multiple incorrect IF statements and adds weekday value instead of days to add."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.3,
+          "justification": "Student partially attempted to compute days but with fundamentally incorrect approach."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1-G3 don't account for weekend shift; they just reference input cells."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Solution has multiple significant errors."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correct logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student attempted to build DATE function, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Student used DATE function in C1, though with comma separators instead of semicolons."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "C1 formula has syntax errors (commas vs semicolons) and references are incorrect."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "D1 WEEKDAY formula lacks reference to a cell or serial number."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 is incomplete and uses incorrect approach (multiplying days by years)."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.3,
+          "justification": "Student partially attempted to compute days but with incomplete and incorrect logic."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1-G3 use cell references incorrectly within extraction functions."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Solution has multiple significant errors and is incomplete."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correct logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student attempted to build full DATE function, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student used DATE function but with significant syntax errors (misplaced quotes and semicolons)."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "C1 is not present; student combined all logic directly in G1-G3."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "D1 is not present as separate cell; WEEKDAY embedded in complex formula."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "E1 is not present; logic embedded but with syntax errors."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.4,
+          "justification": "Student partially attempted to compute days to add using IF/WEEKDAY logic but with syntax errors."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1-G3 contain significant syntax errors and logic applies 2 years to day parameter incorrectly."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Solution has significant syntax errors and incorrect logic."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correct logic."
+        }
+      ]
+    }
+  ]
+}

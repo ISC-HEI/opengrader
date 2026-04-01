@@ -1,0 +1,329 @@
+{
+  "question": {
+    "id": 2,
+    "name": "Q. 3",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "IF",
+        "value": 0.5
+      },
+      {
+        "description": "No empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "Return the number of empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "All wrong",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student uses COUNTBLANK directly without IF wrapper for conditional message display."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Missing the message display when count is 0, as noted in pregrade_feedback."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Uses COUNTBLANK which correctly counts empty cells."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Not all wrong - COUNTBLANK is a valid approach for counting empty cells."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student uses COUNTBLANK directly without IF wrapper for conditional message display."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Missing the message display when count is 0, as noted in pregrade_feedback."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Uses COUNTBLANK which correctly counts empty cells."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Not all wrong - COUNTBLANK is a valid approach for counting empty cells."
+        }
+      ]
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Missing the IF wrapper to check if count equals 0 and return the appropriate message."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Missing the message display when no empty cells, as noted in pregrade_feedback."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Syntax is incorrect - ISBLANK doesn't work as a criteria in COUNTIF, and the formula has invalid syntax."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Formula is fundamentally broken with incorrect syntax and logic - essentially all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Uses IF function with proper conditional structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Correctly returns 'Aucune cellule vide' message when count equals 0."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Correctly returns the count of empty cells using COUNTIFS when count is not 0."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Formula is correct despite using COUNTIFS instead of COUNTIF."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Uses IF function with conditional structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Logic is inverted - checks if count=100 instead of 0, so message displays incorrectly."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "COUNTIF(A1:A100;\"\") correctly counts empty cells, even though the condition logic is wrong."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Not all wrong - has correct IF structure and COUNTIF for empty cells, just inverted condition."
+        }
+      ]
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Uses IF function with conditional structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Logic is inverted - shows message when there ARE empty cells (>0), not when there are none."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "COUNTIF(A1:A100;\"\") correctly counts empty cells, even though the condition logic is wrong."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Not all wrong - has correct IF structure and COUNTIF for empty cells, just inverted condition."
+        }
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Uses IF function with conditional structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Logic is inverted and uses wrong criteria (\"=\" instead of \"\"), so message displays incorrectly."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Counts cells equal to \"=\" instead of empty cells (\"\") - fundamentally wrong criteria."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.75,
+          "justification": "Uses wrong criteria for counting empty cells - counts \"=\" instead of empty string, making the solution essentially incorrect."
+        }
+      ]
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Attempts IF function with conditional logic, though formula is incomplete and syntactically incorrect."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Formula is incomplete - false branch is missing entirely, no proper message handling."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Formula doesn't properly count empty cells - COUNTIF lacks proper condition reference and false branch is missing."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Formula is syntactically incorrect and incomplete - missing false branch and proper condition structure."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Uses IF function with correct conditional structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly returns 'Aucune cellule vide' message when count equals 0."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly returns the count of empty cells using COUNTIF when count is not 0."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Formula is completely correct as confirmed by pregrade_feedback."
+        }
+      ]
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula uses IF function with correct conditional structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula correctly returns 'Aucune cellule vide' message when count equals 0."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula correctly returns the count of empty cells using COUNTIF when count is not 0."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Formula structure is correct despite empty pregrade_feedback."
+        }
+      ]
+    }
+  ]
+}

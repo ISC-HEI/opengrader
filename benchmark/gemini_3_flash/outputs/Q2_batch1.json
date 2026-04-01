@@ -1,0 +1,265 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 1,
+  "students": [
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms correct use of the LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Feedback states that the COUNT(FIND(...)) approach does not correctly count multiple spaces, failing to remove all spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly used the LEN function."
+        }
+      ]
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer was provided."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer was provided."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The student did not provide any answer."
+        }
+      ]
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms correct use of the LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states the student used REPLACE to remove only a single character, which does not account for all spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly used the LEN function."
+        }
+      ]
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms the implementation of the solution including the LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms the implementation of the solution using the SUBSTITUTE function."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly implemented the requested logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states the function used (COUNT) is incorrect for character counting."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states no logic was provided to exclude spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The student provided an incorrect function and no logic for space removal."
+        }
+      ]
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms correct identification of the LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The rubric explicitly accepts TRIM, even though the feedback notes it is insufficient for the specific example."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly identified the core functions."
+        }
+      ]
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer was provided."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer was provided."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The student did not provide any answer."
+        }
+      ]
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms the use of the LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The rubric explicitly accepts TRIM, despite the feedback suggesting SUBSTITUTE is better."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly used the LEN function."
+        }
+      ]
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms the correct use of the LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The rubric explicitly accepts TRIM, even though the feedback notes it only removes some spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly used the LEN function."
+        }
+      ]
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms the correct use of the LEN function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms the correct use of the SUBSTITUTE function to exclude all spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student correctly implemented the solution."
+        }
+      ]
+    }
+  ]
+}

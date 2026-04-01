@@ -1,0 +1,393 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Formula uses nested IF statements (double IF structure), though placed in wrong cell."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Has A2>=80 -> Excellent condition, though references A2 instead of A1."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "Has condition for 50-79 range -> Suffisan (typo), using AND logic."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Has A2<50 -> Insuffisant condition in the formula."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student provided a formula, not empty or nothing."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Formula uses nested IF statements (double IF structure), though placed in wrong cell."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Has A2>=80 -> Excellent condition, though references A2 instead of A1."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "Has condition for 50-79 range -> Suffisan (typo), using AND logic."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Has A2<50 -> Insuffisant condition in the formula."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student provided a formula, not empty or nothing."
+        }
+      ]
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Uses nested IF structure with two IF statements."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Has A1>=80 -> Excellent condition correctly implemented."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Has condition for >=50 range via the ELSE branch returning Suffisant."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Has A1<50 -> Insuffisant condition correctly implemented."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student provided a formula, not empty or nothing."
+        }
+      ]
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Pregrade confirms nested IF statements with correct structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Pregrade confirms A1>=80 -> Excellent is properly defined."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Pregrade confirms 50-79 range -> Suffisant is properly defined."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Pregrade confirms A1<50 -> Insuffisant is properly defined."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided a complete formula, not empty or nothing."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Uses nested IF structure despite syntax errors and unbalanced parentheses."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Has A1>=80 -> Excellent condition, though formula has syntax issues."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "Attempts A1>=50 && A1<=79 -> Sufficient using AND, but has syntax error."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Has else -> Inuffisant (typo) for insufficient case."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student provided a formula, not empty or nothing."
+        }
+      ]
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Pregrade confirms nested IF pattern with two IF statements."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Pregrade confirms A1>=80 -> Excellent is correctly handled."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "Relies on final ELSE for 50-79 range, not explicit per rubric but functionally equivalent."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Has A1<50 -> Insuffisant condition in formula."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student provided a formula, not empty or nothing."
+        }
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Uses nested IF structure with two IF statements."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Has A1>=80 -> Excellent condition correctly implemented."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Has AND(A1>=50;A1<=79) -> Suffisant condition correctly implemented."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Has else -> insuffisant (lowercase) for insufficient case."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student provided a formula, not empty or nothing."
+        }
+      ]
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Uses OR instead of nested IF structure; formula is malformed."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "Has A1>=80 but embedded in incorrect OR structure, not proper IF condition."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "No proper condition for 50-79 range; formula structure is broken."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Has Insuffisant but in malformed formula structure."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Student attempted a formula, though it is incorrect."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Uses IFS function which satisfies the 'Double IF / IFS' rubric criterion."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Has A1>=80 -> Excellent condition in IFS."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.4,
+          "justification": "Has A1<80 -> Suffisant but pregrade notes it redundantly covers both 50-79 and <50 ranges."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "Has A1<50 -> Insuffisant but it will never be reached due to flawed IFS ordering."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student provided a formula, not empty or nothing."
+        }
+      ]
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Uses IFS function which satisfies the 'Double IF / IFS' rubric criterion."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Has A1>=80 -> Excellent condition in IFS."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Has A1<80 -> Suffisant which covers the 50-79 range (though also <50)."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Has A1<50 -> Insuffisant condition in IFS."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student provided a formula, not empty or nothing."
+        }
+      ]
+    }
+  ]
+}

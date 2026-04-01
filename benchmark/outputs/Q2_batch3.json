@@ -1,0 +1,265 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback explicitly states the student correctly identifies `LEN` as the function to count characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The feedback notes that `TRIM` fails to remove all spaces and does not work for all cases like \"Life Sciences\"."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student demonstrated functional code with LEN and TRIM functions."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback explicitly states the student correctly identifies `LEN` as the function to count characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The feedback notes that `TRIM` fails to remove all spaces and does not work for all cases like \"Life Sciences\"."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student demonstrated functional code with LEN and TRIM functions."
+        }
+      ]
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback explicitly states the student correctly uses `LEN` and references cell `G1`."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The feedback notes `TRIM(G1)` only removes certain spaces, not all spaces as required."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student demonstrated functional code with LEN and TRIM functions."
+        }
+      ]
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback explicitly states the student correctly uses the `LEN` function to calculate length."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The feedback states `COUNTIF(A1;\"\")` does not target spaces and checks if cell A1 is empty, which is not a valid space-removal method."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student demonstrated functional code with LEN function."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback explicitly states the student uses `LEN` to count characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The feedback notes TRIM doesn't remove all spaces as requested."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student demonstrated functional code with LEN and TRIM functions."
+        }
+      ]
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback explicitly states the student correctly uses `LEN(G1)` to count total characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The feedback notes the formula does not include any method to exclude spaces from the count."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student demonstrated functional code with LEN function."
+        }
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback states the student correctly uses `LEN` to count the remaining characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback explicitly states the student \"Perfectly implemented the solution\" using `SUBSTITUTE(G1;\" \";\"\")` to remove all spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student demonstrated full solution with both LEN and SUBSTITUTE."
+        }
+      ]
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback states the student correctly uses `LEN` to count the remaining characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback explicitly states the student \"Perfectly implemented the solution\" using `SUBSTITUTE(G1; \" \"; \"\")` to remove all spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student demonstrated full solution with both LEN and SUBSTITUTE."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback states the student uses `LEN` to count characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "The feedback confirms correct logic using `SUBSTITUTE` to remove spaces, though the student violated the constraint by using an auxiliary cell G3."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student demonstrated functional code with LEN and SUBSTITUTE."
+        }
+      ]
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The feedback explicitly states the student uses `LEN(G1)` to count total characters."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The feedback notes `COUNTIF(G1;\"\")` checks if the whole cell matches criteria, not counting spaces within the text."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student demonstrated functional code with LEN and COUNTIF."
+        }
+      ]
+    }
+  ]
+}

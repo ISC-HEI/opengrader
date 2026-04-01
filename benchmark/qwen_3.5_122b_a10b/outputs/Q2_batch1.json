@@ -1,0 +1,265 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 1,
+  "students": [
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student correctly uses LEN(G1) as identified in 'Did Well' section."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Student attempts to remove spaces but uses COUNT(FIND) which only finds the first space, not all spaces. The feedback explicitly states this does not correctly count multiple spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correctness, so 'Nothing' does not apply."
+        }
+      ]
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided, so LEN function was not used."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided, so no space removal method was used."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "No answer provided ('No answer provided' feedback), which matches the 'Nothing' rubric."
+        }
+      ]
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student correctly uses LEN function as noted in 'Did Well' section."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student uses REPLACE which only removes a single character at position 5, not all spaces. Feedback explicitly states this does not account for all spaces."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correctness (uses LEN), so 'Nothing' does not apply."
+        }
+      ]
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly implemented LEN(SUBSTITUTE(...)) as confirmed in 'Did Well' section."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly uses SUBSTITUTE to remove all spaces, which is explicitly accepted by the rubric. The feedback confirms correct implementation."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided a correct answer, so 'Nothing' does not apply."
+        }
+      ]
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student used COUNT function, not LEN. Feedback states 'Incorrect function; COUNT is for counting numbers'."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No space removal method was used. Feedback states 'No logic provided to exclude spaces'."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Student's answer is completely incorrect (just 'COUNT'). 'Did Well' section says 'Nothing notable found', indicating no correct elements."
+        }
+      ]
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student correctly identifies LEN as the function to count characters, per 'Did Well' section."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student uses TRIM which is explicitly accepted by the rubric ('SUBSTITUTE / TRIM (accepted)'). However, feedback notes TRIM only removes leading/trailing and extra internal spaces, not all spaces. Since rubric explicitly accepts TRIM, marking as active but with lower confidence due to functional limitation."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correctness, so 'Nothing' does not apply."
+        }
+      ]
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided ($@NULL@$), so LEN function was not used."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided, so no space removal method was used."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "No answer provided ('No answer provided' feedback), which matches the 'Nothing' rubric."
+        }
+      ]
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student uses LEN to count characters as noted in 'Did Well' section."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student uses TRIM which is explicitly accepted by the rubric ('SUBSTITUTE / TRIM (accepted)'). Feedback notes TRIM does not remove all spaces, but rubric acceptance takes precedence."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correctness, so 'Nothing' does not apply."
+        }
+      ]
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student correctly uses LEN function as noted in 'Did Well' section."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student uses TRIM which is explicitly accepted by the rubric ('SUBSTITUTE / TRIM (accepted)'). Feedback notes TRIM only removes leading/trailing and redundant spaces, but rubric acceptance takes precedence."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided an answer with partial correctness, so 'Nothing' does not apply."
+        }
+      ]
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly uses LEN as confirmed in 'Did Well' section."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Student correctly uses SUBSTITUTE to remove all spaces, which is explicitly accepted by the rubric. Feedback confirms correct implementation."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student provided a correct answer, so 'Nothing' does not apply."
+        }
+      ]
+    }
+  ]
+}

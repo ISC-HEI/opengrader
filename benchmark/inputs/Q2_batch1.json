@@ -1,0 +1,86 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 1,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "answer": "G2 : =LEN(G1)-COUNT(FIND(\" \";G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `LEN(G1)` and attempts to subtract spaces using `COUNT` and `FIND` functions.\n* **Needs Improvement:** `COUNT(FIND(\" \";G1))` only identifies the first occurrence of a space and will not correctly count multiple spaces.\n\n---"
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "No answer provided.\n\n---"
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "answer": "G2: =LEN(REPLACE(G1;5;1;\"\"))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `LEN` to count characters and references cell `G1`.\n* **Needs Improvement:** Uses `REPLACE(G1;5;1;\"\")`, which only removes a single character at a specific position (the 5th character). This does not account for all spaces in an arbitrary text.\n\n---"
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "answer": "G1: Life Sciences\nG2: =LEN(SUBSTITUTE(G1;\" \";\"\"))",
+      "pregrade_feedback": "* **Did Well:** Correctly implemented the solution `=LEN(SUBSTITUTE(G1;\" \";\"\"))` and specified the correct cell `G2`.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "answer": "COUNT",
+      "pregrade_feedback": "* **Did Well:** Nothing notable found for this exercise.\n* **Needs Improvement:** Incorrect function; `COUNT` is for counting numbers in a range, not for character counting or string manipulation. No logic provided to exclude spaces.\n\n---"
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "answer": "G2: =LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly identifies `LEN` as the function to count characters.\n* **Needs Improvement:** `TRIM` only removes leading, trailing, and extra internal spaces; it does not remove all spaces as required by the example.\n\n---"
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "No answer provided.\n\n---"
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "answer": "G2=LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Uses `LEN` to count characters.\n* **Needs Improvement:** Uses `TRIM(G1)` which does not remove all spaces between words; `SUBSTITUTE` should be used instead.\n\n---"
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "answer": "=LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses the `LEN` function to count characters in the cell G1.\n* **Needs Improvement:** Uses `TRIM(G1)` which only removes leading, trailing, and redundant internal spaces. To exclude all spaces as requested, the `SUBSTITUTE(G1; \" \"; \"\")` function should be used.\n\n---"
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "answer": "=LEN(SUBSTITUTE(G1;\" \";\"\"))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `LEN` and `SUBSTITUTE` to count characters while excluding all spaces.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    }
+  ]
+}

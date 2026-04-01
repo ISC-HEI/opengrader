@@ -1,0 +1,169 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The student correctly used the DATE function (covered by rubric index 1), so this partial rubric is not the most appropriate."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms the student correctly used DATE(A3+2;A2;A1)."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Feedback states the formula for the serial number was nested within an OR function incorrectly, making the logic invalid."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Feedback mentions the student recognized the need for WEEKDAY, and the answer shows its use in a CHOOSE formula."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Logic for adding days was invalid; it attempted to add days to the weekday number rather than the date serial number."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The student attempted to compute days to add (+2, +1), satisfying the requirement for partial computation despite the incorrect target."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback explicitly states formulas for cells G1, G2, and G3 are missing."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The submission contains several errors and omissions."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student successfully implemented parts of the required logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The student used the DATE function (covered by rubric index 1), which is a more complete implementation than 'partially built'."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Feedback confirms the student correctly used the DATE function, although it critiqued the use of hardcoded values."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Feedback says the student correctly identified the target date serial number (=DATE(2025;5;10)), meeting the criterion despite hardcoding."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback explicitly states the student correctly used the WEEKDAY function."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Feedback states the logic for E1 uses circular references or lacks proper formulas."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "The mention of circular references in E1 implies a formulaic attempt was made to compute the value."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Feedback indicates G1-G3 lacks proper formulas; the student provided hardcoded values only."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The submission contains several errors (hardcoding, circular references)."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student successfully implemented several parts of the required logic."
+        }
+      ]
+    }
+  ]
+}

@@ -44,6 +44,13 @@
         "websearch": false,
         "webfetch": false
       }
+    },
+    "benchmark-worker": {
+      "mode": "subagent",
+      "model": "openrouter/qwen/qwen3.5-122b-a10b",
+      "description": "A worker to fullfill tasks",
+      "hidden": true,
+      "steps": 5
     }
   }
 }

@@ -1,0 +1,329 @@
+{
+  "question": {
+    "id": 2,
+    "name": "Q. 3",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "IF",
+        "value": 0.5
+      },
+      {
+        "description": "No empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "Return the number of empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "All wrong",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 2,
+  "students": [
+    {
+      "firstname": "Lena",
+      "lastname": "Geissberger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Student attempted to use IF, though the syntax is incorrect."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Failed to properly handle the no-empty-cell case due to incorrect IF and COUNTIF logic."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "COUNTIF syntax is incorrect and uses two columns instead of returning a proper count."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "Attempted a solution with multiple issues rather than being completely wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Lorie",
+      "lastname": "Haefliger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly used IF function."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Logic checks count=100 instead of count=0, so it fails the no-empty-cell case."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Fails to return the actual count when cells are empty, as noted in feedback."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "Correctly identified COUNTIF and empty cell criteria, but logic is inverted."
+        }
+      ]
+    },
+    {
+      "firstname": "Théo",
+      "lastname": "Haenni",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly used IF and COUNTIF as confirmed in feedback."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Returns 'Aucune cellule vide' when count is 0 (no empty cells)."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Returns the count of empty cells when count > 0."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Solution is complete and correct according to feedback."
+        }
+      ]
+    },
+    {
+      "firstname": "Iliana",
+      "lastname": "Harlingue",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback explicitly states missing IF conditional logic."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No conditional handling for when count is zero."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly uses COUNTIF to count empty cells as confirmed in feedback."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Partially correct - COUNTIF implementation is accurate."
+        }
+      ]
+    },
+    {
+      "firstname": "Jeanne",
+      "lastname": "Magnin",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Perfectly implemented IF as confirmed in feedback."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Returns 'Aucune cellule vide' when no empty cells exist."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly counts and returns empty cells as confirmed."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Solution is perfect according to feedback."
+        }
+      ]
+    },
+    {
+      "firstname": "Eloise",
+      "lastname": "Maiorano",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Recognized need for IF statement."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Syntax errors (curly quotes) would cause formula errors."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "COUNTIFS syntax is fundamentally incorrect for the task."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "Attempted approach shows understanding but implementation is broken."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Mauro",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly used IF as confirmed in feedback."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Returns 'Aucune cellule vide' when count is 0."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly returns COUNTIF when cells are empty."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Solution is complete and correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Isabelle",
+      "lastname": "Meier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback explicitly states IF statement is required but not used."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No conditional handling for no-empty-cell case."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "COUNTIF has too many arguments; does not return valid count."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Correctly identified range and criteria but formula is invalid."
+        }
+      ]
+    },
+    {
+      "firstname": "Justin",
+      "lastname": "Michod",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No IF statement present; only COUNTIF used."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No conditional handling for no-empty-cell case."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Criteria '\"<>\" \" \"' does not target empty cells and range is wrong."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "Partially correct - used COUNTIF but with wrong range and criteria."
+        }
+      ]
+    },
+    {
+      "firstname": "Samuele Prince",
+      "lastname": "Moungang Moussandja",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No IF statement; only COUNTIF."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Missing IF logic to handle zero count case."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "ISBLANK cannot be used as COUNTIF criteria in this way."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "Identified correct function and range but implementation is invalid."
+        }
+      ]
+    }
+  ]
+}

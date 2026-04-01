@@ -1,0 +1,169 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.1,
+          "justification": "DATE formula is correctly built, not partially built"
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Uses =DATE(A3+2;A2;A1) to calculate the anniversary date"
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Serial number formula has invalid nested OR wrapping WEEKDAY incorrectly"
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "WEEKDAY(DATE(A3+2;A2;A1)) is used to identify day of week"
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "Weekday numbers added to themselves, not date; missing actual day count calculation"
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "WEEKDAY function nested with DATE attempts weekday-related computation"
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "CHOOSE formula outputs text strings (Dimanche, Lundi) instead of numeric date components"
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Serial number formula is invalid, G1-G3 use text instead of components"
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.1,
+          "justification": "Answer contains formulas and calculations, not empty or all wrong"
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.1,
+          "justification": "DATE formula exists with proper syntax using =DATE(2025;5;10)"
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Uses =DATE(2025;5;10) formula to build date"
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "C1 uses hardcoded values rather than serial number formula"
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "D1 has hardcoded '12' without WEEKDAY function for calculation"
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "E1 circular reference with WEEKDAY(E1+2) prevents meaningful computation"
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "WEEKDAY function appears in E1 indicating attempt at computation"
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "G1, G2, G3 (12, 5, 2025) are hardcoded values without formulas for date components"
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Multiple formula categories have logical errors and hardcoded values"
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.1,
+          "justification": "Answer contains formulas and attempted solutions"
+        }
+      ]
+    }
+  ]
+}

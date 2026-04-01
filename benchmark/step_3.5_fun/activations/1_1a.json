@@ -1,0 +1,1504 @@
+{
+  "question_id": 0,
+  "question_name": "Q. 1",
+  "rubrics": [
+    {
+      "description": "Double IF / IFS",
+      "value": 0.5
+    },
+    {
+      "description": "Condition A1>=80 -> Excellent",
+      "value": 0.5
+    },
+    {
+      "description": "Condition A1>=50 -> Sufficient",
+      "value": 0.5
+    },
+    {
+      "description": "Else -> Insufficient",
+      "value": 0.5
+    },
+    {
+      "description": "Nothing",
+      "value": 0.0
+    }
+  ],
+  "students": [
+    {
+      "firstname": "Justin",
+      "lastname": "Aeby",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Used nested IF statements to handle all three categories with correct threshold values."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Condition A1>=80 maps to 'excellent' label, meeting the criterion."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Condition A1>=50 present and maps to 'Suffisant' label."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Else case yields 'Insufisant' (despite minor spelling error)."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a valid formula with multiple criteria met."
+        }
+      ]
+    },
+    {
+      "firstname": "Lilandra",
+      "lastname": "Albert-Lavault",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Identified and used the IFS function for multiple conditions."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Condition A1>=80 maps to 'Excellent' label."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Condition for Sufficient uses impossible AND(A1<50; A1>79), making it incorrect."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No proper else case for Insufficient due to logic errors."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student attempted a formula with some correct parts."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah Simon",
+      "lastname": "Anthamatten",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Implemented nested IF structure correctly."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Label used is 'Ausgezeichnet' (German) instead of 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Label used is 'Ausreichend' (German) instead of 'Sufficient'."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Label used is 'Unzureichend' (German) instead of 'Insufficient'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula with correct logic but wrong labels."
+        }
+      ]
+    },
+    {
+      "firstname": "Jade",
+      "lastname": "Aymon",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Used nested IF to handle the three scoring brackets."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.98,
+          "justification": "Label misspelled as 'Ecsellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Middle range condition A1<79 excludes value 79, which should be 'Suffisant'."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Else case yields 'Insuffisant' label (French spelling correct)."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula with both correct and incorrect parts."
+        }
+      ]
+    },
+    {
+      "firstname": "Gioele",
+      "lastname": "Bagnovini",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Formula uses IF with OR incorrectly; not a nested IF or IFS."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No proper condition A1>=80; syntax invalid and labels incorrect."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No correct condition for Sufficient."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No proper else case for Insufficient."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Student's answer is invalid and yields no points."
+        }
+      ]
+    },
+    {
+      "firstname": "Ninon",
+      "lastname": "Bagutti",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Implemented the required logic using nested IF statements."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Condition A1>=80 maps to 'excellent' (minor casing difference acceptable)."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Condition for Sufficient satisfied via else after handling >=80 and <50; maps to 'suffisant'."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Else branch yields 'suffisant' instead of 'Insuffisant'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student successfully implemented nested IF logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Jonas",
+      "lastname": "Barraud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Used the IFS function as requested."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Condition A1 >=80 maps to 'Excellent' correctly placed first."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Logical ordering error: condition for Sufficient is placed after a catch-all 'A1 < 80', making it ineffective."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "The condition for Insufficient (A1 < 50) is unreachable due to ordering."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student attempted IFS but with ordering issues."
+        }
+      ]
+    },
+    {
+      "firstname": "Shannon",
+      "lastname": "Billy Bilounga",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Answer is incomplete, only '=if' without proper structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No condition for >=80."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No condition for >=50."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No else case defined."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Student provided an incomplete formula with no functional logic."
+        }
+      ]
+    },
+    {
+      "firstname": "Maxime",
+      "lastname": "Bétrisey",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Used CHOOSE(SWITCH(...)) instead of nested IF/IFS; syntax invalid."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Missing 'Excellent' label entirely; syntax errors."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No proper condition for Sufficient; contains 'Suffisant' but logic broken."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No proper else for Insufficient."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Student's formula is invalid and yields no points."
+        }
+      ]
+    },
+    {
+      "firstname": "Ness",
+      "lastname": "Chanthakesone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Successfully implemented nested IF statements to map all categories."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Condition A1>=80 maps to 'Excellent' correctly."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Condition for Sufficient satisfied via else after handling <50; maps to 'Suffisant'."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Else branch yields 'Suffisant', not 'Insufficient'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student's solution is correct overall, just different ordering."
+        }
+      ]
+    },
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Correct use of IFS function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Excellent condition correctly implemented with IFS."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Sufficient condition correctly implemented with IFS."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Insufficient condition correctly implemented with IFS."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Zero-point placeholder."
+        }
+      ]
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Used nested IF statements."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Excellent condition correctly implemented."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Sufficient condition correctly implemented with AND range."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Insufficient branch correctly implemented."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Zero-point placeholder."
+        }
+      ]
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Used nested IF structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Excellent condition correct."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Sufficient condition correct."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Insufficient branch correct."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Zero-point placeholder."
+        }
+      ]
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Used nested IF structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Excellent condition (A1>=80) correctly implemented."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Sufficient condition uses A1>49 instead of A1>=50."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Insufficient branch correctly implemented."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Zero-point placeholder."
+        }
+      ]
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Used single IF, not IFS or nested IF."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Excellent threshold identified but OR logic incorrect."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Missing Sufficient category entirely."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Else returns Insufficient but overall logic incomplete."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Zero-point placeholder."
+        }
+      ]
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Correct nested IF structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Excellent condition (A1>=80) correct and label correct."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Sufficient condition uses A1>50, excluding boundary 50."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Insufficient branch with correct label, though not a simple else."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Zero-point placeholder."
+        }
+      ]
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Used IFS function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Excellent condition (A1>=80) correct."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Sufficient condition uses AND(A1>=50;A1<80) but label 'Suffisent' has typo."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Insufficient condition (A1<50) present with correct label."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Zero-point placeholder."
+        }
+      ]
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Malformed nested IF structure with syntax errors."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Identified threshold but condition syntax invalid."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "No proper Sufficient condition implemented."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "Final case returns empty string, not Insufficient label."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Zero-point placeholder."
+        }
+      ]
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Invalid IF structure with extra argument and wrong separators."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Excellent condition identified but formula syntax invalid."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "No Sufficient condition implemented."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Insufficient condition identified but formula syntax invalid."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Zero-point placeholder."
+        }
+      ]
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Correct nested IF structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Excellent condition correct and label 'Excellent' correct."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Sufficient threshold correct but label in French not English."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Insufficient branch correct but label in French not English."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Zero-point placeholder."
+        }
+      ]
+    },
+    {
+      "firstname": "Lena",
+      "lastname": "Geissberger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Uses correctly nested IF statements (two IF functions)."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition A1>=80 is present and maps to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Uses else branch for sufficient rather than a direct condition A1>=50."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Else branch yields 'Suffisant', not 'Insuffisant'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Answer provided; not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Lorie",
+      "lastname": "Haefliger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Attempted nested IF but syntax error in parentheses."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Threshold >=80 present and maps to 'Excellent' (despite syntax error)."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Else branch intended to yield 'Suffisant' (not a direct A1>=50 condition)."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "False branch yields 'Suffisant', not 'Insuffisant'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Answer provided; not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Théo",
+      "lastname": "Haenni",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer; does not use IF or IFS."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Iliana",
+      "lastname": "Harlingue",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Uses nested IF structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition A1>=80 present and maps to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Uses A1>49 instead of A1>=50 for sufficient range."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Else branch of inner IF outputs 'Insuffisant' for insufficient."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Answer provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Jeanne",
+      "lastname": "Magnin",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Uses correctly nested IF statements."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition A1>=80 present and correct."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Else branch yields 'Suffisant' (no direct A1>=50 condition)."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Else yields 'Suffisant', not 'Insuffisant'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Answer provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Eloise",
+      "lastname": "Maiorano",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Attempted nested IF but with syntax errors (curly quotes, comma, missing parenthesis)."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition A1>=80 present in inner IF and maps to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Outer IF condition A1>=50 leads to sub-branch; not a direct mapping to 'Sufficient'."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Outer IF's else clause outputs 'Insuffisant' for A1<50."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Answer provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Mauro",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Uses IFS function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition A1>=80 present and maps to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Condition for sufficient is A1<80, not A1>=50."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Uses explicit conditions rather than an else clause for insufficient."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Answer provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Isabelle",
+      "lastname": "Meier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Uses single IF with OR, not nested IF or IFS."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Condition A1>=80 is inside OR and formula is invalid; not properly implemented."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Condition A1<50 appears but not in correct structure."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Else output is 'SUFFISIANT', not 'Insuffisant'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Answer provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Samuele Prince",
+      "lastname": "Moungang Moussandja",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Attempted IFS function but with multiple syntax errors."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Threshold >=80 is present but inside a string, making it an invalid condition."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Conditions for sufficient are malformed and not exactly A1>=50."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "No proper else clause; uses explicit conditions but they are malformed."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Answer provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The feedback explicitly states 'Recognizable nested IF structure', indicating the student used a nested IF approach."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The condition A2>=80 is used to output 'Excellent', matching the criterion despite referencing the wrong cell."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The threshold used is >50 instead of >=50 and references A2 instead of A1, so condition not correctly met."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The else case returns an empty string, not 'Insuffisant'; moreover, Insufficient is handled in a dedicated IF rather than as the else branch."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with no points, not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The feedback explicitly states 'Recognizable nested IF structure', indicating the student used a nested IF approach."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The condition A2>=80 is used to output 'Excellent', matching the criterion despite referencing the wrong cell."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The threshold used is >50 instead of >=50 and references A2 instead of A1, so condition not correctly met."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The else case returns an empty string, not 'Insuffisant'; moreover, Insufficient is handled in a dedicated IF rather than as the else branch."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with no points, not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The student used nested IF functions as indicated."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition correctly maps A1>=80 to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No explicit condition for A1>=50; the 'Suffisant' case is handled by the else branch, not a direct condition."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The else branch outputs 'Suffisant' instead of 'Insuffisant'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with no points, not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The student used nested IF functions as indicated."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition correctly maps A1>=80 to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No explicit condition for A1>=50; the 'Suffisant' case is handled by the else branch, not a direct condition."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The else branch outputs 'Suffisant' instead of 'Insuffisant'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with no points, not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The formula has critical syntax errors that prevent it from a valid nested IF."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The formula includes IF(A1>=80; 'Excellent'; ...) which correctly implements the condition for Excellent, despite later syntax errors."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "A condition using A1>=50 is present but suffers from syntax errors and does not correctly implement the Sufficient criterion."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "The formula attempts an else branch outputting a variant of 'Insufficient', but syntax errors prevent proper function."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with no points, not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correct nested IF logic and threshold values."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition correctly maps A1>=80 to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No explicit condition for A1>=50; 'Suffissant' is the else branch, not a direct condition."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The else branch outputs 'Suffissant' instead of 'Insuffisant'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with no points, not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly implemented nested IF with AND to define the middle range."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition correctly maps A1>=80 to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Used AND(A1>=50; A1<=79) which includes A1>=50, correctly implementing the Sufficient condition."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The else branch outputs 'insuffisant' (lowercase), correctly representing Insufficient."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with no points, not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The formula uses OR incorrectly and does not establish a nested IF structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The threshold 80 is used within an OR expression and does not correctly map to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No condition correctly implementing A1>=50 -> Sufficient is present."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The formula's else branch is not properly defined as returning 'Insuffisant' due to syntax issues."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with no points, not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Used IFS function, which qualifies as an alternative to nested IF."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition A1>=80 correctly maps to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No explicit condition A1>=50; 'Suffisant' is associated with A1<80, which is not equivalent."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "'Insuffisant' is implemented as a separate IFS condition, not as an else branch, and is unreachable due to ordering."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with no points, not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Used IFS function correctly."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition A1>=80 correctly maps to 'Excellent'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "'Suffisant' is associated with condition A1<80, not A1>=50."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "'Insuffisant' is handled by an explicit condition A1<50, not by the else branch."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Placeholder rubric with no points, not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback states student correctly implemented nested IF logic."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback confirms condition A1>=80 for Excellent is present."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback describes sufficient handled via default, not condition A1>=50."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback shows else used for sufficient, not insufficient."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a solution; 'Nothing' rubric not applicable."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No nested IF structure present; formulas are either single IF or malformed."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback says student correctly identified 80 threshold and labels; B4 formula implements condition A1>=80 -> Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Attempted condition using invalid syntax '50<=A1<=79' and B4 lacks sufficient condition."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "B4 formula includes else clause returning 'INSUFFISANT', meeting the criterion despite missing sufficient condition."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided formulas."
+        }
+      ]
+    }
+  ]
+}

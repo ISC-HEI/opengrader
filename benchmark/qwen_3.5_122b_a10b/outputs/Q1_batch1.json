@@ -1,0 +1,393 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 1,
+  "students": [
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Pregrade feedback explicitly states 'Correct use of the IFS function'."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.90,
+          "justification": "Formula includes A1>=80 -> Excellent mapping, confirmed as correct by feedback."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.90,
+          "justification": "Formula includes A1<50 -> Insuffisant and A1<80 -> Suffisant, covering the >=50 threshold correctly."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.90,
+          "justification": "Formula handles the else case with Insuffisant for values below 50."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a complete formula, not empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Pregrade feedback states 'Successfully implemented the required logic using nested IF statements'."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula correctly uses A1>=80 -> Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.90,
+          "justification": "Formula uses AND(A1>=50;A1<=79) for Suffisant, correctly covering >=50 threshold."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Else case returns Insuffisant for values outside the other conditions."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a complete formula, not empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Pregrade feedback states 'Successfully implemented the nested IF logic'."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula correctly uses A1>=80 -> Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.90,
+          "justification": "Formula handles >=50 case through the else branch after checking A1<50 for Insuffisant."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula correctly returns Insuffisant for A1<50."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a complete formula, not empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.90,
+          "justification": "Pregrade feedback states 'Correct implementation of the nested logic'."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula correctly uses A1>=80 -> Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.60,
+          "justification": "Formula uses A1>49 instead of A1>=50, which is technically incorrect for continuous values but functionally similar."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Else case returns Insuffisant for A1<=49."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a complete formula, not empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.50,
+          "justification": "Student used IF with OR, but feedback indicates the logic is fundamentally broken and misses the Suffisant category entirely."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.70,
+          "justification": "Formula includes A1>=80 threshold, but OR condition makes it always return Excellent for values above 50."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.90,
+          "justification": "Feedback explicitly states the formula 'misses the Suffisant category entirely'."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.80,
+          "justification": "Formula includes Insuffisant as the else case, though it's never reached due to the OR logic error."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula, not empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Pregrade feedback states 'Correct nested IF structure'."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula correctly uses A1>=80 -> Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.60,
+          "justification": "Formula uses A1>50 instead of A1>=50, which excludes the boundary value 50 as noted in feedback."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.90,
+          "justification": "Formula handles Insuffisant for A1<50, though there's an edge case at exactly 50."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a complete formula, not empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Pregrade feedback states 'Correct use of IFS with a precise range definition using AND'."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula correctly uses A1>=80 -> Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Formula uses AND(A1>=50;A1<80) for Suffisant, correctly covering the threshold despite the typo in label."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.90,
+          "justification": "Formula handles Insuffisant for A1<50."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a complete formula, not empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.40,
+          "justification": "Student attempted nested IF structure but feedback indicates multiple syntax errors and malformed logic."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.50,
+          "justification": "Formula attempts A1=>80 (syntax error) for Excellent, but the intent and threshold identification was noted."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Formula has malformed OR condition that doesn't properly implement the Suffisant category."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.60,
+          "justification": "Formula attempts Insuffisant for A1<50, but overall structure is broken."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula attempt, not empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.50,
+          "justification": "Student attempted nested IF structure but formula has invalid structure with extra argument."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.80,
+          "justification": "Feedback confirms 'Correctly identified the conditions for Excellent (A1>=80)'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.70,
+          "justification": "Formula structure is broken and Suffisant handling is misplaced outside the IF chain."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.80,
+          "justification": "Feedback confirms 'Correctly identified the conditions for Insuffisant (A1<50)'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a formula attempt, not empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Pregrade feedback states 'Perfect nested IF syntax and logic'."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula correctly uses A1>=80 -> Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Formula correctly uses A1>=50 -> Suffisant."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Else case correctly returns Insuffisant for values below 50."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student provided a complete formula, not empty."
+        }
+      ]
+    }
+  ]
+}

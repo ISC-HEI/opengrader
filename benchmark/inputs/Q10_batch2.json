@@ -1,0 +1,110 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 2,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Lena",
+      "lastname": "Geissberger",
+      "answer": "A1: 10\nC1: =DATE(A3;A2;A1)\nD1: =DATE(A3+2;A2;A1)\nE1: =WEEKDAY(D1)\nF1: =DAY(D1)\nG1: =IF(E1=7;F1+2;IF(E1=1;F1+1;F1))\nA2: 5\nG2: =MONTH(D1)\nA3: 2023\nG3: =YEAR(D1)",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the 2-year anniversary date using `DATE(A3+2;A2;A1)`. Appropriately used `WEEKDAY`, `MONTH`, and `YEAR` functions. The conditional logic in G1 correctly identifies Saturday (7) and Sunday (1) for the default `WEEKDAY` type.\n* **Needs Improvement:** The logic in G1 uses `F1` (the original day) as a base but only for the day extraction. G2 and G3 formulas (`MONTH(D1)`, `YEAR(D1)`) do not account for the weekend shift, which could lead to errors if the anniversary falls on the last weekend of a month or year.\n\n---"
+    },
+    {
+      "firstname": "Lorie",
+      "lastname": "Haefliger",
+      "answer": "C1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C1;2)\nE1: =IF(D1=6;D1+2;IF(D1=7;D1+1);D1)\nG1: =DAY(E1)\nG2: =MONTH(C1)\nG3: =YEAR(C1)",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the anniversary date in C1 and used `WEEKDAY(C1;2)` in D1.\n* **Needs Improvement:** The logic in E1 adds the offset to the weekday number (`D1`) rather than the date (`C1`). Consequently, G1 performs a `DAY` calculation on a small integer, which is incorrect. G2 and G3 do not account for the weekend adjustment from E1.\n\n---"
+    },
+    {
+      "firstname": "Théo",
+      "lastname": "Haenni",
+      "answer": "0\nC1: =A1\nA2: 5\nC2: =A2\nD2: =WEEKDAY(A3-A2-A1)\nE2: =IF(OR(D2=7;D2=1);C1=C1+(7-D1); ))\nA3: 2023\nC3: =A3+2",
+      "pregrade_feedback": "* **Did Well:** Attempted to use the `WEEKDAY` and `IF` functions as suggested in the procedure.\n* **Needs Improvement:** The formulas are logicially and syntactically incorrect. `A3-A2-A1` does not calculate a date serial number, and the nested logic in `E2` (`C1=C1+...`) is not valid spreadsheet syntax. Most of the required calculations for the anniversary date and the final display cells are missing or incorrect.\n\n---"
+    },
+    {
+      "firstname": "Iliana",
+      "lastname": "Harlingue",
+      "answer": "C1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C1)",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the 2-year anniversary date in `C1` and identified the use of the `WEEKDAY` function.\n* **Needs Improvement:** The response is incomplete. It lacks the logic to determine the number of days to add and the final formulas for cells `G1`, `G2`, and `G3`.\n\n---"
+    },
+    {
+      "firstname": "Jeanne",
+      "lastname": "Magnin",
+      "answer": "C1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C1;2)\nE1: =IF(D1=6;DATE(A3+2;A2;A1+2);IF(D1=7;DATE(A3+2;A2;A1+1);C1))\n\nG1: =DAY(E1)\nG2: =MONTH(E1)\nG3: =YEAR(E1)",
+      "pregrade_feedback": "* **Did Well:** Perfectly implemented the logic. Correctly calculated the anniversary date in C1 (`=DATE(A3+2;A2;A1)`), identified the weekday in D1 (`=WEEKDAY(C1;2)`), and adjusted for weekends in E1 by adding the appropriate number of days. The final extraction of day, month, and year in G1, G2, and G3 is accurate.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Eloise",
+      "lastname": "Maiorano",
+      "answer": "A1: 10\nC1: =DATE(A3 + 2; A2; A1)\nD1: =WEEKDAY(C1)\nE1: =IF(D1 = 6; A1 + 2; C1) + IF(D1 = 7; A1 + 1; C1)\nG1: =YEAR(E1)\nA2: 5\nG2: =MONTH(E1)\nA3: 2023\nG3: =DAY(E1)",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the 2-year anniversary date in `C1` using `DATE(A3+2; A2; A1)`.\n* **Needs Improvement:** The formula in `E1` is mathematically incorrect as it adds two `IF` results that mix date serials and raw numbers. The output cells `G1` and `G3` are swapped (Year in `G1`, Day in `G3`).\n\n---"
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Mauro",
+      "answer": "A1: 10\nB1: =DATE(A3;A2;A1)\nC1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C1;2)\nE1: =IF(D1=6;C1+2;IF(D1=7;C1+1;C1))\nG1: =DAY(E1)\nG2: =MONTH(E1)\nG3: =YEAR(E1)\nA2: 5\nA3: 2023",
+      "pregrade_feedback": "* **Did Well:** Perfectly implemented the logic. Correctly used cell references, handled the 2-year increment, used `WEEKDAY` correctly, and provided a robust `IF` formula in `E1` that accounts for both weekends and weekdays. Results are correctly output to `G1`, `G2`, and `G3`.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Isabelle",
+      "lastname": "Meier",
+      "answer": "G1:=DATE(YEAR(TODAY())+2;2;2)-TODAY()-2",
+      "pregrade_feedback": "* **Did Well:** Utilized the `DATE`, `YEAR`, and `TODAY` functions. Attempted to calculate a future date by adding 2 to a year.\n* **Needs Improvement:** The formula does not use the required inputs from cells A1, A2, and A3. It calculates a difference between a fixed date and today instead of determining the warranty end date. Missing formulas for G2 and G3. No logic for weekend adjustment.\n\n---"
+    },
+    {
+      "firstname": "Justin",
+      "lastname": "Michod",
+      "answer": "=DAY(2023-5-10)",
+      "pregrade_feedback": "* **Did Well:** Used the `DAY` function.\n* **Needs Improvement:** Used hardcoded values (`2023-5-10`) instead of the required cell references A1, A2, and A3. The internal subtraction does not represent a valid date calculation for this task. Missing all logic for 2-year projection and weekend adjustment.\n\n---"
+    },
+    {
+      "firstname": "Samuele Prince",
+      "lastname": "Moungang Moussandja",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "No answer provided.\n\n---"
+    }
+  ]
+}

@@ -1,0 +1,333 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The feedback explicitly mentions a recognizable nested IF structure was implemented."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The formula includes A1>=80 threshold for Excellent, though it references A2 instead of A1."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "The threshold uses A2>50 which excludes exactly 50, failing to meet the A1>=50 requirement."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The formula includes IF(A2<50;\"Insuffisant\") for the insufficient condition."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The feedback explicitly mentions a recognizable nested IF structure was implemented."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The formula includes A1>=80 threshold for Excellent, though it references A2 instead of A1."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "The threshold uses A2>50 which excludes exactly 50, failing to meet the A1>=50 requirement."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The formula includes IF(A2<50;\"Insuffisant\") for the insufficient condition."
+        }
+      ]
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The feedback confirms correct nested IFs implementation."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The feedback confirms correct thresholds including >=80 for Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "The else branch 'Suffisant' covers the >=50 range implicitly through IF(A1<50; \"Insuffisant\"; \"Suffisant\")."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The feedback confirms correct <50 threshold for Insuffisant."
+        }
+      ]
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The feedback confirms correct use of nested IF functions."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The feedback confirms all thresholds and labels match requirements including >=80 for Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The formula handles the Sufficient case correctly in the else branch with proper logic."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The feedback confirms all labels including Insuffisant match the required criteria exactly."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The feedback confirms correct use of IF functions including nested structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The feedback confirms thresholds including 80 were identified correctly."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "The formula has AND(A1>=50;A1<=79) for Suffisant, but has critical syntax errors (extra parenthesis, misplaced semicolon)."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "The label 'Inuffisant' is a misspelling of Insufficient, indicating the requirement was not properly met."
+        }
+      ]
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The feedback confirms correct nested IF logic and thresholds."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The nested IF includes >=80 for Excellent as confirmed in feedback."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "The else branch 'Suffissant' covers the >=50 range implicitly (typo aside)."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The formula includes <50 for Insuffisant, though with a typo (extra 's')."
+        }
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The feedback confirms correct nested IF logic with AND for middle range."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The nested IF includes >=80 for Excellent as confirmed in feedback."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The formula explicitly uses AND(A1>=50;A1<=79) to handle the >=50 Sufficient condition."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The formula includes 'insuffisant' with minor casing difference, meeting the core requirement."
+        }
+      ]
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "The formula has incorrect syntax with OR used with strings, not a valid IF/IFS structure."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "Though threshold 80 and 'Excellent' label were identified, the formula structure is broken."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "The formula incorrectly places boolean expressions where result values should be."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Though 50 threshold and 'Insuffisant' appear, the formula syntax is incorrect."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The feedback confirms IFS function was used for the solution."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The IFS includes >=80 for Excellent with correct threshold."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The IFS includes A1<80 for Suffisant, which covers the range (despite ordering issues)."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The IFS includes <50 for Insuffisant with correct threshold."
+        }
+      ]
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The feedback confirms correct use of the IFS function."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The IFS includes >=80 for Excellent with correct threshold."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The IFS condition A1<80 for Suffisant works due to correct ordering (comes after <50 condition)."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The IFS correctly uses A1<50 for Insuffisant as the first condition."
+        }
+      ]
+    }
+  ]
+}

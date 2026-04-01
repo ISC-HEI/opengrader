@@ -1,0 +1,105 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The student correctly implemented nested IF logic with IF(A1>=80;...)IF(A1<50;...;... as confirmed by the feedback."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The formula covers A1>=80 returning \"Excellent\" as explicitly stated in the feedback."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The condition A1>=50 is not explicitly checked; instead the fallback is handled via else in the middle branch, not as >=50 check."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The formula covers A1<50 returning \"Insuffisant\" as explicitly stated in the feedback."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "The student did implement IF logic, so \"Nothing\" does not apply."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "B2 formula has syntax errors and B4 is a separate IF without proper nested structure. Multiple formulas provided instead of one correct nested IF."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "B4 formula correctly includes A1>=80 -> \"EXCELLENT\" condition despite other errors."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "No correct condition for A1>=50 -> \"Sufficient\" was properly implemented; B2 syntax is invalid."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.4,
+          "justification": "B4 formula covers A1<80 -> \"INSUFFISANT\" but not the specific A1<50 condition as required by rubric."
+        },
+        {
+          "rubric_index": 4,
+          \"active\": false,
+          "confidence": 1.0,
+          "justification": "Student did attempt IF logic, so \"Nothing\" does not apply."
+        }
+      ]
+    }
+  ]
+}

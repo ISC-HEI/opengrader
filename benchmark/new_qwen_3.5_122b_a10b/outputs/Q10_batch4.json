@@ -1,0 +1,169 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student attempted full DATE formula, not partial. Rubric 1 (build date) is more appropriate."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Pregrade feedback confirms: 'Correctly attempted to use DATE(A3+2;A2;A1) to compute the 2-year anniversary date'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "No evidence of C1 serial number calculation for date in 2 years; formula attempts are flawed."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Student attempted WEEKDAY() function, but the feedback indicates the logic is incorrect and produces wrong results."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Feedback states: 'WEEKDAY(DATE(...))+2 or +1 is arithmetically incorrect' - did not properly compute days to add."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.5,
+          "justification": "Student made partial attempt at computing days to add (weekend adjustment logic), though flawed. Low confidence due to incorrect implementation."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Feedback explicitly states: 'No formulas provided for G1, G2, G3'."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Solution is incomplete with multiple issues; not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student provided substantial attempts with DATE and WEEKDAY functions; not all wrong or empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Student used hardcoded DATE values, not partial building. Rubric 1 would be more appropriate if DATE was partially built."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Pregrade feedback confirms: 'Attempted to use DATE function with correct values (2025, 5, 10) for the anniversary date'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "C1 uses hardcoded =DATE(2025;5;10) instead of formula referencing A1, A2, A3. Not a proper serial number calculation."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student attempted =WEEKDAY(\"2025-05-10\") for D1, though hardcoded and not referencing a cell."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 formula =WEEKDAY(E1+2) is circular and references an empty cell; does not compute days to add."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "No partial computation of days to add; the formula is circular and incorrect."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1, G2, G3 are hardcoded values, not calculated formulas. Feedback states 'G1 is hardcoded as 12 rather than being calculated'."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Solution has multiple issues with hardcoded values and circular references; not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Student provided attempts with DATE and WEEKDAY functions, even if flawed; not all wrong or empty."
+        }
+      ]
+    }
+  ]
+}

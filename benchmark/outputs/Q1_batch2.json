@@ -1,0 +1,334 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 2,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Lena",
+      "lastname": "Geissberger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Perfectly correct nested IF formula as confirmed by pregrade feedback."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly includes IF(A1>=80;\"Excellent\") as stated in feedback."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes the middle condition with \"Suffisant\" label for values between thresholds."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes IF(A1<50;\"Insuffisant\") for the else case as confirmed."
+        }
+      ]
+    },
+    {
+      "firstname": "Lorie",
+      "lastname": "Haefliger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Has syntax error in nested IF - premature parenthesis makes it invalid."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Correctly identified thresholds and labels per feedback, despite syntax error."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Includes \"Suffisant\" label but formula has syntax error affecting execution."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Mentions \"Insuffisant\" but the IF syntax error prevents proper evaluation."
+        }
+      ]
+    },
+    {
+      "firstname": "Théo",
+      "lastname": "Haenni",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided - $NULL$ indicates empty cell."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer means no condition for A1>=80 -> Excellent."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer means no condition for A1>=50 -> Sufficient."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer means no else clause for Insufficient."
+        }
+      ]
+    },
+    {
+      "firstname": "Iliana",
+      "lastname": "Harlingue",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correct nested IF with AND function as confirmed in feedback."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes IF(A1>=80;\"Excellent\") as stated in feedback."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Uses AND(A1>49;A1<80) for Suffisant - noted as effective though less precise for decimals."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes \"Insuffisant\" as default else case as confirmed."
+        }
+      ]
+    },
+    {
+      "firstname": "Jeanne",
+      "lastname": "Magnin",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Perfectly implemented nested IF statements per feedback."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly implements IF(A1 >= 80; \"Excellent\") as stated."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Middle condition handles Suffisant via nested IF as confirmed."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes IF(A1<50;\"Insuffisant\") as confirmed in feedback."
+        }
+      ]
+    },
+    {
+      "firstname": "Eloise",
+      "lastname": "Maiorano",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Multiple syntax errors including curly quotes and missing parenthesis."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "Attempts the logic but syntax errors prevent execution from being valid."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "Has logical structure but syntax errors invalidate the formula."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "Includes \"Insuffisant\" but formula cannot execute due to errors."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Mauro",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Perfect implementation using IFS function as confirmed."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly includes A1>=80;\"Excellent\" in IFS sequence."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1<80;\"Suffisant\" in correct sequence per feedback."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Includes A1<50;\"Insuffisant\" as first condition in IFS."
+        }
+      ]
+    },
+    {
+      "firstname": "Isabelle",
+      "lastname": "Meier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Incorrect use of OR functions makes formula logically invalid."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "Identified threshold 80 but used invalid OR(A1>=80;\"EXCELLENT\") syntax."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "Has \"SUFFISIANT\" label but not properly nested in valid IF structure."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "Includes \"INSUFFISIANT\" but formula is logically invalid per feedback."
+        }
+      ]
+    },
+    {
+      "firstname": "Justin",
+      "lastname": "Michod",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Only uses single IF, not nested or IFS as required."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Correctly identifies IF(C1>=80;\"Excellent\") though wrong cell reference."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No condition for Suffisant range - explicitly noted as omitted in feedback."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Has \"insuffisant\" but formula only has two outcomes missing the middle range."
+        }
+      ]
+    },
+    {
+      "firstname": "Samuele Prince",
+      "lastname": "Moungang Moussandja",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Has syntax errors in IFS - operators inside strings and malformed arguments."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Identifies threshold 80 and \"Excellent\" label despite syntax errors."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "Includes Suffisant condition but formula has multiple syntax errors."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Includes \"Insuffisant\" for <50 case despite malformed syntax per feedback."
+        }
+      ]
+    }
+  ]
+}

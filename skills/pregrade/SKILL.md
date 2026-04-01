@@ -43,7 +43,12 @@ All generated directories (`pregrade/`, `code/`) are created **next to the exam 
 Run the preparation script to extract focused JSON files from the exam YAML:
 
 ```bash
-uv run skills/pregrade/scripts/prepare_inputs.py <exam.yaml> --batch-size 10
+uv run skills/pregrade/scripts/prepare_inputs.py <exam.yaml> [--output-dir <path>] [--batch-size 10]
+```
+
+Example with custom output directory:
+```bash
+uv run skills/pregrade/scripts/prepare_inputs.py exam.yaml --output-dir ./my-results
 ```
 
 This creates `EXAM_DIR/pregrade/inputs/` and writes one file per question per batch. The script prints the full path of every created file and the pregrade directory — **save these paths for Steps 3 and 4**.
@@ -204,7 +209,7 @@ EXAM_DIR/pregrade/
 To give the teacher copyable text files of every student answer (useful for Excel formulas, Python code, etc.), run:
 
 ```bash
-uv run skills/pregrade/scripts/export_answers.py <exam.yaml>
+uv run skills/pregrade/scripts/export_answers.py <exam.yaml> [--output-dir <path>]
 ```
 
 This creates one file per student per question in `EXAM_DIR/code/`:
@@ -228,7 +233,7 @@ Students with no answer get a file containing `(no answer from student to this q
 Run the validation script to confirm the outputs are complete and consistent:
 
 ```bash
-uv run skills/pregrade/scripts/validate_outputs.py <exam.yaml>
+uv run skills/pregrade/scripts/validate_outputs.py <exam.yaml> [--pregrade-dir <path>]
 ```
 
 It verifies:

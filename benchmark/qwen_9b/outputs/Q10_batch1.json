@@ -1,0 +1,649 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 1,
+  "students": [
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE is fully built, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Covered by rubric 7 'all correct' which is more appropriate."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Covered by rubric 7 'all correct' which is more appropriate."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Covered by rubric 7 'all correct' which is more appropriate."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Covered by rubric 7 'all correct' which is more appropriate."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Covered by rubric 7 'all correct' which is more appropriate."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Covered by rubric 7 'all correct' which is more appropriate."
+        },
+        {
+          "rubric_index": 7,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Student correctly calculated anniversary with proper WEEKDAY handling and accurate G1-G3 extraction; no notable issues found."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Answer is complete, not empty or wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE is fully built, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Successfully used DATE formula to calculate anniversary date."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Correctly calculated date with 2-year offset in C1."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Using WEEKDAY function to find day of week."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Formula returns text strings instead of numbers, making calculation unusable."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.75,
+          "justification": "Partial attempt at weekend logic using nested IFs, though flawed."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "G1 adds offset to wrong date; does not correctly calculate final adjusted date."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Contains significant errors in weekend logic."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Contains partial calculations, not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE is fully built, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Successfully used DATE formula to calculate anniversary date."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Correctly calculated date with 2-year offset in C1."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Using WEEKDAY function to find day of week."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Logic (=DAY(C1+2)) is incorrect and causes G1 to fail."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Partial attempt at weekend adjustment, though approach is wrong."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "G1 does not correctly calculate final day due to flawed E1 value."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Contains incorrect weekend calculation."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Contains partial calculations, not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE is fully built, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Covered by rubric 7 'all correct' which is more appropriate."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Covered by rubric 7 'all correct' which is more appropriate."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.98,
+          "justification": "Covered by rubric 7 'all correct' which is more appropriate."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Correctly computed day offset using IF logic for weekend adjustment."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "E1 fully computes the correct offset, no partial needed."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "F1-G3 formulas work but placed in wrong cells; G2/G3 don't account for date shift from E1."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.92,
+          "justification": "Cell placement is wrong (F1-3 vs G1-3) and G2/G3 don't handle month/year shifts from E1."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Contains partial work, not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided, so NO rubric criteria can be satisfied."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided, so NO rubric criteria can be satisfied."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer equals all correct; not satisfied."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "No answer provided means empty response."
+        }
+      ]
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE is fully built, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Used DATE function with WEEKDAY and IF for weekend adjustment."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Arguments in C1 are swapped (day A1 and month A2 reversed from correct A3+2;A2;A1)."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Using WEEKDAY function to find day of week."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.65,
+          "justification": "E1 logic is correct but incomplete due to WEEKDAY type mismatch with D1."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "E1 logic is incompatible with WEEKDAY type in D1, not a partial computation."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1, G2, G3 reference input cells instead of C1; don't account for weekend shifts affecting months."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.98,
+          "justification": "Contains multiple errors in argument order and formula logic."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Contains partial calculations, not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE is fully built, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Constructed complex IFS formula targeting weekend adjustment logic."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.98,
+          "justification": "Logic targets correct anniversary date calculation."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "WEEKDAY applied to DAY() result instead of full date; formula also displayed text."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Overall formula structure not complete due to text output and wrong WEEKDAY application."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Partial attempt at weekend logic with IFS, despite implementation errors."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "G1 shows text, not correct day value; G2/G3 don't account for weekend adjustments."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.98,
+          "justification": "Contains errors: text output from G1 and incorrect WEEKDAY nesting."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Contains partial work, not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE is fully built, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Attempted to use DATE, WEEKDAY, and IF functions."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "G3 targets anniversary but G1-G2 not correctly calculated as not adjusted dates."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.4,
+          "justification": "WEEKDAY references G4 (concatenated string) instead of valid date serial number."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "E1 logic uses multiple IFs incorrectly and adds weekday value instead of offset."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Partial attempt at weekend logic, though flawed and in wrong cell."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1-G3 contain errors: results don't account for weekend shifts, G4 wrong type."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.98,
+          "justification": "Multiple errors in formula construction and logic."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Contains partial calculations, not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE is fully built, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Used YEAR, MONTH, DAY, and DATE functions in an attempt."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "Uses YEAR(A3) incorrectly when A3 already is a year value (should be YEAR(C1))."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "WEEKDAY formula uses commas and references wrong serial number."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "E1 uses multiplication (365*2) instead of adding days to account for weekends."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "Logic is incomplete and uses wrong approach; only stub attempt visible."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1-G3 extract from wrong references; DATE/WEEKDAY formulas use commas (array) instead of semicolons."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.98,
+          "justification": "Multiple formula errors and incomplete weekend logic."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Contains partial calculations and function usage, not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE is fully built, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Attempted to combine full date calculation logic using IF/WEEKDAY/DATE."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "Uses YEAR(IF(...)) which would work if syntax was correct."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.3,
+          "justification": "Uses WEEKDAY(DATE(...)) but syntax errors prevent proper execution."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "E1 logic is not addressed; formulas only extract final date components."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Syntax errors and incorrect year offset location (day+\u2192\t0.3) due to errors; no partial computation for days to add visible."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "G1-G3 formulas have syntax errors preventing correct calculation."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.98,
+          "justification": "Syntax errors, wrong parameter (year+\u2192 day), and missing E1 calculation."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Contains partial calculations, not all wrong."
+        }
+      ]
+    }
+  ]
+}

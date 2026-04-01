@@ -1,0 +1,94 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "answer": "A1: =IF(A2>= 80; \"Excellent\";IF(AND(A2<=79;A2>50);\"Suffisan\";IF(A2<50;\"Insuffisant\";\"\")))\nA2: 70",
+      "pregrade_feedback": "* **Did Well:** Recognizable nested IF structure.\n* **Needs Improvement:** The formula is placed in A1 and references A2, which is the inverse of the instructions (formula in A2 referencing A1). The threshold `A2>50` excludes 50. Typo in \"Suffisan\".\n\n---"
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "answer": "A1: =IF(A2>= 80; \"Excellent\";IF(AND(A2<=79;A2>50);\"Suffisan\";IF(A2<50;\"Insuffisant\";\"\")))\nA2: 70",
+      "pregrade_feedback": "* **Did Well:** Recognizable nested IF structure.\n* **Needs Improvement:** The formula is placed in A1 and references A2, which is the inverse of the instructions (formula in A2 referencing A1). The threshold `A2>50` excludes 50. Typo in \"Suffisan\".\n\n---"
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "answer": "=IF(A1>=80; \"Excellent\" ; IF(A1<50; \"Insuffisant\" ; \"Suffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Correctly implemented the logic using nested IFs with the correct thresholds and labels.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "answer": "A2: =IF(A1<50;\"Insuffisant\";IF(A1>=80;\"Excellent\";\"Suffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Correct use of nested IF functions and logic to handle all three thresholds. All labels (\"Insuffisant\", \"Excellent\", \"Suffisant\") match the required barème exactly.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "answer": "B1: =IF(A1>=80;\"Excellent\";(IF(AND(A1>=50;A1<=79));\"Suffisant\";\"Inuffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `IF` functions and identifies the thresholds (80, 50).\n* **Needs Improvement:** Formula placed in `B1` instead of `A2`. Critical syntax error in the nested `IF`: `(IF(AND(A1>=50;A1<=79))` has an extra opening parenthesis and a misplaced semicolon. Misspellings: \"Suffisant\" instead of \"Sufficient\" and \"Inuffisant\" instead of \"Insufficient\".\n\n---"
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "answer": "=IF(A1>=80;\"Excellent\";IF(A1<50; \"Insuffisant\"; \"Suffissant\"))",
+      "pregrade_feedback": "* **Did Well:** Correct nested IF logic and threshold values.\n* **Needs Improvement:** Typo in the label \"Suffissant\" (contains an extra 's').\n\n---"
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "answer": "=IF(A1>=80;\"Excellent\";IF(AND(A1>=50;A1<=79);\"Suffisant\";\"insuffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Correctly implemented the nested IF logic and successfully used `AND` to define the middle range.\n* **Needs Improvement:** Minor casing difference for \"insuffisant\" compared to the French prompt.\n\n---"
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "answer": "A1: 82\nB2: =IF(OR(A1>=80;\"Excellent\";\"Suffisant\");(A1< 50); \"Insuffisant\")",
+      "pregrade_feedback": "* **Did Well:** Correctly identified labels and thresholds (80, 50).\n* **Needs Improvement:** The formula has incorrect syntax; `OR` is used with strings, and the second argument of the first `IF` is a boolean expression instead of a result value. The formula is placed in B2 instead of A2.\n\n---"
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "answer": "=IFS(A1>=80; \"Excellent\"; A1<80; \"Suffisant\"; A1<50; \"Insuffisant\")",
+      "pregrade_feedback": "* **Did Well:** Uses `IFS` with correct thresholds for \"Excellent\" and \"Insuffisant\".\n* **Needs Improvement:** Logical error in `IFS` ordering: `A1<80` appears before `A1<50`. Since any score below 50 is also below 80, the \"Suffisant\" case will always catch scores like 10, making the \"Insuffisant\" case unreachable. Used French labels.\n\n---"
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "answer": "A2: =IFS(A1<50;\"Insuffisant\";A1>=80;\"Excellent\";A1<80;\"Suffisant\")",
+      "pregrade_feedback": "* **Did Well:** Correctly uses the `IFS` function with accurate thresholds for `<50` and `>=80`.\n* **Needs Improvement:** The condition `A1<80` for \"Suffisant\" is too broad (it includes scores below 50), although it works here due to the order of `IFS` conditions. Used French labels.\n\n---"
+    }
+  ]
+}

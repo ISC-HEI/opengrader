@@ -14,10 +14,15 @@ def main():
         description="Validate pregrade outputs against the source exam.yaml."
     )
     parser.add_argument("exam_yaml", help="Path to the exam.yaml file")
+    parser.add_argument(
+        "--pregrade-dir",
+        type=Path,
+        help="Path to the pregrade/ directory (default: <exam_yaml_parent>/pregrade)",
+    )
     args = parser.parse_args()
 
     exam_path = Path(args.exam_yaml)
-    pregrade_dir = exam_path.parent / "pregrade"
+    pregrade_dir = args.pregrade_dir or exam_path.parent / "pregrade"
     inputs_dir = pregrade_dir / "inputs"
     outputs_dir = pregrade_dir / "outputs"
 
@@ -67,7 +72,9 @@ def main():
     for md_file in md_files:
         text = md_file.read_text()
         # Count level-2 headings — each represents one student
-        student_sections = [line for line in text.splitlines() if line.startswith("## ")]
+        student_sections = [
+            line for line in text.splitlines() if line.startswith("## ")
+        ]
         count = len(student_sections)
         if count != expected_students:
             errors.append(
@@ -75,7 +82,9 @@ def main():
             )
 
     if not errors:
-        print(f"✓ All {len(md_files)} files contain exactly {expected_students} students")
+        print(
+            f"✓ All {len(md_files)} files contain exactly {expected_students} students"
+        )
 
     # --- Report ---
     print()

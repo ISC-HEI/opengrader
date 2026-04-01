@@ -1,0 +1,110 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the 2-year anniversary date in `C1`.\n* **Needs Improvement:** The `D1` formula has syntax errors and attempts to use `CHOOSE` to create text labels for days, which cannot be used for calculation in `E1`. `G1` extracts the year instead of the day, and `G3` is missing. `G2` references the input month `A2` rather than the adjusted date.\n\n---"
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "answer": "A1: 10\nB1: =DATE(A3;A2;A1)\nC1: =DATE((A3+2);A2;A1)\nD1: =CHOOSE(WEEKDAY(B1);2);\"LUNDI\";\"MARDI\";\"MERCRED\";\"JEUDI\";\"VENDRED\";SAMEDI\";\"DIMANCHE\")\nE1: =7-WEEKDAY(D1;2)\nG1: =YEAR(C1)\nA2: 5\nG2: =MONTH(A2)\nA3: 2023",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the 2-year anniversary date in `C1`.\n* **Needs Improvement:** The `D1` formula has syntax errors and attempts to use `CHOOSE` to create text labels for days, which cannot be used for calculation in `E1`. `G1` extracts the year instead of the day, and `G3` is missing. `G2` references the input month `A2` rather than the adjusted date.\n\n---"
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "answer": "C1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C1;2)\nE1: =IF(D1=6; \"2\"; IF(D1 = 7; \"1\"; \"\"))\nG1: =DAY(A1+E1)\nG2: =A2\nG3: =YEAR(C1)",
+      "pregrade_feedback": "* **Did Well:** Correctly used `DATE` to calculate the anniversary and `WEEKDAY` to identify the day of the week.\n* **Needs Improvement:** `E1` returns text strings (e.g., `\"2\"`) instead of numbers, which causes errors in arithmetic. `G1` incorrectly applies `DAY()` to a sum of day numbers rather than a date serial number. `G2` does not account for potential month changes if the date is moved to Monday.\n\n---"
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "answer": "C1: =DATE(A3+2;A2;A1)\n\nD1: =WEEKDAY(C1;2)\n\nE1: =IF(D1=6;\"1\";IF(D1=7;\"2\";0))\n\nG1: =DAY(C1+E1)\nG2: =MONTH(C1+E1)\nG3: =YEAR(C1+E1)",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the 2-year anniversary date in `C1` and used `WEEKDAY(C1;2)` to find the day of the week. Successfully extracted the day, month, and year in `G1`, `G2`, and `G3`.\n* **Needs Improvement:** The logic in `E1` for adding days is reversed (`D1=6` adds 1 instead of 2; `D1=7` adds 2 instead of 1) and uses text strings (`\"1\"`, `\"2\"`) instead of numbers, which may cause issues in addition.\n\n---"
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "answer": "C1: =DATE(10;5;2023+2)\nD1: =WEEKDAY(DATE(10;5;2025))\nE1: =WEEKDAY(DATE(10;5;2025))-...",
+      "pregrade_feedback": "* **Did Well:** Correct use of the `DATE` function to increment the year and the `WEEKDAY` function to identify the day of the week.\n* **Needs Improvement:** Used hardcoded values (`10;5;2023`) instead of cell references (`A3;A2;A1`) in the formulas. The formula for `E1` is incomplete. Missing the final calculations for cells `G1`, `G2`, and `G3` as requested.\n\n---"
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "answer": "C1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C1)\nG1: =DAY()\nG2: =MONTH()\nG3: =YEAR()",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the 2-year anniversary date in `C1`.\n* **Needs Improvement:** The formulas for `G1`, `G2`, and `G3` are missing their arguments (the date to extract from). The logic to check for weekends and add days is entirely absent.\n\n---"
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "No answer provided.\n\n---"
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "answer": "A1: 10\nC1: =A1& \"/\"& A2 & \"/\" & (A3 + 2)\nD1: =SWITCH(D2; 1;\"Lundi\"; 2; \"mardi\";3; \"mercredi\";4;\"Jeudi\";5;\"vendredi\";6;\"samedi\";7;\"dimanche\")\nE1: =IF (D1=dimanche ; D1 + 1 ; )\nA2: 5\nD2: =WEEKDAY(C1)\nA3: 2023",
+      "pregrade_feedback": "* **Did Well:** Correctly identified that the year needs to be `A3 + 2`. Attempted to use `WEEKDAY` and `SWITCH` for the logic.\n* **Needs Improvement:** `C1` creates a text string instead of a date serial number, which prevents other date functions from working correctly. `D1` uses unquoted text (e.g., `dimanche`) and incorrectly references `D2`. Missing formulas for `G1`, `G2`, and `G3`.\n\n---"
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "answer": "A1: 10\nA2: 5\nA3: 2023\n\nC1: =DATE(A3; A2; A1)+2*365\n\nD1: =WEEKDAY(C1)\n\nE1: =IF(D1=6; 2; IF(D1=7; 1; 0))\n\nG1: =DAY(C1+E1)\nG2: =MONTH(C1+E1)\nG3: =YEAR(C1+E1)",
+      "pregrade_feedback": "* **Did Well:** Followed the requested procedure and correctly extracted the date components in `G1`, `G2`, and `G3`.\n* **Needs Improvement:** Calculated the 2-year increment by adding `2*365` days, which does not account for leap years (the `DATE` function should be used for this). The `WEEKDAY` function was used without the second argument, meaning Sunday is 1 and Saturday is 7, making the logic in `E1` (`D1=6` for Saturday) incorrect for that specific setting.\n\n---"
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "answer": "1) calcul pour déterminer le numéro de série de la date anniversaire\nC1: =DATE(A1;A2;A3+2)\n\n2) le jour de la semaine correspondant à la date anniversaire\nD1: =WEEKDAY(C1;2)\n\n3) le nombre de jours à ajouter si nécessaire\nE1: =IFS(D1=6;C1+2;D1=7;C1+1)\n\n4) la date de garantie corrigée\nG1: =DAY(E1)\nG2: =MONTH(E1)\nG3: =YEAR(E1)",
+      "pregrade_feedback": "* **Did Well:** Clearly structured the steps and correctly used `WEEKDAY` and `DAY/MONTH/YEAR` functions. Successfully implemented the logic to shift the date to Monday if it falls on a weekend using `IFS` in `E1`.\n* **Needs Improvement:** In the `DATE` function in `C1`, the arguments are in the wrong order (`A1;A2;A3+2` which is Day;Month;Year) whereas the function expects `Year;Month;Day`. Additionally, `E1` only returns a value for weekends; it should handle the case for weekdays so that `G1`, `G2`, and `G3` can always display a valid date.\n\n---"
+    }
+  ]
+}

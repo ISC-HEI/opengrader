@@ -1,0 +1,79 @@
+#import "@preview/isc-hei-document:0.7.1" : *
+
+#show: project.with(
+  doc-type: "document",
+  show-cover: false,
+  show-toc: false,
+  fancy-line: true,
+
+  title: "{{ exam.name }}",
+  subtitle: [{{ exam.course }}],
+  authors: (
+    {%- for a in exam.authors -%}
+    "{{ a }}"{% if not loop.last %}, {% endif %}
+    {%- endfor -%}
+  ),
+
+  date: datetime(year: {{ exam.date.year }}, month: {{ exam.date.month }}, day: {{ exam.date.day }}),
+  revision: "1.0",
+  language: "fr",
+  logo: auto,
+
+  code-theme: "bluloco-light",
+)
+
+// Student name header
+*Nom / Name: {{ exam.firstname }} {{ exam.lastname }}*
+
+{% for q in exam.questions %}
+#grid(
+  columns: (1fr, auto),
+  [
+    = {% if exam.add_anchors %}Q{{ loop.index0 }} {% endif %}{{ q.name }}
+  ],
+  [
+    {% if q.max_point is not none %}#align(right)[{{ q.max_point }} pts]{% endif %}
+  ]
+)
+
+{{ q.description | markdown_to_typst }}
+
+{% if q.answer is not none and q.answer.content is not none %}
+
+#grid(
+  columns: (1fr, auto),
+  [
+  == Student answer
+  ],
+  [
+    {% if q.answer.points is not none %}#align(right)[{{ q.answer.points }}/{{ q.max_point }}pts]{% endif %}
+  ]
+)
+
+#code(
+  ```{{ q.type }}
+{{ q.answer.content }}
+  ```
+)
+
+{% if q.answer.correction_details is not none %}
+#pad(top: 0.5em)[
+  *Correction details:*
+  #code(
+    ```
+    {{ q.answer.correction_details }}
+    ```
+  )
+]
+{% endif %}
+
+{% endif %}
+{% for b in range(q.linebreak) -%}
+#pagebreak()
+{%- endfor %}
+
+{%- if not loop.last %}
+#pagebreak()
+{% endif -%}
+
+{% endfor %}

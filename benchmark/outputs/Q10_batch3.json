@@ -1,0 +1,649 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 3,
+  "students": [
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student properly used DATE function in C1, not partial building."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly used =DATE((A3+2);A2;A1) in C1."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly calculated the 2-year anniversary date in C1 as noted in feedback."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Student used WEEKDAY in D1 formula, though with syntax errors."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "E1 formula attempts to compute days but uses CHOOSE for text labels which Cannot be used for calculation."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "E1 does partially attempt to compute days but fails due to using text labels."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1 extracts year instead of day, G2 references wrong cell A2, G3 is missing entirely."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Multiple errors prevent this from being all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Not all wrong - student did well on C1 with correct 2-year calculation."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student properly used DATE function in C1, not partial building."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly used =DATE((A3+2);A2;A1) in C1."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly calculated the 2-year anniversary date in C1 as noted in feedback."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Student used WEEKDAY in D1 formula, though with syntax errors."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "E1 formula attempts to compute days but uses CHOOSE for text labels which Cannot be used for calculation."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "E1 does partially attempt to compute days but fails due to using text labels."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1 extracts year instead of day, G2 references wrong cell A2, G3 is missing entirely."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Multiple errors prevent this from being all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Not all wrong - student did well on C1 with correct 2-year calculation."
+        }
+      ]
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student properly used DATE function correctly."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly used =DATE(A3+2;A2;A1) in C1."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback confirms correct 2-year anniversary calculation in C1."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback confirms correct use of WEEKDAY to identify day of week in D1."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 returns text strings instead of numbers, causing arithmetic errors."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "E1 partially computes how many days to add using IF logic for weekend check."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "G1 incorrectly applies DAY to sum of numbers, G2 does not account for month changes."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Multiple errors in E1 and G1 prevent this from being all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Not all wrong - student correctly used DATE and WEEKDAY functions."
+        }
+      ]
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student properly used DATE function correctly."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly used =DATE(A3+2;A2;A1) in C1."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback confirms correct 2-year anniversary date in C1."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback confirms correct use of WEEKDAY(C1;2) to find day of week."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 for adding days is reversed and uses text strings instead of numbers."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "E1 partially computes how many days to add using IF logic, though with reversed values."
+        },
+        {
+          "rubric_index": 6,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "G1, G2, G3 correctly extract day, month, year although E1 has issues that may cause addition problems."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 logic is reversed and uses text strings instead of numbers."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Not all wrong - student correctly implemented DATE, WEEKDAY, and G1-3 extractions."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Student partially built DATE with hardcoded values instead of cell references."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Student used =DATE(10;5;2023+2) and =DATE(10;5;2025) correctly but with hardcoded values."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "Used hardcoded values instead of cell references A3;A2;A1 as requested."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student correctly used WEEKDAY function in D1."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 formula is incomplete."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "E1 formula is incomplete so cannot properly compute days to add."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Missing final calculations for G1, G2, and G3 entirely."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Not all correct - E1 incomplete and G1-3 missing."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Not all wrong - student used DATE and WEEKDAY functions correctly."
+        }
+      ]
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student properly used DATE function correctly in C1."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Student correctly used =DATE(A3+2;A2;A1) in C1."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback confirms correct 2-year anniversary date calculation."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Student used WEEKDAY function in D1."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Logic to check for weekends and add days is entirely absent."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No attempt to compute days to add - weekend logic entirely absent."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "G1, G2, G3 formulas are missing their arguments completely."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Missing weekend logic and G1-3 have no arguments."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Not all wrong - C1 and D1 were done correctly."
+        }
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Feedback states 'No answer provided' which qualifies as all wrong/empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "Student partially built DATE but created text string instead of date serial."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "C1 creates text string with & operators, not using DATE function."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "C1 does not produce a date serial number needed for calculations."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Attempted WEEKDAY in D2 referenced by D1 SWITCH formula."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "E1 formula is incomplete and incorrectly references D1."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "E1 partially attempts the day calculation but has syntax errors."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Missing formulas for G1, G2, and G3 entirely."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Multiple errors prevent this from being all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Not all wrong - attempted WEEKDAY, SWITCH, and identified year needs A3+2."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "Student partially used DATE concept but added 2*365 days instead."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Did not use DATE function - used =DATE(A3;A2;A1)+2*365 which is conceptually wrong."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "Adding 2*365 days does not correctly account for leap years as DATE would."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Student used WEEKDAY function in D1."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "E1 computes days to add with IF logic for weekend check."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.75,
+          "justification": "E1 computes days but the logic is incorrect for the WEEKDAY setting used."
+        },
+        {
+          "rubric_index": 6,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "G1, G2, G3 correctly extract day, month, year from C1+E1."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "DATE calculation wrong (2*365 ignores leap years) and WEEKDAY logic incorrect."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Not all wrong - followed procedure and extracted date components correctly."
+        }
+      ]
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.75,
+          "justification": "Student partially built DATE though with wrong argument order."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.85,
+          "justification": "Student used =DATE(A1;A2;A3+2) but arguments are in wrong order (Day;Month;Year)."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "DATE has wrong argument order producing incorrect date serial number."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback confirms correct use of WEEKDAY(C1;2)."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 0.75,
+          "justification": "E1 uses IFS to shift date to Monday but adds days to C1 instead of computing days to add."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.7,
+          "justification": "E1 partially computes days but implements it as adding to date rather than computing number of days."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "G1, G2, G3 reference E1 (which returns a date for weekends only) rather than the corrected date."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.85,
+          "justification": "DATE argument order wrong and E1 only handles weekends."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Not all wrong - structured steps correctly and used WEEKDAY, DAY/MONTH/YEAR functions."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Formula uses nested IF structure: IF(A1>=80;...;IF(A1<50;...;...))"
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Condition A1>=80 returns \"Excellent\" as required"
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "The inner IF's else branch handles A1>=50 case returning \"Suffisant\""
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Student uses A1<50 condition for \"Insuffisant\" rather than a simple else clause; final else returns \"Suffisant\" not \"Insuffisant\""
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted a valid formula, not empty"
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No nested IF structure present; formulas are separate and incomplete"
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.6,
+          "justification": "Has IF(A1>=80;\"EXCELLENT\") but formula is incomplete (missing else clause)"
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "Uses incorrect OR(50<=A1<=79;...) syntax instead of proper IF condition for Sufficient"
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.5,
+          "justification": "Second IF has else \"INSUFFISANT\" but formula is incomplete; empty pregrade feedback makes assessment uncertain"
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Student submitted content (multiple formulas), not empty submission"
+        }
+      ]
+    }
+  ]
+}

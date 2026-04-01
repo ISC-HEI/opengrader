@@ -1,0 +1,86 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 2,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Lena",
+      "lastname": "Geissberger",
+      "answer": "=LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Used the `LEN` function.\n* **Needs Improvement:** Used `TRIM(G1)`, which does not remove all internal spaces.\n\n---"
+    },
+    {
+      "firstname": "Lorie",
+      "lastname": "Haefliger",
+      "answer": "G2: =LEN(SUBSTITUTE(G1;\" \";\"\"))",
+      "pregrade_feedback": "* **Did Well:** Correctly used `LEN(SUBSTITUTE(G1;\" \";\"\"))` in cell `G2` to count characters excluding all spaces.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Théo",
+      "lastname": "Haenni",
+      "answer": "G2: =LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Uses `LEN` to count characters.\n* **Needs Improvement:** Uses `TRIM(G1)` which fails to remove all internal spaces; `SUBSTITUTE` is required to exclude all spaces.\n\n---"
+    },
+    {
+      "firstname": "Iliana",
+      "lastname": "Harlingue",
+      "answer": "G2: =LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly identifies `LEN` as the function to count characters.\n* **Needs Improvement:** `TRIM` does not remove all internal spaces, failing the requirement to exclude all spaces from the count.\n\n---"
+    },
+    {
+      "firstname": "Jeanne",
+      "lastname": "Magnin",
+      "answer": "G2: =LEN(SUBSTITUTE(G1;\" \";\"\"))",
+      "pregrade_feedback": "* **Did Well:** Provided the exact correct formula `=LEN(SUBSTITUTE(G1;\" \";\"\"))` in cell `G2`, which correctly removes all spaces before counting characters.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Eloise",
+      "lastname": "Maiorano",
+      "answer": "=LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly identifies `LEN` as the function to count characters.\n* **Needs Improvement:** `TRIM` does not remove all internal spaces; it leaves single spaces between words, which fails the requirement to exclude all spaces.\n\n---"
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Mauro",
+      "answer": "=LEN(SUBSTITUTE(G1;\" \";\"\"))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `LEN` and `SUBSTITUTE` to count characters while excluding all spaces.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Isabelle",
+      "lastname": "Meier",
+      "answer": "G2:=COUNT(LEN(G1)-1)",
+      "pregrade_feedback": "* **Did Well:** Correctly identified cell `G2` and used the `LEN` function to address character length.\n* **Needs Improvement:** Used `COUNT`, which is for numeric ranges, and attempted to subtract a fixed value of `1` instead of removing all spaces dynamically. The formula `LEN(G1)-1` does not account for the actual number of spaces in `G1`.\n\n---"
+    },
+    {
+      "firstname": "Justin",
+      "lastname": "Michod",
+      "answer": "=LEN(TRIM(A1))",
+      "pregrade_feedback": "* **Did Well:** Used the `LEN` function.\n* **Needs Improvement:** Referenced the wrong cell `A1` instead of `G1`. Used `TRIM`, which does not remove all spaces.\n\n---"
+    },
+    {
+      "firstname": "Samuele Prince",
+      "lastname": "Moungang Moussandja",
+      "answer": "=REPLACE(A1;FIND(\" \";A1);1;\"\")",
+      "pregrade_feedback": "* **Did Well:** Attempts to remove a space using `REPLACE` and `FIND`.\n* **Needs Improvement:** References `A1` instead of `G1`. Only removes the first space found. Missing the `LEN` function to count the remaining characters.\n\n---"
+    }
+  ]
+}

@@ -29,6 +29,11 @@ def main():
         description="Export student answers to individual files, one per question per student."
     )
     parser.add_argument("exam_yaml", help="Path to the exam.yaml file")
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        help="Output directory for code files (default: <exam_yaml_parent>/code)",
+    )
     args = parser.parse_args()
 
     exam_path = Path(args.exam_yaml)
@@ -43,7 +48,7 @@ def main():
     questions = exam.get("questions", [])
     students = exam.get("student_response", [])
 
-    output_root = exam_path.parent / "code"
+    output_root = args.output_dir or exam_path.parent / "code"
     total_files = 0
 
     for question in questions:
@@ -60,10 +65,16 @@ def main():
             filename = f"{firstname}_{lastname}.{ext}"
 
             answer = next(
-                (a for a in student.get("answers", []) if a["question_id"] == q_id),
+                (
+                    a
+                    for a in student.get("answers", [])
+                    if a["question_id"] == q_id
+                ),
                 None,
             )
-            content = (answer["content"] if answer and answer.get("content") else None) or EMPTY_ANSWER_PLACEHOLDER
+            content = (
+                answer["content"] if answer and answer.get("content") else None
+            ) or EMPTY_ANSWER_PLACEHOLDER
 
             (q_dir / filename).write_text(content, encoding="utf-8")
             total_files += 1

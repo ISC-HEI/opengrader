@@ -1,8 +1,4 @@
-# OpenGrader generated files
-opengrader.db
-opengrader.db-shm
-opengrader.db-wal
-logs/
+
 exams
 
 sources

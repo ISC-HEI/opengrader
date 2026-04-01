@@ -1,0 +1,86 @@
+{
+  "question": {
+    "id": 1,
+    "name": "Q. 2",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Length -> LEN",
+        "value": 1.0
+      },
+      {
+        "description": "Remove all spaces -> SUBSTITUTE / TRIM (accepted)",
+        "value": 1.0
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 0,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Justin",
+      "lastname": "Aeby",
+      "answer": "=LEN(REPLACE(G1;FIND(\" \";G1);1;\"\"))",
+      "pregrade_feedback": "* **Did Well:** Used `LEN` to count characters and attempted a dynamic removal of spaces using `REPLACE` and `FIND`.\n* **Needs Improvement:** The combination of `REPLACE` and `FIND(\" \";G1)` only removes the first space found. It does not handle cases with multiple spaces.\n\n---"
+    },
+    {
+      "firstname": "Lilandra",
+      "lastname": "Albert-Lavault",
+      "answer": "=LEN(G1)+COUNTIF(FIND(\" \"; G1))",
+      "pregrade_feedback": "* **Did Well:** Used the `LEN` function.\n* **Needs Improvement:** The logic `=LEN(G1)+COUNTIF(FIND(\" \"; G1))` is incorrect. `FIND` returns a position number, and `COUNTIF` expects a range. Additionally, adding to the length is the opposite of the requirement to exclude spaces.\n\n---"
+    },
+    {
+      "firstname": "Noah Simon",
+      "lastname": "Anthamatten",
+      "answer": "=LEN(SUBSTITUTE(G1;\" \";\"\"))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `LEN` and `SUBSTITUTE` to count characters while excluding all spaces.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Jade",
+      "lastname": "Aymon",
+      "answer": "G1: Life Sciences\nG2: =LEN(TRIM(G1))\nD3: =TRIM(G1)",
+      "pregrade_feedback": "* **Did Well:** Correctly targeted cell `G2` and used the `LEN` function.\n* **Needs Improvement:** Used `TRIM(G1)`, which only removes leading/trailing spaces and reduces internal multiple spaces to one. It does not remove all internal spaces as required by the exercise.\n\n---"
+    },
+    {
+      "firstname": "Gioele",
+      "lastname": "Bagnovini",
+      "answer": "=MID(",
+      "pregrade_feedback": "* **Did Well:** Nothing notable found for this exercise.\n* **Needs Improvement:** The answer `=MID(` is incomplete and does not address the character counting requirement.\n\n---"
+    },
+    {
+      "firstname": "Ninon",
+      "lastname": "Bagutti",
+      "answer": "G2: =LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `LEN` and references cell `G1`.\n* **Needs Improvement:** Uses `TRIM(G1)`, which only removes leading, trailing, and extra internal spaces. It fails to exclude all spaces as requested.\n\n---"
+    },
+    {
+      "firstname": "Jonas",
+      "lastname": "Barraud",
+      "answer": "=LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly used the `LEN` function to count characters.\n* **Needs Improvement:** Used `TRIM(G1)`, which fails to remove all internal spaces (it only handles leading, trailing, and redundant internal spaces).\n\n---"
+    },
+    {
+      "firstname": "Shannon",
+      "lastname": "Billy Bilounga",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "No answer provided.\n\n---"
+    },
+    {
+      "firstname": "Maxime",
+      "lastname": "Bétrisey",
+      "answer": "=LEN(TRIM(G1))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `LEN` to count characters and references cell `G1`.\n* **Needs Improvement:** Uses `TRIM(G1)`, which only removes leading, trailing, and redundant internal spaces. It does not exclude all spaces as required.\n\n---"
+    },
+    {
+      "firstname": "Ness",
+      "lastname": "Chanthakesone",
+      "answer": "=LEN(G1)-COUNT(FIND(G1;\" \"))",
+      "pregrade_feedback": "* **Did Well:** Correctly uses `LEN` and references cell `G1`.\n* **Needs Improvement:** The logic `COUNT(FIND(G1;\" \"))` does not correctly identify or count all spaces. `FIND` only returns the position of the first occurrence, and `COUNT` expects a range or list of numbers.\n\n---"
+    }
+  ]
+}

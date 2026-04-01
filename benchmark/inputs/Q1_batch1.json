@@ -1,0 +1,94 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 1,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "answer": "A2 : =IFS(A1<50;\"Insuffisant\";A1<80;\"Suffisant\";A1>=80;\"Excellent\")",
+      "pregrade_feedback": "* **Did Well:** Correct use of the `IFS` function to map the three score ranges to the correct labels.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "answer": "A2: =IF(A1>=80;\"Excellent\";IF(AND(A1>=50;A1<=79);\"Suffisant\";\"Insuffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Successfully implemented the required logic using nested IF statements with explicit `AND` conditions for the middle range.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "answer": "A2: =IF(A1>=80;\"Excellent\";IF(A1<50;\"Insuffisant\";\"Suffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Successfully implemented the nested IF logic to handle all three categories correctly with proper thresholds.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "answer": "A1: 80\nA2: =IF(A1>49;IF(A1>=80;\"Excellent\";\"Suffisant\");\"Insuffisant\")",
+      "pregrade_feedback": "* **Did Well:** Correct implementation of the nested logic and correct assignment of labels to scores.\n* **Needs Improvement:** Use of `A1>49` instead of `A1>=50` is technically inaccurate for continuous values (e.g., 49.5) and does not strictly match the requirement.\n\n---"
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "answer": "=IF(OR(A1>=80; 50<=A1) ; \"Excellent \"; \" Insuffisant \")",
+      "pregrade_feedback": "* **Did Well:** Correctly identified the thresholds (80 and 50) and the labels \"Excellent\" and \"Insuffisant\".\n* **Needs Improvement:** The logical condition `OR(A1>=80; 50<=A1)` always returns \"Excellent\" for any value above 50, which misses the \"Suffisant\" category entirely. Includes extra spaces in strings.\n\n---"
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "answer": "A2: =IF(A1>=80;\"Excellent\";IF(A1>50;\"Suffisant\";IF(A1<50;\"Insuffisant\";\"\")))",
+      "pregrade_feedback": "* **Did Well:** Correct nested IF structure and labels for \"Excellent\" and \"Insuffisant\".\n* **Needs Improvement:** The condition `A1>50` for \"Suffisant\" excludes the value 50 itself, which should be included according to the prompt (50–79).\n\n---"
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "answer": "=IFS(A1>=80;\"Excellent\";A1<50;\"Insuffisant\";AND(A1>=50;A1<80);\"Suffisent\")",
+      "pregrade_feedback": "* **Did Well:** Correct use of `IFS` with a precise range definition using `AND(A1>=50;A1<80)` for the middle category.\n* **Needs Improvement:** Typo in the label \"Suffisent\" (should be \"Suffisant\").\n\n---"
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "answer": "A2=IF(A1=>80; \"excellent\"; IF(A1<50; \"Insuffisant\"; IF(OR(A1>50; A1<79)); \"suffisant\"; \"\"))",
+      "pregrade_feedback": "* **Did Well:** Identifies the three distinct categories based on score thresholds (80, 50).\n* **Needs Improvement:** Syntax error: uses `=>` instead of `>=`. The nested logic is malformed: `IF(OR(A1>50; A1<79))` lacks values and has misplaced punctuation. The `OR` condition is logically flawed as it would be true for almost any number. Returns an empty string `\"\"` for the final case.\n\n---"
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "answer": "=IF(A1>=80, « Excellent », IF(A1<50, « Insuffisant », «  »), « Suffisant »)",
+      "pregrade_feedback": "* **Did Well:** Correctly identified the conditions for \"Excellent\" (A1>=80) and \"Insuffisant\" (A1<50).\n* **Needs Improvement:** The formula structure is invalid due to an extra argument in the first `IF` and the use of curly quotes (« ») instead of standard quotation marks. Commas are used instead of semicolons as separators.\n\n---"
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "answer": "=IF(A1>=80;\"Excellent\";IF(A1>=50;\"Suffisant\"; \"Insuffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Perfect nested `IF` syntax and logic using the correct thresholds (`>=80`, `>=50`).\n* **Needs Improvement:** Used French labels (\"Suffisant\", \"Insuffisant\") instead of English (\"Sufficient\", \"Insufficient\").\n\n---"
+    }
+  ]
+}

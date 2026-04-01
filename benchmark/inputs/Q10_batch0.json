@@ -1,0 +1,110 @@
+{
+  "question": {
+    "id": 9,
+    "name": "Q. 10",
+    "type": "open",
+    "max_points": 3.0,
+    "rubrics": [
+      {
+        "description": "Partially built the DATE",
+        "value": 0.3
+      },
+      {
+        "description": "build date =DATE(...)",
+        "value": 0.5
+      },
+      {
+        "description": "C1: serial nr of date in 2 years",
+        "value": 0.6
+      },
+      {
+        "description": "D1: weekday",
+        "value": 0.7
+      },
+      {
+        "description": "E1: compute how many days to add",
+        "value": 0.7
+      },
+      {
+        "description": "E1: partially compute how many days to add",
+        "value": 0.3
+      },
+      {
+        "description": "correct new date in G1, G2, G3",
+        "value": 0.5
+      },
+      {
+        "description": "all correct",
+        "value": 3.0
+      },
+      {
+        "description": "all wrong / empty",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 0,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Justin",
+      "lastname": "Aeby",
+      "answer": "C1=A1&\"/\"&A2&\"/\"&A3+2",
+      "pregrade_feedback": "* **Did Well:** Attempted to construct a date by adding 2 to the year input from A3.\n* **Needs Improvement:** Used string concatenation (`&`) which results in text rather than a date serial number that a spreadsheet can manipulate. Missing the weekend adjustment logic and the extraction of day, month, and year into G1, G2, and G3.\n\n---"
+    },
+    {
+      "firstname": "Lilandra",
+      "lastname": "Albert-Lavault",
+      "answer": "C1 : =DATE(A3+2;A2;A1)\n\nD1 : =WEEKDAY(C1; 2)\n\nE1 : =IFS(D1=6; 2; D1=7; 1)\n\nG1 : =DAY(D1+E1)\nG2: =MONTH(D1)\nG3: =YEAR(D1)",
+      "pregrade_feedback": "* **Did Well:** Correctly calculated the anniversary date in C1 and the weekday number in D1 using `WEEKDAY(C1;2)`. Effectively used `IFS` to determine the number of days to add.\n* **Needs Improvement:** In G1, the formula `DAY(D1+E1)` adds the offset to the weekday number (1-7) instead of the date serial number (C1). G2 and G3 use the weekday number (`D1`) as the source for `MONTH` and `YEAR` instead of the date, leading to incorrect results.\n\n---"
+    },
+    {
+      "firstname": "Noah Simon",
+      "lastname": "Anthamatten",
+      "answer": "A1: 10\nC1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C1;2)\nE1: =IF(D1=6;2;IF(D1=7;1;0))\nF1: =DAY(DATE(A3+2;A2;A1+E1))\nA2: 05\nF2: =MONTH(DATE(A3+2;A2;A1+E1))\nA3: 2023\nF3: =YEAR(DATE(A3+2;A2;A1+E1))",
+      "pregrade_feedback": "* **Did Well:** Correct implementation of the logic across all steps. Properly used cell references to calculate the anniversary date (`C1`), the weekday (`D1`), and the shift for weekends (`E1`).\n* **Needs Improvement:** Placed the final day, month, and year results in cells `F1`, `F2`, and `F3` instead of the requested `G1`, `G2`, and `G3`.\n\n---"
+    },
+    {
+      "firstname": "Jade",
+      "lastname": "Aymon",
+      "answer": "A1: 10\nD1: nouvelle année\nE1: =A3+2\nG1: =YEAR(IF(WEEKDAY(DAY(DATE(A3+2;A2;A1)))=OR(1;7);DATE(A3+2+2;A2;A1);DATE(A3+2;A2;A1)))\nA2: 5\nD2: garantie\nE2: =DATE(A3+2;A2;A1)\nG2: =MONTH(IF(WEEKDAY(DAY(DATE(A3+2;A2;A1)))=OR(1;7);DATE(A3+2+2;A2;A1);DATE(A3+2;A2;A1)))\nA3: 2023\nG3: =DAY(IF(WEEKDAY(DAY(DATE(A3+2;A2;A1)))=OR(1;7);DATE(A3+2+2;A2;A1);DATE(A3+2;A2;A1)))\nD5: =IF(WEEKDAY(DAY(DATE(A3+2;A2;A1)))=OR(1;7);DATE(A3+2+2;A2;A1);DATE(A3+2;A2;A1))",
+      "pregrade_feedback": "* **Did Well:** Used `A3+2` for the year calculation and correctly identified the functions `WEEKDAY`, `DATE`, `YEAR`, `MONTH`, and `DAY` as relevant.\n* **Needs Improvement:** The syntax `OR(1;7)` is incorrect for a logical comparison in a spreadsheet. The nested functions are improperly structured (e.g., `WEEKDAY(DAY(...))`). The formulas for G1, G2, and G3 are inconsistent, with `YEAR` being assigned to G1 and `DAY` to G3. The logic for adding years (`A3+2+2`) is incorrect.\n\n---"
+    },
+    {
+      "firstname": "Gioele",
+      "lastname": "Bagnovini",
+      "answer": "=IF(WEEKDAY(TODAY() + 365 * 2) = 6; \"+2\")\n=IF(WEEKDAY(TODAY() + 365 * 2) = 7; \"+1\")\n=IF(WEEKDAY(TODAY() + 365 * 2) < 6; \"+0\")",
+      "pregrade_feedback": "* **Did Well:** Recognized the need to check for weekends (6 for Saturday, 7 for Sunday) and identified the number of days to add.\n* **Needs Improvement:** Used `TODAY()` instead of the provided date in `A1:A3`. The formulas return text strings like `\"+2\"` rather than performing a date calculation. Did not provide the required values in cells `G1`, `G2`, and `G3`.\n\n---"
+    },
+    {
+      "firstname": "Ninon",
+      "lastname": "Bagutti",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "No answer provided.\n\n---"
+    },
+    {
+      "firstname": "Jonas",
+      "lastname": "Barraud",
+      "answer": "=(YEAR(DATE(A3;A2;A1)))+2",
+      "pregrade_feedback": "* **Did Well:** Correctly identified that the year needs to be incremented by 2.\n* **Needs Improvement:** Only provided a formula for the year calculation. Missing the full date calculation, the weekend adjustment logic, and the separate outputs for G1 (day) and G2 (month).\n\n---"
+    },
+    {
+      "firstname": "Shannon",
+      "lastname": "Billy Bilounga",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "No answer provided.\n\n---"
+    },
+    {
+      "firstname": "Maxime",
+      "lastname": "Bétrisey",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "No answer provided.\n\n---"
+    },
+    {
+      "firstname": "Ness",
+      "lastname": "Chanthakesone",
+      "answer": "A1: 10\nC1: =DATE(A3+2;A2;A1)\nD1: =WEEKDAY(C2;2)\nE1: =IF(D1=6; 2; IF(D1 = 7; 1;\"\"))\nG1: =A1+E1\nA2: 5\nG2: =A2\nA3: 2023\nG3: =A3+2",
+      "pregrade_feedback": "* **Did Well:** Correctly used `DATE` to find the anniversary and an `IF` statement to determine the number of days to add for weekends.\n* **Needs Improvement:** Contains a typo in `D1` (`C2` instead of `C1`). `G1` adds the adjustment to the original purchase day (`A1`) instead of the calculated anniversary date. `G2` and `G3` do not account for the weekend adjustment.\n\n---"
+    }
+  ]
+}

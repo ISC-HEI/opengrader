@@ -23,10 +23,12 @@ The pregrade skill must have been run first, producing:
 
 **ONLY** if pregrade outputs are missing, run:
 ```bash
-uv run skills/pregrade/scripts/prepare_inputs.py <exam.yaml> --batch-size 10
+uv run skills/pregrade/scripts/prepare_inputs.py <exam.yaml> [--output-dir <path>] [--batch-size 10]
 # Then spawn sub-agents (see pregrade skill)
 uv run skills/pregrade/scripts/assemble_outputs.py pregrade/
 ```
+
+Note: If you used a custom `--output-dir` in `prepare_inputs.py`, adjust the path to `assemble_outputs.py` accordingly.
 
 ---
 

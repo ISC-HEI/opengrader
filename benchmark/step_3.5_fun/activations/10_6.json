@@ -1,0 +1,2474 @@
+{
+  "question_id": 9,
+  "question_name": "Q. 10",
+  "rubrics": [
+    {
+      "description": "Partially built the DATE",
+      "value": 0.3
+    },
+    {
+      "description": "build date =DATE(...)",
+      "value": 0.5
+    },
+    {
+      "description": "C1: serial nr of date in 2 years",
+      "value": 0.6
+    },
+    {
+      "description": "D1: weekday",
+      "value": 0.7
+    },
+    {
+      "description": "E1: compute how many days to add",
+      "value": 0.7
+    },
+    {
+      "description": "E1: partially compute how many days to add",
+      "value": 0.3
+    },
+    {
+      "description": "correct new date in G1, G2, G3",
+      "value": 0.5
+    },
+    {
+      "description": "all correct",
+      "value": 3.0
+    },
+    {
+      "description": "all wrong / empty",
+      "value": 0.0
+    }
+  ],
+  "students": [
+    {
+      "firstname": "Justin",
+      "lastname": "Aeby",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Used string concatenation instead of date functions."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No evidence of DATE() function usage."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "C1 does not yield a date serial number."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No D1 provided."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No E1 provided."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No E1 provided."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No G1, G2, G3 provided."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Answer does not meet all criteria."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Answer lacks any correct components; all essential parts are missing or wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Lilandra",
+      "lastname": "Albert-Lavault",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Date was fully built, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 uses DATE() function correctly."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 correctly produces date serial 2 years ahead."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "D1 correctly computes weekday via WEEKDAY(C1,2)."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "E1 correctly computes adjustment using IFS."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 is fully correct, not partial."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1, G2, G3 incorrect due to referencing D1 instead of adjusted date."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G cells are incorrect."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some components are correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah Simon",
+      "lastname": "Anthamatten",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Date fully built."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 uses DATE() correctly."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 yields correct date serial."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "D1 uses WEEKDAY(C1,2) correctly."
+        },
+        {
+          "rubric_index": 4,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "E1 correctly computes adjustment with nested IF."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 is full, not partial."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Results placed in F1-F3 instead of required G1-G3."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1-G3 in wrong cells."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Core logic correct but cell placement error."
+        }
+      ]
+    },
+    {
+      "firstname": "Jade",
+      "lastname": "Aymon",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE not properly constructed."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "DATE function misused."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "C1 does not correctly produce date serial."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "D1 incorrect due to improper WEEKDAY usage."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "E1 not correctly computed."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No partial computation."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "G1,G2,G3 formulas inconsistent and incorrect."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "All formulas are incorrect; no correct components."
+        }
+      ]
+    },
+    {
+      "firstname": "Gioele",
+      "lastname": "Bagnovini",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No DATE usage."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No DATE function."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "C1 missing or uses TODAY()."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "D1 missing."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "E1 missing."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "E1 partial missing."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "G1-G3 missing."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Answer uses TODAY() and returns text; no meaningful date calculation."
+        }
+      ]
+    },
+    {
+      "firstname": "Ninon",
+      "lastname": "Bagutti",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Answer is empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Jonas",
+      "lastname": "Barraud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No DATE construction."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Missing DATE function."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "C1 not built as date serial."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No D1."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No E1."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No E1."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No G1-G3."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "Incomplete answer."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Only year increment; essential parts missing."
+        }
+      ]
+    },
+    {
+      "firstname": "Shannon",
+      "lastname": "Billy Bilounga",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Answer is empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Maxime",
+      "lastname": "Bétrisey",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Answer is empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Ness",
+      "lastname": "Chanthakesone",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "DATE built fully."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 correctly uses DATE(A3+2;A2;A1)."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 yields correct date serial."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "D1 contains typo (C2) and is incorrect."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 depends on incorrect D1."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not partial."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1 adds to A1; G2/G3 incorrect."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some parts correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Aurélien",
+      "lastname": "Christ",
+      "rubric_assessments": [
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Deactivated due to 'all correct' being satisfied."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Deactivated due to 'all correct' being satisfied."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Deactivated due to 'all correct' being satisfied."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Deactivated due to 'all correct' being satisfied."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Deactivated due to 'all correct' being satisfied."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Deactivated due to 'all correct' being satisfied."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Deactivated due to 'all correct' being satisfied."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback indicates no issues; solution fully correct."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Deactivated due to 'all correct' being satisfied."
+        }
+      ]
+    },
+    {
+      "firstname": "Maéva",
+      "lastname": "Ciccarone",
+      "rubric_assessments": [
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "DATE built correctly, not partially."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 uses =DATE(A3+2;A2;A1) to build anniversary date."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 correctly calculates date serial for 2-year anniversary."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "D1 uses WEEKDAY(C1;2) to compute weekday correctly."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 returns text strings instead of numeric values, so does not compute days."
+        },
+        {
+          "active": true,
+          "confidence": 0.9,
+          "justification": "E1 uses IFS to attempt day computation but outputs text; partial correctness."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1 uses A1+E1 instead of C1+E1; G2/G3 do not adjust for weekend, so final date incorrect."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all components correct; G1-G3 incorrect."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some components correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Maé",
+      "lastname": "Clet",
+      "rubric_assessments": [
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "DATE built correctly, not partially."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 uses =DATE(A3+2;A2;A1) correctly."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 correctly calculates the 2-year anniversary date."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "D1 uses =WEEKDAY(C1) to compute weekday (default type)."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 uses =DAY(C1+2), which does not compute number of days to add."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 approach is fundamentally incorrect, not partial."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1 depends on flawed E1; G2/G3 extract from C1 without adjustment; final date incorrect."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 and G1-G3 incorrect."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some components correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Julien",
+      "lastname": "Cloutier",
+      "rubric_assessments": [
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "DATE built correctly, not partially."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 uses =DATE(A3+2;A2;A1) correctly."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 correct 2-year anniversary."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "D1 correctly computes weekday with WEEKDAY(C1;2)."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "E1 =IF(D1=6;2;IF(D1=7;1;0)) correctly computes days to add."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 fully correct, not partial."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Results placed in F1-F3 instead of G1-G3; month/year do not account for shift."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Final output in wrong cells; incomplete adjustment."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Partial errors prevent full correctness."
+        }
+      ]
+    },
+    {
+      "firstname": "Lydia",
+      "lastname": "Dangi",
+      "rubric_assessments": [
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No attempt."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No attempt."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No attempt."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No attempt."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No attempt."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No attempt."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No attempt."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No attempt."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "No answer provided; all wrong/empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Cédric",
+      "lastname": "Daul",
+      "rubric_assessments": [
+        {
+          "active": true,
+          "confidence": 0.8,
+          "justification": "C1 uses DATE but with day/month swapped, so partially built."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "DATE arguments incorrect; not properly built."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "C1 incorrect due to swapped arguments."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "D1 uses default WEEKDAY type; mismatched with E1 logic; not correct."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 logic flawed due to D1 type mismatch; does not compute correctly."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 not partially correct; misaligned with D1."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1,G2,G3 do not correctly reflect final date; wrong references."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Significant errors prevent full correctness."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some attempt but not completely wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Gabrielle",
+      "lastname": "De Morsier",
+      "rubric_assessments": [
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No C1; no DATE built."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No C1; date not built as required."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No C1 provided."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No D1 provided."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No E1 provided."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No E1 provided."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1-G3 contain syntax errors and incorrect logic; not correct."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Multiple errors; not fully correct."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "No correct components; all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Paul",
+      "lastname": "Dehoul",
+      "rubric_assessments": [
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "C1 built correctly; not partial."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 =DATE(G3;G2;G1) correctly builds anniversary date from components."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 correctly yields 2-year anniversary serial number."
+        },
+        {
+          "active": false,
+          "confidence": 0.9,
+          "justification": "D1 uses WEEKDAY on concatenated string; incorrect."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 formula garbled; does not compute days."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No partial computation; E1 malformed."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1-G3 are raw values without weekend adjustment; incorrect."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Only C1 correct; others wrong."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some correct parts."
+        }
+      ]
+    },
+    {
+      "firstname": "Victor Vincent Raoul",
+      "lastname": "Erard",
+      "rubric_assessments": [
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No valid DATE construction."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "DATE formulas malformed."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No correct C1."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "D1 formula invalid."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 incomplete and incorrect."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No partial E1 computation."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1-G3 formulas incorrect."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Numerous errors."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "No valid solution; all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Olivia Kaloa",
+      "lastname": "Farias Melo",
+      "rubric_assessments": [
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No separate C1; DATE used inside G formulas but not as required."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No C1 with =DATE(...)."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No C1 provided."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No D1 provided."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No E1 provided."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No E1 provided."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1-G3 contain syntax errors and incorrect year addition; final date wrong."
+        },
+        {
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Incorrect formulas throughout."
+        },
+        {
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Solution is entirely incorrect."
+        }
+      ]
+    },
+    {
+      "firstname": "Lena",
+      "lastname": "Geissberger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "The student fully implemented the DATE function, not partially."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The student correctly built the 2-year anniversary date using DATE(A3+2;A2;A1)."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The student correctly created the date serial number in C1 representing the 2-year anniversary."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "The student defined D1 using WEEKDAY, though it contains a circular reference to D1."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 is incorrectly defined with circular references and does not compute days to add correctly."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 does not partially compute days to add; it is fundamentally flawed."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "G1, G2, G3 formulas are incorrect; G2 and G3 do not account for weekend shift."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Not all components are correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "The student provided a substantial answer, not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Lorie",
+      "lastname": "Haefliger",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Fully built DATE, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "C1 correctly uses DATE(A3+2;A2;A1) to compute the 2-year anniversary."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "C1 represents the correct serial number for the 2-year anniversary date."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "D1 correctly applies WEEKDAY(C1;2) to determine the weekday."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "E1 incorrectly adds the offset to D1 instead of C1 and contains syntax errors."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "E1 does not partially compute days to add; it is incorrect."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "G1, G2, G3 are incorrect: G1 uses DAY(E1) where E1 is not a date, and G2/G3 use the unadjusted date."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Not all elements correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Substantial answer provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Théo",
+      "lastname": "Haenni",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "No DATE function used; cannot be considered partial construction of DATE."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Student did not build a DATE using the DATE function."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No correct C1 formula providing the date serial."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No valid D1 formula for weekday."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "E2 formula is invalid and does not compute days."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "E2 not partially correct."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Missing G1, G2, G3 formulas."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "All provided formulas are incorrect or missing."
+        }
+      ]
+    },
+    {
+      "firstname": "Iliana",
+      "lastname": "Harlingue",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Full DATE built, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "C1 correctly uses DATE(A3+2;A2;A1)."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "C1 produces the correct 2-year anniversary date serial."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "D1 uses WEEKDAY(C1) to compute the weekday correctly."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "E1 formula missing."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "E1 missing."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "G1/G2/G3 missing."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Incomplete, not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Partial answer present."
+        }
+      ]
+    },
+    {
+      "firstname": "Jeanne",
+      "lastname": "Magnin",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Full DATE built; partial not applicable."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by 'all correct'."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by 'all correct'."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by 'all correct'."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by 'all correct'."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by 'all correct'."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by 'all correct'."
+        },
+        {
+          "rubric_index": 7,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Student's solution is fully correct as indicated by the feedback."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by 'all correct'."
+        }
+      ]
+    },
+    {
+      "firstname": "Eloise",
+      "lastname": "Maiorano",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Full DATE built."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "C1 correctly uses DATE(A3+2;A2;A1)."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "C1 produces the correct 2-year anniversary date serial."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "D1 uses WEEKDAY(C1) correctly."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "E1 formula is mathematically incorrect."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "E1 does not partially compute days to add."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "G1/G2/G3 are incorrect due to swapped order."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Substantial answer provided."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Mauro",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Full DATE built."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by all correct."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by all correct."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by all correct."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by all correct."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by all correct."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by all correct."
+        },
+        {
+          "rubric_index": 7,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Student's solution is fully correct as indicated by the feedback."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Superseded by all correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Isabelle",
+      "lastname": "Meier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "DATE used but not with required inputs; not a proper DATE build."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Student did not build DATE from A1, A2, A3 as required."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No C1 with correct date serial."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No D1 formula."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No E1 formula."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No E1 partial."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "Only G1 present and incorrect; G2/G3 missing."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "The answer does not follow requirements and is essentially all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Justin",
+      "lastname": "Michod",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.95,
+          "justification": "No DATE function used."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No DATE built from inputs."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No C1."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No D1."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No E1."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No E1 partial."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No G cells."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "Not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 0.99,
+          "justification": "Only an incorrect single formula; essentially all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Samuele Prince",
+      "lastname": "Moungang Moussandja",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 0.99,
+          "justification": "No answer provided."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "No answer provided; empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Used DATE correctly, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Used DATE function to compute anniversary."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback explicitly states correctly calculated 2-year anniversary date in C1."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback indicates D1 has syntax errors."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 uses CHOOSE incorrectly, not computing days."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 attempted but incorrect, not partial."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1 extracts year, G3 missing, G2 references wrong cell."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Multiple components incorrect."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "C1 is correct, not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Hadrien",
+      "lastname": "Mustaki",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Used DATE correctly, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Answer shows =DATE((A3+2);A2;A1)."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 formula yields correct 2-year anniversary."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback indicates D1 has syntax errors."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 uses CHOOSE incorrectly, not computing days."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 attempted but incorrect, not partial."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1 extracts year, G3 missing, G2 references wrong cell."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Multiple components incorrect."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "C1 is correct, not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Nadine",
+      "lastname": "Noè",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Fully built date correctly."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback: correctly used DATE."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 correct as implied by DATE use."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback: correctly used WEEKDAY."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 returns text strings, causing errors."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 flawed, not partial."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1 incorrectly applies DAY, G2 does not handle month changes."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all components correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Alicia",
+      "lastname": "Oggier",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Fully correct date building."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 uses DATE correctly."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly calculated 2-year anniversary."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Correctly used WEEKDAY(C1;2)."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 logic reversed and uses text strings."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "E1 not partially correct due to reversal."
+        },
+        {
+          "rubric_index": 6,
+          "active": true,
+          "confidence": 0.95,
+          "justification": "Feedback states successfully extracted date components."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 errors prevent all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all wrong."
+        }
+      ]
+    },
+    {
+      "firstname": "Noah",
+      "lastname": "Perriard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Used DATE correctly, not partial."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback: correct use of DATE function."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 yields correct anniversary date."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "WEEKDAY function correctly identifies day."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 incomplete."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No partial computation."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Missing G1,G2,G3."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all components present."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some components correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Delphine",
+      "lastname": "Pitteloud",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Used DATE correctly."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "C1 uses DATE correctly."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback: correctly calculated anniversary."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "D1 uses WEEKDAY(C1) and not flagged, assumed correct."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No E1 provided."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No partial E1."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1,G2,G3 missing arguments."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Missing components."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some components correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Riederer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No answer."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "No answer provided, all wrong/empty."
+        }
+      ]
+    },
+    {
+      "firstname": "Maïc",
+      "lastname": "Santschy",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Did not use DATE."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No DATE function used."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "C1 is text, not date."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "D1 flawed, uses SWITCH incorrectly."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 incomplete and incorrect."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 not partially correct."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1,G2,G3 missing."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "All components incorrect or missing."
+        }
+      ]
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Truffer",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Used DATE but flawed increment; still used DATE but not correct."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "DATE used but not correctly for anniversary; feedback did not praise DATE usage."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "C1 does not yield correct anniversary date (leap year error)."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "D1 not considered correct due to C1 error and weekday numbering issue."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 logic incorrect."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 not partially correct."
+        },
+        {
+          "rubric_index": 6,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback states correctly extracted date components."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all components correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some components correct."
+        }
+      ]
+    },
+    {
+      "firstname": "Romane",
+      "lastname": "Vergères",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.8,
+          "justification": "C1 uses DATE but arguments in wrong order, partial attempt."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "DATE used incorrectly, not building properly."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "C1 incorrect due to argument order."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Feedback: correctly used WEEKDAY."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 returns adjusted date, not days; missing weekday case."
+        },
+        {
+          "rubric_index": 5,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "E1 implements weekend shift correctly but lacks weekday case, partial."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "G1,G2,G3 depend on incomplete E1; not fully correct."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all components correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some partial credit."
+        }
+      ]
+    },
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "DATE fully correct, partial not applicable."
+        },
+        {
+          "rubric_index": 1,
+          "active": true,
+          "confidence": 1.0,
+          "justification": "Feedback explicitly states correct use of DATE function."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states formula for serial number is invalid."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "CHOOSE formula used incorrectly for G cells; no correct D1."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No evidence of correct E1 computation."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No partial E1 computation."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Missing required formulas for G1, G2, G3."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all components correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some credit earned for DATE."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "DATE function used but with hardcoded arguments, indicating partial implementation."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "DATE does not use required cell references, so not fully correct."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Feedback states he correctly identified the target date (10/05/2025)."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "Feedback explicitly states correct use of WEEKDAY function."
+        },
+        {
+          "rubric_index": 4,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "E1 has circular reference, incorrect."
+        },
+        {
+          "rubric_index": 5,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "No partial E1 computation."
+        },
+        {
+          "rubric_index": 6,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Feedback states G1-G3 lack proper formulas."
+        },
+        {
+          "rubric_index": 7,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Not all components correct."
+        },
+        {
+          "rubric_index": 8,
+          "active": false,
+          "confidence": 1.0,
+          "justification": "Some credit earned for C1 and D1."
+        }
+      ]
+    }
+  ]
+}

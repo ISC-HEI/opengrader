@@ -1,0 +1,89 @@
+{
+  "question": {
+    "id": 2,
+    "name": "Q. 3",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "IF",
+        "value": 0.5
+      },
+      {
+        "description": "No empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "Return the number of empty cell",
+        "value": 0.75
+      },
+      {
+        "description": "All wrong",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 4,
+  "students": [
+    {
+      "firstname": "Yann",
+      "lastname": "Voisard",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The answer uses IF function for conditional logic: =IF(COUNTIF(A1:A116;\"\")=0;...)"
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.8,
+          "justification": "The formula does not specifically address 'no empty cell' as a standalone criterion; it returns a message or count."
+        },
+        {
+          "rubric_index": 2,
+          "active": true,
+          "confidence": 0.9,
+          "justification": "The formula returns COUNTIF(A1:A116;\"\") which counts empty cells when the condition is not met."
+        },
+        {
+          "rubric_index": 3,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The answer is not entirely wrong; it uses correct IF and COUNTIF functions for detecting empty cells."
+        }
+      ]
+    },
+    {
+      "firstname": "Mathis",
+      "lastname": "Vouillamoz",
+      "rubric_assessments": [
+        {
+          "rubric_index": 0,
+          "active": true,
+          "confidence": 0.6,
+          "justification": "The answer uses IF function, but the pregrade feedback notes it lacks a proper true/false branch and is fundamentally incorrect."
+        },
+        {
+          "rubric_index": 1,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The formula does not address empty cells; it uses '<>0' criteria which counts non-zero values, not empty cells."
+        },
+        {
+          "rubric_index": 2,
+          "active": false,
+          "confidence": 0.9,
+          "justification": "The formula uses COUNT with '<>0' criteria instead of COUNTIF with '' to count empty cells; fundamentally wrong approach."
+        },
+        {
+          "rubric_index": 3,
+          "active": true,
+          "confidence": 0.7,
+          "justification": "The pregrade feedback states the formula is 'fundamentally wrong for this task' - mutual exclusion applies, this overrides the partial IF usage."
+        }
+      ]
+    }
+  ]
+}

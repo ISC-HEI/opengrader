@@ -1,0 +1,94 @@
+{
+  "question": {
+    "id": 0,
+    "name": "Q. 1",
+    "type": "open",
+    "max_points": 2.0,
+    "rubrics": [
+      {
+        "description": "Double IF / IFS",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=80 -> Excellent",
+        "value": 0.5
+      },
+      {
+        "description": "Condition A1>=50 -> Sufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Else -> Insufficient",
+        "value": 0.5
+      },
+      {
+        "description": "Nothing",
+        "value": 0.0
+      }
+    ]
+  },
+  "batch": 2,
+  "total_batches": 5,
+  "students": [
+    {
+      "firstname": "Lena",
+      "lastname": "Geissberger",
+      "answer": "=IF(A1>=80;\"Excellent\";IF(A1<50;\"Insuffisant\";\"Suffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Perfectly correct formula using nested `IF` with accurate thresholds and labels.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Lorie",
+      "lastname": "Haefliger",
+      "answer": "=IF(A1>=80;\"Excellent\";IF(A1<50);\"Insuffisant\";\"Suffisant\")",
+      "pregrade_feedback": "* **Did Well:** Correctly identified the necessary thresholds and labels.\n* **Needs Improvement:** Syntax error in the nested `IF`; the parenthesis after `IF(A1<50)` closes the second `IF` function prematurely, which would cause the formula to fail.\n\n---"
+    },
+    {
+      "firstname": "Théo",
+      "lastname": "Haenni",
+      "answer": "$@NULL@$",
+      "pregrade_feedback": "No answer provided.\n\n---"
+    },
+    {
+      "firstname": "Iliana",
+      "lastname": "Harlingue",
+      "answer": "A2: =IF(A1>=80;\"Excellent\";IF(AND(A1>49;A1<80);\"Suffisant\";\"Insuffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Correct nested logic and exact labels used.\n* **Needs Improvement:** Used `A1>49` instead of `A1>=50`; while effective for integers, it is less precise for potential decimal values.\n\n---"
+    },
+    {
+      "firstname": "Jeanne",
+      "lastname": "Magnin",
+      "answer": "A2: =IF(A1 >= 80; \"Excellent\"; IF(A1<50;\"Insuffisant\";\"Suffisant\"))",
+      "pregrade_feedback": "* **Did Well:** Perfectly implemented the required logic using nested `IF` statements with correct thresholds (80 and 50) and corresponding labels.\n* **Needs Improvement:** Nothing notable found for this exercise.\n\n---"
+    },
+    {
+      "firstname": "Eloise",
+      "lastname": "Maiorano",
+      "answer": "=IF((A1)>=50; IF((A1)>=80; “Excellent”, “Suffisant”; “Insuffisant”)",
+      "pregrade_feedback": "* **Did Well:** The logical structure of the nested IF correctly identifies the three ranges.\n* **Needs Improvement:** Multiple syntax errors: use of curly quotes (`“`, `”`) instead of standard quotes, a comma instead of a semicolon in the inner IF, and a missing closing parenthesis for the outer IF.\n\n---"
+    },
+    {
+      "firstname": "Simon",
+      "lastname": "Mauro",
+      "answer": "=IFS(A1<50;\"Insuffisant\";A1<80;\"Suffisant\";A1>=80;\"Excellent\")",
+      "pregrade_feedback": "* **Did Well:** Perfect implementation using `IFS`. The sequence `<50`, `<80`, `>=80` correctly isolates the three ranges.\n* **Needs Improvement:** Used French labels (\"Insuffisant\", \"Suffisant\") instead of English (\"Insufficient\", \"Sufficient\").\n\n---"
+    },
+    {
+      "firstname": "Isabelle",
+      "lastname": "Meier",
+      "answer": "A2: =IF(OR(A1>=80;\"EXCELLENT\");OR(A1<50;\"INSUFFISIANT\");\"SUFFISIANT\")",
+      "pregrade_feedback": "* **Did Well:** Identified the `IF` function and the threshold values (80 and 50).\n* **Needs Improvement:** Incorrect use of `OR` functions to return text values; the formula `OR(A1>=80;\"EXCELLENT\")` is logically invalid for Excel. Failed to correctly nest the conditions to handle the three different outcomes.\n\n---"
+    },
+    {
+      "firstname": "Justin",
+      "lastname": "Michod",
+      "answer": "=IF(C1>=80;\"Excellent\";\"insuffisant\")",
+      "pregrade_feedback": "* **Did Well:** Correctly identified the 80 threshold for the \"Excellent\" category.\n* **Needs Improvement:** Referenced the wrong cell (`C1` instead of `A1`). The formula only accounts for two outcomes, omitting the \"Suffisant\" range entirely.\n\n---"
+    },
+    {
+      "firstname": "Samuele Prince",
+      "lastname": "Moungang Moussandja",
+      "answer": "=IFS(A1;\">=80\"; \"Excellent\";A1;\">=50\"\"Suffisant\";A1;\"<=79\";\"Suffisant\";A1;\"<50\";\"Insuffisant\")",
+      "pregrade_feedback": "* **Did Well:** Correctly identifies all thresholds (80, 50) and labels.\n* **Needs Improvement:** Multiple syntax errors in `IFS`: comparison operators are placed inside strings (e.g., `\">=80\"`) and arguments are malformed with extra quotes and semicolons. Used French labels.\n\n---"
+    }
+  ]
+}
