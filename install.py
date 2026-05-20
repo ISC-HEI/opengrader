@@ -13,7 +13,6 @@
 
 import json
 import shutil
-import subprocess
 from pathlib import Path
 
 CONFIG_PATH = Path.home() / ".config" / "opencode" / "opencode.json"
@@ -89,34 +88,16 @@ def install_stow():
 
     if SKILLS_SRC.exists():
         clear_stale_entries(SKILLS_SRC, skills_dest)
-        subprocess.run(
-            [
-                "stow",
-                "-t",
-                str(skills_dest),
-                "-d",
-                str(SKILLS_SRC.parent),
-                SKILLS_SRC.name,
-            ],
-            check=True,
-        )
+        for entry in SKILLS_SRC.iterdir():
+            (skills_dest / entry.name).symlink_to(entry.resolve())
         print(f"  Installed skills to: {skills_dest}")
     else:
         print(f"  No skills source found at: {SKILLS_SRC}, skipping")
 
     if PROMPTS_SRC.exists():
         clear_stale_entries(PROMPTS_SRC, prompts_dest)
-        subprocess.run(
-            [
-                "stow",
-                "-t",
-                str(prompts_dest),
-                "-d",
-                str(PROMPTS_SRC.parent),
-                PROMPTS_SRC.name,
-            ],
-            check=True,
-        )
+        for entry in PROMPTS_SRC.iterdir():
+            (prompts_dest / entry.name).symlink_to(entry.resolve())
         print(f"  Installed prompts to: {prompts_dest}")
     else:
         print(f"  No prompts source found at: {PROMPTS_SRC}, skipping")
