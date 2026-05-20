@@ -80,6 +80,18 @@ Then, you can start prompting the agent with requests like :
 
 Or you can force the usage of a particual skill by typing `/skills` and then pressing `Tab`.
 
+## Model Selection
+
+OpenGrader will work with any model supported by your provider. For small workloads, such as imports, exports, and format conversions **Qwen3.5-122B-A10B** is a very good fit. For grading tasks like **pregrade-submissions** and **rubric-activation-benchmark**, a larger model with stronger reasoning capabilities, such as **Qwen3.5-397B-A17B**, is a better choice. Any capable model (Gemini, Claude, etc.) will work well too.
+
+### Changing the Model
+
+Use the `/connect` command to connect to your preferred provider (OpenRouter, Anthropic, Google, etc.). Then use `/model` to select the specific model.
+
+When selecting a model, you will often see multiple entries for the same model name, one per provider offering it. Make sure to pick the correct model entry for the provider you connected with.
+
+For full details, see the [OpenCode documentation on model configuration](https://opencode.ai/docs/models/).
+
 ## Observability
 
 To enable LLM debugging, you have two paths forward :
