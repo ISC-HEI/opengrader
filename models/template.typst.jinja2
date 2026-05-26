@@ -29,7 +29,7 @@
 #grid(
   columns: (1fr, auto),
   [
-    = {% if exam.add_anchors %}Q{{ loop.index0 }} {% endif %}{{ q.name }}
+    = {% if exam.add_anchors %}Q{{ loop.index0 }}:start {% endif %}{{ q.name }}
   ],
   [
     {% if q.max_point is not none %}#align(right)[{{ q.max_point }} pts]{% endif %}

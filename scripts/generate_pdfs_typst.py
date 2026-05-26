@@ -182,7 +182,7 @@ def find_questions_in_pdf(pdf_path: str, num_questions: int) -> dict[int, int]:
     question_pages = {}
 
     for q_num in range(num_questions):
-        pattern = f"Q{q_num}"
+        pattern = f"Q{q_num}:start"
         page_num = None
 
         for idx, page in enumerate(reader.pages):
