@@ -4,9 +4,9 @@
   doc-type: "document",
   show-cover: false,
   show-toc: false,
-  fancy-line: true,
+  fancy-line: false,
 
-  title: "{{ exam.name }}",
+  title: "{{ exam.name | replace('--', '–') }}",
   subtitle: [{{ exam.course }}],
   authors: (
     {%- for a in exam.authors -%}
@@ -17,7 +17,7 @@
   date: datetime(year: {{ exam.date.year }}, month: {{ exam.date.month }}, day: {{ exam.date.day }}),
   revision: "1.0",
   language: "fr",
-  logo: auto,
+  logo: none,
 
   code-theme: "bluloco-light",
 )
@@ -29,16 +29,21 @@
 #grid(
   columns: (1fr, auto),
   [
-    = {% if exam.add_anchors %}Q{{ loop.index0 }} {% endif %}{{ q.name }}
+    = {% if exam.add_anchors %}Q{{ loop.index0 }}:start {% endif %}{{ q.name }}
   ],
   [
     {% if q.max_point is not none %}#align(right)[{{ q.max_point }} pts]{% endif %}
   ]
 )
 
-{{ q.description | markdown_to_typst }}
+#[
+  #set text(font: "Source Sans 3")
+  {{ q.description | markdown_to_typst }}
+]
 
 {% if q.answer is not none and q.answer.content is not none %}
+
+#pagebreak()
 
 #grid(
   columns: (1fr, auto),
@@ -46,7 +51,23 @@
   == Student answer
   ],
   [
-    {% if q.answer.points is not none %}#align(right)[{{ q.answer.points }}/{{ q.max_point }}pts]{% endif %}
+    #stack(dir: ltr, spacing: 1em,
+      {% if q.answer.test_results is not none %}[
+        {% set tr = q.answer.test_results %}
+        {% if tr.error == "compile_error" %}#text(fill: red)[⚠ compile error]
+        {% elif tr.error == "timeout" %}#text(fill: red)[⚠ timeout]
+        {% elif tr.error == "empty" %}#text(fill: gray)[– pas de code]
+        {% elif tr.total > 0 %}
+          {% set p = tr.passed %}
+          {% set t = tr.total %}
+          {% if p == t %}#text(fill: green)[✓ {{ p }}/{{ t }} tests]
+          {% elif p == 0 %}#text(fill: red)[✗ {{ p }}/{{ t }} tests]
+          {% else %}#text(fill: orange)[~ {{ p }}/{{ t }} tests]
+          {% endif %}
+        {% endif %}
+      ],{% endif %}
+      {% if q.answer.points is not none %}[#align(right)[{{ q.answer.points }}/{{ q.max_point }} pts]]{% else %}[]{% endif %}
+    )
   ]
 )
 

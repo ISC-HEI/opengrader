@@ -1,0 +1,48 @@
+# OpenGrader — Exam structure template
+#
+# This file is the STRUCTURE ONLY (no student data, no solutions).
+# Generate it automatically from the Markdown exam spec — see docs/WORKFLOW.md Step 0.
+# Fill in the fields below and add one entry per question.
+
+exam_name: "ISC -- Course Name YYYY"
+course_name: "XXX.Y Course Name"
+module: "000"
+ue: "XXX.Y"
+exam_date: YYYY-MM-DD
+authors:
+- "Dr A. Author"
+- "Dr B. Author"
+
+questions:
+- name: "Question 1"
+  id: 0
+  type: scala        # language tag used for syntax highlighting (scala, python, java, …)
+  max_points: 6.0
+  description: |-
+    # Question 1 — Title
+    Question text in Markdown.
+    Code blocks, lists, and callouts are all supported.
+
+- name: "Question 2"
+  id: 1
+  type: scala
+  max_points: 8.0
+  description: |-
+    # Question 2 — Title
+    Question text in Markdown.
+
+- name: "Question 3"
+  id: 2
+  type: scala
+  max_points: 8.0
+  description: |-
+    # Question 3 — Title
+    Question text in Markdown.
+
+- name: "Question 4"
+  id: 3
+  type: scala
+  max_points: 11.0
+  description: |-
+    # Question 4 — Title
+    Question text in Markdown.

@@ -1,15 +1,14 @@
 import argparse
 import glob
+import json
 import os
 import re
 import shutil
 import subprocess
 import sys
 import uuid
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import date as DateObj, datetime
-from os import mkdir, path
-from typing import List, Optional
 from os import mkdir, path
 from typing import List, Optional
 from jinja2 import Environment, FileSystemLoader
@@ -35,6 +34,8 @@ def convert_code_blocks(text):
 def markdown_to_typst(text):
     if not text:
         return ""
+    # Strip a leading level-1 heading (the template already renders q.name as a heading)
+    text = re.sub(r"^#[^#][^\n]*\n?", "", text.lstrip("\n"), count=1)
     result = md2typst_convert(text)
     result = convert_code_blocks(result)
     return result
@@ -46,6 +47,7 @@ class Answer:
     content: str
     points: Optional[int]
     correction_details: Optional[str]
+    test_results: Optional[dict] = None
 
 
 @dataclass
@@ -180,7 +182,7 @@ def find_questions_in_pdf(pdf_path: str, num_questions: int) -> dict[int, int]:
     question_pages = {}
 
     for q_num in range(num_questions):
-        pattern = f"Q{q_num}"
+        pattern = f"Q{q_num}:start"
         page_num = None
 
         for idx, page in enumerate(reader.pages):
@@ -278,6 +280,9 @@ def generate_exam(data: List[FilledExam], output_folder, template_path: str):
 
         os.makedirs(output_folder, exist_ok=True)
         for pdf_path in glob.glob(os.path.join(working_folder, "*.pdf")):
+            dst = path.join(output_folder, path.basename(pdf_path))
+            if path.exists(dst):
+                os.remove(dst)
             shutil.move(pdf_path, output_folder)
 
     finally:
@@ -286,12 +291,23 @@ def generate_exam(data: List[FilledExam], output_folder, template_path: str):
     print(f"Generated {len(data)} PDFs to {output_folder}")
 
 
-def load_yaml(filepath: str):
+def load_yaml(filepath: str, test_results_path: Optional[str] = None):
     yaml = YAML()
     with open(filepath, "r") as f:
         data = yaml.load(f)
 
     filled_exams = FilledExam.from_yaml(data)
+
+    if test_results_path:
+        with open(test_results_path) as f:
+            test_results = json.load(f)
+        for exam in filled_exams:
+            key = f"{exam.firstname}_{exam.lastname}"
+            if key in test_results:
+                student_results = test_results[key]
+                for q in exam.questions:
+                    if q.answer and str(q.id) in student_results:
+                        q.answer.test_results = student_results[str(q.id)]
 
     return filled_exams
 
@@ -308,9 +324,14 @@ def main():
         default="./models/template.typst.jinja2",
         help="Path to Typst Jinja2 template",
     )
+    parser.add_argument(
+        "--test-results",
+        default=None,
+        help="Path to test_results.json produced by run_tests.py",
+    )
     args = parser.parse_args()
 
-    generate_exam(load_yaml(args.input), args.output, args.template)
+    generate_exam(load_yaml(args.input, args.test_results), args.output, args.template)
 
 
 if __name__ == "__main__":

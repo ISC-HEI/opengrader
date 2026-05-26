@@ -40,9 +40,25 @@ OpenGrader comes with a set of skills that are bundled with the system. These sk
 - **skill-creator**: Creates new skills, modifies and improves existing skills, and measures skill performance.
 - **text-exam-to-yaml**: Parses any text-based exam file (txt, html, doc, rtf) into a structured YAML file.
 
+## Scala-exam -> Typst PDF Grading Pipeline
+
+For Scala lab-test exams with ScalaTest unit tests, a lighter direct-script pipeline is available alongside the full agentic workflow, without requiring OpenCode.
+
+```
+exam structure YAML + student submissions YAML
+        │
+        ├─ scripts/run_tests.py          → test_results.json
+        ├─ scripts/generate_pdfs_typst.py → pdf/  (Gradescope-ready)
+        └─ scripts/generate_summary.py   → summary.md + summary.pdf
+```
+
+See **[docs/WORKFLOW.md](docs/WORKFLOW.md)** for the full step-by-step guide (prerequisites, exam setup, ScalaTest integration, troubleshooting).
+
+Sanitized exam templates (questions only, no student data) are stored in `exams/`.
+
 ## Installation
 
-For this project, we recommand using [OpenCode](https://opencode.ai/), as it can be linked to the AI agent of your choice, and support the `SKILL.md` [specification](https://agentskills.io/specification). But you can bring the local agent of your choice. We will only detail installation and usage with this tool, and we officially support only this one.
+For this project, we recommend using [OpenCode](https://opencode.ai/), as it can be linked to the AI agent of your choice, and support the `SKILL.md` [specification](https://agentskills.io/specification). But you can bring the local agent of your choice. We will only detail installation and usage with this tool, and we officially support only this one. Tests have been made with `Claude Code` and it works as well.
 
 Run the installation script to set up OpenGrader with OpenCode:
 
@@ -92,7 +108,7 @@ When selecting a model, you will often see multiple entries for the same model n
 
 For full details, see the [OpenCode documentation on model configuration](https://opencode.ai/docs/models/).
 
-## Observability
+## Development and Observability
 
 To enable LLM debugging, you have two paths forward :
 - OpenRouter Broadcasting
