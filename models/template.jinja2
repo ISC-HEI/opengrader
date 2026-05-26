@@ -16,6 +16,8 @@ course: "{{ exam.course }}"
 # LaTex specific
 fontsize: 10pt
 caption-justification: centering
+monofont: "Fira Code"
+monofontoptions: "Scale=0.85"
 ---
 
 <style>
@@ -39,9 +41,11 @@ TODO {color: Blue}
 
 ## Student answer
 
+\begingroup\footnotesize
 ```{% if q.type == 'open' %}text{% elif q.type == "python" %}text{% else %}{{ q.type }}{% endif %}
 {{ q.answer.content | wrap_text }}
 ```
+\endgroup
 
 {% endif %}
 {% for b in range(q.linebreak) -%}

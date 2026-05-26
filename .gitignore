@@ -1,10 +1,36 @@
 
-exams
+# ── Old catch-alls (kept for compatibility) ───────────────────────────────
 benchmark
 sources
 demo
+my_exams
 
-# Python
+# ── Student personal data — NEVER commit ─────────────────────────────────
+# Raw submission archives
+*.tar
+
+# Per-student PDFs (Gradescope uploads)
+pdf/
+
+# Full exam YAML that contains student_response (source code + answers)
+# The sanitized structure-only YAMLs in exams/ ARE tracked.
+labo_test_*.yaml
+*_responses.yaml
+
+# Test runner output
+test_results.json
+
+# Corrector summary (aggregated student data)
+summary.md
+summary.pdf
+
+# Pre-grade pipeline artefacts (questions, inputs, outputs — all local only)
+pregrade/
+
+# OCR working directory
+OCR/
+
+# ── Python ────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
@@ -13,18 +39,18 @@ __pycache__/
 *.egg-info/
 dist/
 build/
-uv.lock
 
-# Secrets
-secrets
-
-# Virtual environments
+# ── Virtual environments ──────────────────────────────────────────────────
 venv/
 .venv
 env/
 ENV/
 
-# IDE
+# ── Secrets ───────────────────────────────────────────────────────────────
+secrets
+.env
+
+# ── IDE ───────────────────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
@@ -32,19 +58,14 @@ ENV/
 *~
 .ruff_cache
 
-# OS
+# ── OS ────────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
 __MACOSX/
 
-# Temporary files
+# ── Temporary files ───────────────────────────────────────────────────────
 .tmp/
 *.tmp
 *.bak
-
-# OpenGrader output folders (optional - uncomment if you don't want to track generated files)
-# **/opengrader/
-my_exams
 *.log
-.env
 session-ses*.md
